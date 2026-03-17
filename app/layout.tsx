@@ -17,6 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Skanilan Tech',
   description: 'Modern Tech website for Skanilan Tech featuring IoT, Web Development, Mobile Applications, Photography, and Gamification.',
+  icons: 'favicon.ico',
 };
 
 export default function RootLayout({
