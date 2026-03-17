@@ -52,7 +52,7 @@ export function Contact() {
                   <div>
                     <p className="font-medium text-slate-900">Office Location</p>
                     <p className="text-slate-600 text-sm mt-1">
-                      Jl. Peterongansari No.2, Peterongan, Kec. Semarang Sel., </br>
+                      Jl. Peterongansari No.2, Peterongan, Kec. Semarang Sel., <br>
                       Kota Semarang, Jawa Tengah 50242
                     </p>
                   </div>
