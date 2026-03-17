@@ -52,8 +52,8 @@ export function Contact() {
                   <div>
                     <p className="font-medium text-slate-900">Office Location</p>
                     <p className="text-slate-600 text-sm mt-1">
-                      Jl. Teknologi No. 42, Innovation District<br />
-                      Jakarta Selatan, 12345
+                      Jl. Peterongansari No.2, Peterongan, Kec. Semarang Sel., </br>
+                      Kota Semarang, Jawa Tengah 50242
                     </p>
                   </div>
                 </div>
@@ -86,10 +86,10 @@ export function Contact() {
           >
             {/* Custom styled Google Maps iframe */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24009710352!2d106.758749!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1625581234567!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0895533899725!2d110.43205977403679!3d-6.998735068544575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c990db0089b%3A0x6b67584fe408fd4a!2sSMK%20Negeri%209%20Semarang!5e0!3m2!1sid!2sid!4v1773770893828!5m2!1sid!2sid"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: 'grayscale(100%) invert(92%) contrast(83%) hue-rotate(180deg) saturate(200%) brightness(95%)' }}
+              style={{ border: 0, filter: 'invert(92%) contrast(83%) hue-rotate(180deg) saturate(200%) brightness(95%)' }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
