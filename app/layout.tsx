@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     icon: '/skanilantech.png?v=2',
   },
   verification: {
-    google: 'google-site-verification=vyN5yBdV4a9eJyCohsf565h3VJ0j42HSUUnwY2EmzrM',
+    google: 'vyN5yBdV4a9eJyCohsf565h3VJ0j42HSUUnwY2EmzrM',
   },
 };
 
