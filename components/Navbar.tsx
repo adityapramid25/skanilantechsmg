@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, User, LogOut, Loader2 } from 'lucide-react';
@@ -105,9 +106,14 @@ export function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center w-[200px]">
               <Link href="/" className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded bg-gradient-to-br from-violet-600 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
-                  S
-                </div>
+                <Image 
+                  src="/skanilantech.png" 
+                  alt="Skanilan Tech Logo" 
+                  width={32} 
+                  height={32} 
+                  className="object-contain"
+                  priority 
+                />
                 <span className={`font-bold text-lg tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
                   Skanilan Tech
                 </span>
