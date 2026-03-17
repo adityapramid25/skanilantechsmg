@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -7,9 +8,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded bg-violet-600 flex items-center justify-center text-white font-bold text-xl">
-                S
-              </div>
+              <Image 
+                src="/skanilantech.png" 
+                alt="Skanilan Tech Logo" 
+                width={36} 
+                height={36} 
+                className="object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all" 
+              />
               <span className="font-bold text-xl tracking-tight text-slate-900">
                 Skanilan Tech
               </span>
