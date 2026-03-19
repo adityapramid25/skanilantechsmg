@@ -7,10 +7,10 @@ import { motion } from 'motion/react';
 
 export default function ProductPage() {
   const product = {
-    title: 'Website Portofolio',
-    price: '$2500.00',
+    title: 'Website Al-Muttaqin Wiku',
+    price: 'Rp 1.000.000/Months',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Menghubungkan umat, menebar manfaat. Website resmi Al-Muttaqin Wiku hadir sebagai inovasi digital untuk mempermudah jamaah, santri, dan masyarakat luas dalam mengakses berbagai layanan kami. Dari informasi kajian rutin, pendaftaran program pendidikan, hingga penyaluran Zakat, Infaq, Sadaqah, Wakaf, semuanya kini dapat diakses dengan cepat, transparan, dan aman langsung dari genggaman Anda.',
     features: [
       { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
       { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
@@ -73,7 +73,7 @@ export default function ProductPage() {
               </div>
             </div>
             <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
+              src={`/WEBSITE-WIKU/masjid_wiku_1.jpeg`} 
               alt="Video Thumbnail" 
               fill 
               className="object-cover -z-10"
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Website Al-Muttaqin Wiku mengusung desain responsif dengan visual yang nyaman dibaca, dipadukan dengan navigasi intuitif yang menyajikan menu terstruktur untuk mempermudah pencarian informasi bagi pengguna awam. Platform ini tidak hanya terintegrasi dengan berbagai konten Islami—seperti jadwal salat, galeri santri, dan berita yayasan—tetapi juga sangat aman berkat perlindungan sertifikat SSL (HTTPS) yang menjaga data pengunjung dan formulir pendaftaran dari peretasan.
               </p>
             </div>
           </motion.div>
