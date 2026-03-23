@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Desain UI/UX',
-    price: 'Rp. 1.000.000',
+    price: 'Rp. 2.000.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Kami merancang antarmuka (UI) yang memanjakan mata sekaligus pengalaman pengguna (UX) yang intuitif.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Eksklusif (High-Fidelity)', desc: 'Bukan template, desain dibuat khusus sesuai karakter brand Anda.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'User-Centric Design', desc: 'Alur navigasi dirancang agar tidak membingungkan pengguna baru.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Prototyping Interaktif', desc: 'Anda bisa mencoba klik desain sebelum web mulai dibuat (via Figma).' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Mobile-First Approach', desc: 'Memastikan kenyamanan maksimal saat diakses dari smartphone.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Aksesibilitas Tinggi', desc: 'Kontras warna dan ukuran font yang ramah untuk semua kalangan pengguna.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Penyertaan Style Guide', desc: 'Memberikan panduan warna dan tipografi untuk konsistensi brand Anda ke depan.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+               Fokus kami adalah membuat pengunjung betah berlama-lama dan mudah menemukan apa yang mereka cari.
               </p>
             </div>
           </motion.div>
