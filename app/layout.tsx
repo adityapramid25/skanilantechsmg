@@ -23,7 +23,30 @@ export const metadata: Metadata = {
   description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
   keywords: ['Web Development Semarang', 'IoT Services Semarang', 'Jasa Pembuatan Website Semarang', 'SMKN 9 Semarang tech agency', 'Student-led digital agency', 'Jasa IoT Semarang', 'Jasa Fotografi Semarang'],
   icons: {
-    icon: '/skanilantech.png?v=2',
+    icon: 'https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161',
+    apple: 'https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161',
+  },
+  openGraph: {
+    title: 'Skanilan Tech - Technology Solution in Semarang',
+    description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
+    url: 'https://skanilantechsmg.vercel.app',
+    siteName: 'Skanilan Tech',
+    images: [
+      {
+        url: 'https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161',
+        width: 800,
+        height: 600,
+        alt: 'Skanilan Tech Logo',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Skanilan Tech - Technology Solution in Semarang',
+    description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
+    images: ['https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161'],
   },
   verification: {
     google: 'HcEcP0LxIt4YJpPwwop1nDnMYKg-u-gkM5lgb4lXPg8',
@@ -39,7 +62,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Skanilan Tech",
-    "image": "https://skanilantechsmg.vercel.app/skanilantech.png",
+    "image": "https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161",
     "description": "A student-led tech agency from SMKN 9 Semarang specializing in Web Development, IoT Services, and Mobile Applications.",
     "address": {
       "@type": "PostalAddress",

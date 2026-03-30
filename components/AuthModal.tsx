@@ -242,7 +242,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
-            className="relative w-full max-w-sm bg-white border border-violet-100 rounded-xl shadow-2xl overflow-hidden z-10"
+            className="relative w-full max-w-sm bg-white border border-primary/10 rounded-xl shadow-2xl overflow-hidden z-10"
           >
             <button
               onClick={handleClose}
@@ -253,7 +253,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
             <div className="p-6">
               <div className="text-center mb-6">
-                <h3 className="text-xl font-display font-bold text-slate-900">
+                <h3 className="text-xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary-light">
                   {getTitle()}
                 </h3>
                 <p className="text-xs text-slate-500 mt-1">
@@ -282,7 +282,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       autoComplete="name"
-                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       placeholder="Alex Doe"
                     />
                   </motion.div>
@@ -297,7 +297,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       autoComplete="email"
-                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       placeholder="alex@example.com"
                     />
                   </motion.div>
@@ -322,7 +322,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                           onChange={(e) => handleOtpChange(index, e.target.value)}
                           onKeyDown={(e) => handleOtpKeyDown(index, e)}
                           onPaste={handleOtpPaste}
-                          className="w-10 h-12 text-center text-lg font-mono bg-slate-50 border border-slate-200 rounded-md text-slate-900 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                          className="w-10 h-12 text-center text-lg font-mono bg-slate-50 border border-slate-200 rounded-md text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                         />
                       ))}
                     </div>
@@ -341,7 +341,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         autoComplete={authMode === 'login' ? 'current-password' : 'new-password'}
-                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors pr-10"
+                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors pr-10"
                         placeholder="••••••••"
                       />
                       <button
@@ -366,7 +366,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         autoComplete="new-password"
-                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors pr-10"
+                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-sm text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors pr-10"
                         placeholder="••••••••"
                       />
                       <button
@@ -384,7 +384,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-2 bg-gradient-to-r from-violet-600 to-blue-600 hover:opacity-90 text-white text-sm font-medium rounded-md transition-all shadow-[0_4px_15px_rgba(139,92,246,0.3)] mt-2 disabled:opacity-50"
+                  className="w-full py-2 bg-gradient-to-br from-primary to-primary-dark hover:opacity-90 text-white text-sm font-medium rounded-md transition-all shadow-[0_4px_15px_rgba(74,105,189,0.3)] mt-2 disabled:opacity-50"
                 >
                   {getButtonText()}
                 </button>
@@ -395,7 +395,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                   <button
                     type="button"
                     onClick={() => handleModeSwitch('login')}
-                    className="text-xs text-slate-500 hover:text-violet-600 transition-colors"
+                    className="text-xs text-slate-500 hover:text-primary transition-colors"
                   >
                     Back to Login
                   </button>
@@ -405,14 +405,14 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                     <button
                       type="button"
                       onClick={() => handleModeSwitch('register')}
-                      className="text-xs text-slate-500 hover:text-violet-600 transition-colors"
+                      className="text-xs text-slate-500 hover:text-primary transition-colors"
                     >
                       Don&apos;t have an account? Register
                     </button>
                     <button
                       type="button"
                       onClick={() => handleModeSwitch('forgot-request')}
-                      className="text-xs text-slate-500 hover:text-violet-600 transition-colors"
+                      className="text-xs text-slate-500 hover:text-primary transition-colors"
                     >
                       Forgot your password?
                     </button>

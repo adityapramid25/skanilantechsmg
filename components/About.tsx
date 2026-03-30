@@ -30,7 +30,7 @@ export function About() {
               className="object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-violet-900/10" />
+            <div className="absolute inset-0 bg-primary/10" />
           </motion.div>
 
           <motion.div
@@ -39,7 +39,7 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary-light mb-6">
               Skanilan Tech | SMKN 9 Semarang
             </h2>
             <div className="space-y-4 text-slate-600 text-base leading-relaxed">
@@ -55,12 +55,12 @@ export function About() {
             </div>
             
             <div className="mt-8 grid grid-cols-2 gap-6">
-              <div className="border-l-2 border-violet-500 pl-4">
-                <p className="text-2xl font-bold text-slate-900">50+</p>
+              <div className="border-l-2 border-primary pl-4">
+                <p className="text-2xl font-bold text-primary">50+</p>
                 <p className="text-sm text-slate-500">Projects Delivered</p>
               </div>
-              <div className="border-l-2 border-violet-500 pl-4">
-                <p className="text-2xl font-bold text-slate-900">99%</p>
+              <div className="border-l-2 border-primary pl-4">
+                <p className="text-2xl font-bold text-primary">99%</p>
                 <p className="text-sm text-slate-500">Client Satisfaction</p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export function About() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-display font-bold text-slate-900">Our Culture & Work</h3>
+            <h3 className="text-2xl font-display font-bold text-primary">Our Culture & Work</h3>
             <p className="text-sm text-slate-500 mt-2">A glimpse into our daily operations and achievements.</p>
           </div>
           

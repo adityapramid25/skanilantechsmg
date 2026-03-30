@@ -8,7 +8,7 @@ export function Contact() {
     <section className="py-20 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900">Get in Touch</h2>
+          <h2 className="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary-light">Get in Touch</h2>
           <p className="text-sm text-slate-500 mt-2">We&apos;d love to hear from you. Let&apos;s build something great together.</p>
         </div>
 
@@ -22,35 +22,35 @@ export function Contact() {
             className="space-y-8"
           >
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold text-primary mb-6">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-violet-100 text-violet-600 rounded-lg">
+                  <div className="p-3 bg-primary/10 text-primary rounded-lg">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Phone</p>
+                    <p className="font-medium text-primary">Phone</p>
                     <p className="text-slate-600 text-sm mt-1">+62 812 2943 8668</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-violet-100 text-violet-600 rounded-lg">
+                  <div className="p-3 bg-primary/10 text-primary rounded-lg">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Email</p>
+                    <p className="font-medium text-primary">Email</p>
                     <p className="text-slate-600 text-sm mt-1">hello@skanilantech.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-violet-100 text-violet-600 rounded-lg">
+                  <div className="p-3 bg-primary/10 text-primary rounded-lg">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Office Location</p>
+                    <p className="font-medium text-primary">Office Location</p>
                     <p className="text-slate-600 text-sm mt-1">
                       Jl. Peterongansari No.2, Peterongan, Kec. Semarang Sel., <br />
                       Kota Semarang, Jawa Tengah 50242
@@ -60,15 +60,15 @@ export function Contact() {
               </div>
 
               <div className="mt-8 pt-8 border-t border-slate-200">
-                <p className="font-medium text-slate-900 mb-4">Follow Us</p>
+                <p className="font-medium text-primary mb-4">Follow Us</p>
                 <div className="flex gap-4">
-                  <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-violet-600 hover:text-white rounded-lg transition-colors">
+                  <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-primary hover:text-white rounded-lg transition-colors">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-violet-600 hover:text-white rounded-lg transition-colors">
+                  <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-primary hover:text-white rounded-lg transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-violet-600 hover:text-white rounded-lg transition-colors">
+                  <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-primary hover:text-white rounded-lg transition-colors">
                     <Twitter className="w-5 h-5" />
                   </a>
                 </div>
@@ -96,7 +96,7 @@ export function Contact() {
               title="Skanilan Tech Location"
             />
             {/* Overlay to give it a blue-ish tint */}
-            <div className="absolute inset-0 bg-violet-900/10 pointer-events-none" />
+            <div className="absolute inset-0 bg-primary/10 pointer-events-none" />
           </motion.div>
         </div>
       </div>
