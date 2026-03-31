@@ -11,18 +11,21 @@ const slides = [
     title: 'Next-Gen IoT Solutions',
     subtitle: 'Connecting the physical world to the digital realm with smart, scalable IoT infrastructure.',
     image: 'https://picsum.photos/seed/technology/1920/1080',
+    color: 'from-violet-500 to-blue-600',
   },
   {
     id: 2,
     title: 'Enterprise Web Development',
     subtitle: 'Building robust, high-performance web applications tailored to your business needs.',
     image: 'https://picsum.photos/seed/office/1920/1080',
+    color: 'from-blue-600 to-indigo-600',
   },
   {
     id: 3,
     title: 'Mobile App Innovation',
     subtitle: 'Creating intuitive and engaging mobile experiences for iOS and Android platforms.',
     image: 'https://picsum.photos/seed/digital/1920/1080',
+    color: 'from-indigo-500 to-violet-600',
   },
 ];
 
@@ -40,7 +43,7 @@ export function HeroCarousel() {
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-primary to-primary-light">
+    <div className="relative h-screen w-full overflow-hidden bg-white">
       <AnimatePresence initial={false}>
         <motion.div
           key={current}
@@ -54,13 +57,13 @@ export function HeroCarousel() {
             src={slides[current].image}
             alt={slides[current].title}
             fill
-            className="object-cover opacity-40 mix-blend-overlay"
+            className="object-cover opacity-80"
             priority
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -75,18 +78,18 @@ export function HeroCarousel() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="max-w-3xl"
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-slate-900 leading-tight mb-6">
                 {slides[current].title}
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl">
+              <p className="text-lg sm:text-xl text-slate-700 mb-8 max-w-2xl">
                 {slides[current].subtitle}
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className={`px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-br from-secondary to-secondary-dark hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg shadow-secondary/30`}>
+                <button className={`px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r ${slides[current].color} hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg`}>
                   Explore Solutions
                   <ArrowRight className="w-4 h-4" />
                 </button>
-                <button className="px-6 py-3 rounded-lg text-white font-medium bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors border border-white/20">
+                <button className="px-6 py-3 rounded-lg text-slate-900 font-medium bg-white/50 hover:bg-white/80 backdrop-blur-md transition-colors border border-slate-200">
                   Contact Us
                 </button>
               </div>
@@ -99,13 +102,13 @@ export function HeroCarousel() {
       <div className="absolute bottom-8 right-8 z-20 flex gap-4">
         <button
           onClick={prevSlide}
-          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transition-colors shadow-sm"
+          className="w-12 h-12 rounded-full bg-white/50 hover:bg-white/80 backdrop-blur-md flex items-center justify-center text-slate-900 border border-slate-200 transition-colors shadow-sm"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transition-colors shadow-sm"
+          className="w-12 h-12 rounded-full bg-white/50 hover:bg-white/80 backdrop-blur-md flex items-center justify-center text-slate-900 border border-slate-200 transition-colors shadow-sm"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
@@ -117,8 +120,8 @@ export function HeroCarousel() {
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              current === index ? 'w-8 bg-white' : 'w-2 bg-white/40 hover:bg-white/60'
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              current === index ? 'w-8 bg-violet-600' : 'bg-slate-300 hover:bg-slate-400'
             }`}
           />
         ))}

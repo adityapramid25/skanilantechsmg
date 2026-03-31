@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image 
-                src="https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161" 
+                src="/skanilantech.png" 
                 alt="Skanilan Tech Logo" 
                 width={36} 
                 height={36} 

@@ -107,7 +107,7 @@ export function Navbar() {
             <div className="flex-shrink-0 flex items-center w-[200px]">
               <Link href="/" className="flex items-center gap-2">
                 <Image 
-                  src="https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161" 
+                  src="/skanilantech.png" 
                   alt="Skanilan Tech Logo" 
                   width={32} 
                   height={32} 
