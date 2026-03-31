@@ -12,12 +12,21 @@ export default function ProductPage() {
     category: 'Web Development',
     description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
     features: [
+<<<<<<< HEAD
       { icon: <Globe className="w-6 h-6 text-primary" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
       { icon: <Smartphone className="w-6 h-6 text-primary" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
       { icon: <Search className="w-6 h-6 text-primary" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
       { icon: <Zap className="w-6 h-6 text-primary" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
       { icon: <Lock className="w-6 h-6 text-primary" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
       { icon: <Code className="w-6 h-6 text-primary" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+=======
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+>>>>>>> parent of d6f851a (Add files via upload)
     ]
   };
 
