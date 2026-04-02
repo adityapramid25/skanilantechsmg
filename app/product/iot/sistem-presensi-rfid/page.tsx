@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowLeft, Cpu, Wifi, Database, Activity, ShieldCheck, Settings } from 'lucide-react';
+import { ArrowLeft, Zap, Wifi, Database, Activity, ShieldCheck, Sparkles, Shield, CreditCard, Target, Settings } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
@@ -8,15 +8,15 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Sistem Presensi RFID Pintar',
-    price: 'Rp 1.999.000',
+    price: 'Rp 3000/per-Tahun',
     category: 'Solusi IoT',
     description: 'Solusi IoT cerdas yang dilengkapi dengan sensor presisi tinggi dan pemantauan waktu nyata (real-time). Sangat ideal untuk otomatisasi alur kerja dan meningkatkan efisiensi operasional instansi Anda.',
     features: [
-      { icon: <Cpu className="w-6 h-6 text-red-600" />, title: 'Kecepatan Transaksi', desc: 'Proses tapping hanya butuh waktu <1 detik.' },
-      { icon: <Wifi className="w-6 h-6 text-violet-600" />, title: 'Higienis', desc: 'Tidak perlu menyentuh alat secara langsung (berbeda dengan fingerprint), sehingga mengurangi risiko penyebaran kuman/virus.' },
-      { icon: <Database className="w-6 h-6 text-violet-600" />, title: 'Durabilitas Tinggi', desc: 'Reader RFID lebih tahan lama karena tidak memiliki komponen optik yang mudah kotor atau tergores.' },
-      { icon: <Activity className="w-6 h-6 text-violet-600" />, title: 'Multifungsi', desc: 'Kartu yang sama bisa digunakan untuk akses pintu (access control), pembayaran kantin, atau parkir.' },
-      { icon: <ShieldCheck className="w-6 h-6 text-violet-600" />, title: 'Akurasi Data', desc: 'Mengurangi risiko kesalahan input manual dan memudahkan HR dalam menarik laporan bulanan secara otomatis.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Kecepatan Transaksi', desc: 'Proses tapping hanya butuh waktu <1 detik.' },
+      { icon: <Sparkles className="w-6 h-6 text-violet-600" />, title: 'Higienis', desc: 'Tidak perlu menyentuh alat secara langsung (berbeda dengan fingerprint), sehingga mengurangi risiko penyebaran kuman/virus.' },
+      { icon: <Shield className="w-6 h-6 text-violet-600" />, title: 'Durabilitas Tinggi', desc: 'Reader RFID lebih tahan lama karena tidak memiliki komponen optik yang mudah kotor atau tergores.' },
+      { icon: <CreditCard className="w-6 h-6 text-violet-600" />, title: 'Multifungsi', desc: 'Kartu yang sama bisa digunakan untuk akses pintu (access control), pembayaran kantin, atau parkir.' },
+      { icon: <Target className="w-6 h-6 text-violet-600" />, title: 'Akurasi Data', desc: 'Mengurangi risiko kesalahan input manual dan memudahkan HR dalam menarik laporan bulanan secara otomatis.' },
     ]
   };
 
@@ -88,9 +88,9 @@ export default function ProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
   {/* Put your 3 different ImageKit URLs inside this array */}
   {[
-    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_0.png',
+    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_product_1.png',
     'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_tech_4.png',
-    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_card_1.png?updatedAt=1774928299811'
+    'https://ik.imagekit.io/skanilantech/IoT/RFID/okay_smkn9_card_1.png'
   ].map((imageUrl, i) => (
     <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm">
       <Image 
