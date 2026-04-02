@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Landing Page',
-    price: 'Rp. 1.000.000',
+    price: 'Rp. 500.000',
     category: 'Web Development',
     description: 'Satu halaman web yang didesain secara psikologis untuk tujuan tunggal Konversi.',
     features: [
