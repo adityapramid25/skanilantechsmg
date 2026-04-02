@@ -10,14 +10,14 @@ export default function ProductPage() {
     title: 'Website Company Profile',
     price: 'Rp. 1.000.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Wajah resmi sebuah perusahaan di dunia maya.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Kesan Korporat Profesional', desc: 'Desain yang memberikan aura Besar dan Terpercaya.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Halaman Layanan Detail', desc: 'Menjelaskan setiap jasa yang ditawarkan dengan poin-poin yang jelas.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Portofolio Proyek Besar', desc: 'Menampilkan daftar klien atau proyek yang pernah dikerjakan perusahaan.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Email Bisnis', desc: 'Meningkatkan kepercayaan saat berkomunikasi dengan klien.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Multi-Bahasa (Opsional)', desc: 'Menjangkau pasar internasional dengan fitur pilihan bahasa.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Arsitektur Informasi Rapih', desc: 'Navigasi yang memudahkan pengunjung memahami seluruh ekosistem bisnis Anda.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Website ini memberikan informasi lengkap mengenai sejarah, visi-misi, struktur organisasi, dan layanan profesional perusahaan guna meyakinkan klien besar (B2B) atau investor.
               </p>
             </div>
           </motion.div>
