@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Sistem Presensi RFID Pintar',
-    price: 'Rp 199.000',
+    price: 'Rp 1.999.000',
     category: 'Solusi IoT',
     description: 'Solusi IoT cerdas yang dilengkapi dengan sensor presisi tinggi dan pemantauan waktu nyata (real-time). Sangat ideal untuk otomatisasi alur kerja dan meningkatkan efisiensi operasional instansi Anda.',
     features: [
