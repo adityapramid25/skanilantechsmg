@@ -227,7 +227,7 @@ export function ProductSection() {
 
   const handleWhatsApp = (productName: string) => {
     const message = encodeURIComponent(`Hello Skanilan Tech, I am interested in the ${productName}.`);
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/6281229438668?text=${message}`, '_blank');
   };
 
   const getCategorySlug = (category: string) => {
