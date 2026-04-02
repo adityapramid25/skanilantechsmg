@@ -32,7 +32,7 @@ export function About() {
             />
             <div className="absolute inset-0 bg-violet-900/10" />
           </motion.div>
-
+ 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
