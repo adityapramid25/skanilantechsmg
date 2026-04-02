@@ -10,14 +10,14 @@ export default function ProductPage() {
     title: 'Website Landing Page',
     price: 'Rp. 1.000.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Satu halaman web yang didesain secara psikologis untuk tujuan tunggal Konversi.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Copywriting Persuasif', desc: 'Teks disusun menggunakan teknik AIDA untuk memicu aksi beli.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Zero Distraction', desc: 'Tidak ada menu yang membingungkan, fokus hanya pada satu penawaran.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Kecepatan Loading Kilat', desc: 'Dibuat sangat ringan agar pengunjung tidak kabur saat klik iklan.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Integrasi Pixel/Tracking', desc: 'Memantau berapa banyak orang yang klik atau mengisi formulir.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Desain Mobile-Optimized', desc: 'Mayoritas klik iklan berasal dari HP, kami pastikan tampilan HP sempurna.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Social Proof Strategis', desc: 'Peletakan bukti transfer atau ulasan di titik-titik krusial.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Apakah itu untuk menjual satu produk spesifik, pendaftaran event, atau mengumpulkan database (leads). Sangat efektif untuk digunakan sebagai tujuan iklan di Meta Ads atau Google Ads.
               </p>
             </div>
           </motion.div>
