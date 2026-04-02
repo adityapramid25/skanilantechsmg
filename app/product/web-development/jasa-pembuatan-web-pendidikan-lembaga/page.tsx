@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Jasa Pembuatan Web Pendidikan/Lembaga',
-    price: '$300.00',
+    price: '4.000.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Website khusus untuk institusi seperti sekolah, universitas, atau lembaga kursus.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Panel Pengumuman Real-time', desc: 'Memudahkan penyebaran info libur, ujian, atau acara sekolah.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Database Guru & Siswa', desc: 'Menampilkan profil tenaga pengajar secara profesional.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Galeri Kegiatan', desc: 'Dokumentasi foto dan video kegiatan belajar mengajar yang rapi.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Download Center', desc: 'Area khusus untuk mengunduh materi ajar atau formulir pendaftaran.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Integrasi PPDB Online', desc: 'Bisa ditambah fitur pendaftaran siswa baru langsung di website.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Keamanan Data Tinggi', desc: 'Perlindungan ekstra untuk data-data sensitif milik instansi pendidikan.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Berfungsi sebagai pusat informasi akademik, profil guru/dosen, hingga pengumuman penting bagi siswa dan orang tua.
               </p>
             </div>
           </motion.div>
