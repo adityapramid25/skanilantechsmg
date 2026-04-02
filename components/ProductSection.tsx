@@ -101,6 +101,15 @@ const allProducts = [
     description: 'Professional company website with SEO optimization, blog, and CMS for easy content updates.',
     category: 'Web Development',
   },
+  {
+    id: 'web-9',
+    title: 'Website Organisasi',
+    price: 'Rp. 1.000.000',
+    image: 'https://picsum.photos/seed/web2/400/300',
+    description: 'Professional company website with SEO optimization, blog, and CMS for easy content updates.',
+    category: 'Web Development',
+  },
+
 
   // Mobile Applications Category
   {
