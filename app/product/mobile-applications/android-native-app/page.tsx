@@ -1,23 +1,24 @@
 'use client';
 
+import React from 'react';
 import { ArrowLeft, Smartphone, Layers, Zap, Shield, Cloud, RefreshCw } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'; // Menggunakan import yang lebih stabil
 
 export default function ProductPage() {
   const product = {
-    title: 'Android Native App',
-    price: '$2800.00',
+    title: 'SIP SMKN 9 SEMARANG',
+    price: 'Rp. 399.000,00',
     category: 'Mobile Applications',
     description: 'Aplikasi mobile native dan cross-platform dengan performa tinggi dan desain antarmuka yang memukau.',
     features: [
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'UI/UX Intuitif', desc: 'Desain yang mudah digunakan oleh siapa saja.' },
-      { icon: <Layers className="w-6 h-6 text-violet-600" />, title: 'Performa Native', desc: 'Kecepatan dan responsivitas maksimal.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Optimasi Baterai', desc: 'Konsumsi daya yang efisien.' },
-      { icon: <Shield className="w-6 h-6 text-violet-600" />, title: 'Keamanan Data', desc: 'Proteksi data pengguna yang ketat.' },
-      { icon: <Cloud className="w-6 h-6 text-violet-600" />, title: 'Integrasi Cloud', desc: 'Sinkronisasi data secara real-time.' },
-      { icon: <RefreshCw className="w-6 h-6 text-violet-600" />, title: 'Update Berkala', desc: 'Dukungan pemeliharaan jangka panjang.' },
+      { icon: <Smartphone className="w-6 h-6" />, title: 'UI/UX Intuitif', desc: 'Desain yang mudah digunakan oleh siapa saja.' },
+      { icon: <Layers className="w-6 h-6" />, title: 'Performa Native', desc: 'Kecepatan dan responsivitas maksimal.' },
+      { icon: <Zap className="w-6 h-6" />, title: 'Optimasi Baterai', desc: 'Konsumsi daya yang efisien.' },
+      { icon: <Shield className="w-6 h-6" />, title: 'Keamanan Data', desc: 'Proteksi data pengguna yang ketat.' },
+      { icon: <Cloud className="w-6 h-6" />, title: 'Integrasi Cloud', desc: 'Sinkronisasi data secara real-time.' },
+      { icon: <RefreshCw className="w-6 h-6" />, title: 'Update Berkala', desc: 'Dukungan pemeliharaan jangka panjang.' },
     ]
   };
 
@@ -26,7 +27,8 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-violet-200">
-      {/* Fixed Back Navigation */}
+      
+      {/* Fixed Back Navigation - Posisi Tetap Atas Kiri */}
       <div className="fixed top-0 left-0 w-full p-4 md:p-6 z-50 pointer-events-none">
         <Link 
           href="/#product" 
@@ -38,11 +40,12 @@ export default function ProductPage() {
       </div>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32">
-        {/* Hero Section */}
+        
+        {/* Hero Section - Posisi Tetap Tengah */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <div className="inline-block mb-4 px-3 py-1 bg-violet-50 border border-violet-100 text-violet-600 rounded-full text-xs font-semibold tracking-wider uppercase">
@@ -56,92 +59,118 @@ export default function ProductPage() {
           </p>
         </motion.div>
 
-        {/* Video & Visuals Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-24"
-        >
-          {/* Main Video Placeholder */}
-          <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
-            <div className="absolute inset-0 flex items-center justify-center">
+        {/* Visual Showcase - Posisi Tetap (Video Atas, Grid Bawah) */}
+        <div className="mb-24">
+          {/* Main Video/Image Placeholder */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply z-10" />
+            <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+               <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
               </div>
             </div>
+            {/* Menggunakan unoptimized untuk gambar placeholder agar tidak error domain */}
             <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
-              alt="Video Thumbnail" 
+              src={`https://picsum.photos/seed/app123/1920/1080`} 
+              alt="Thumbnail" 
               fill 
-              className="object-cover -z-10"
-              referrerPolicy="no-referrer"
+              unoptimized
+              className="object-cover"
             />
-          </div>
+          </motion.div>
 
-          {/* Image Gallery Grid (3 Columns) */}
+          {/* Image Gallery Grid - Tetap 3 Kolom */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm"
+              >
                 <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
-                  alt={`Gallery Image ${i}`} 
+                  src={`https://picsum.photos/seed/app${i}/800/600`} 
+                  alt={`Gallery ${i}`} 
                   fill 
+                  unoptimized
                   className="object-cover hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* Product Knowledge & Features */}
+        {/* Content Section - Tetap 2 Kolom (5:7) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Product Knowledge */}
-          <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
-          >
-            <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
-            <div className="prose prose-lg prose-slate prose-violet">
-              <p className="text-slate-600 leading-relaxed">
-                {product.description}
-              </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
-                Pengembangan aplikasi yang berfokus pada user experience dan performa. Kami memastikan aplikasi berjalan mulus di berbagai perangkat.
-              </p>
-            </div>
-          </motion.div>
+          
+          {/* Product Knowledge - Kiri */}
+<div className="lg:col-span-5">
+  <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
+  
+  <div className="text-slate-600 text-lg leading-relaxed">
+    {/* Deskripsi Utama */}
+    <p className="mb-6">
+      {product.description}
+    </p>
 
-          {/* Features Grid */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {product.features.map((feature, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-violet-200 hover:bg-white hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300">
-                  <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{feature.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{feature.desc}</p>
+    {/* Tagline / Highlight */}
+    <p className="font-semibold text-slate-800 mb-4">
+      Solusi Presensi Digital yang Praktis dan Andal!
+    </p>
+
+    {/* Narasi Pendek */}
+    <p className="mb-6 text-base">
+      Sistem Informasi Presensi (SIP) SMKN 9 Semarang dirancang khusus untuk mencatat kehadiran siswa secara cepat dan akurat. 
+      Semua data terkelola secara otomatis tanpa perlu rekap manual.
+    </p>
+
+    {/* List Fitur dengan Indentasi agar rapi */}
+    <ul className="space-y-3">
+      {[
+        "Pencatatan kehadiran real-time",
+        "Data lengkap: nama, identitas, waktu, dan status (H/S/I)",
+        "Antarmuka simpel dan mudah digunakan",
+        "Data tersimpan aman untuk laporan akademik"
+      ].map((item, i) => (
+        <li key={i} className="flex items-start gap-3 text-base">
+          <span className="shrink-0">✅</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+          {/* Features Grid - Kanan */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {product.features.map((feature, idx) => (
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-violet-200 hover:bg-white hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4 text-violet-600">
+                  {feature.icon}
                 </div>
-              ))}
-            </div>
-          </motion.div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{feature.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </main>
 
-      {/* Sticky WhatsApp Conversion */}
+      {/* Floating WhatsApp - Posisi Tetap Bawah Kanan & Warna Hijau */}
       <div className="fixed bottom-0 left-0 w-full p-4 md:p-6 z-50 pointer-events-none flex justify-center md:justify-end">
         <a 
           href={whatsappUrl}
@@ -155,6 +184,7 @@ export default function ProductPage() {
           Order via WhatsApp
         </a>
       </div>
+
     </div>
   );
 }
