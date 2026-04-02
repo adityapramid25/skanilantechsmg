@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Portofolio',
-    price: '$2500.00',
+    price: 'Rp. 900.000',
     category: 'Web Development',
     description: 'Ini adalah galeri digital bagi profesional, seniman, atau freelancer.',
     features: [
