@@ -75,8 +75,8 @@ export function About() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-display font-bold text-slate-900">Our Culture & Work</h3>
-            <p className="text-sm text-slate-500 mt-2">A glimpse into our daily operations and achievements.</p>
+            <h3 className="text-2xl font-display font-bold text-slate-900">Our Work & Gallery</h3>
+            <p className="text-sm text-slate-500 mt-2">Hasil dari usaha dan proses kami</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
