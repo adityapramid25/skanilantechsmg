@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Product Photography',
-    price: '$500.00',
+    price: 'Rp100.000-250.000',
     category: 'Photography',
-    description: 'Layanan fotografi profesional untuk mengabadikan momen berharga dan memperkuat visual brand Anda.',
+    description: 'Di era e-commerce dan pemasaran digital, konsumen tidak bisa menyentuh atau merasakan produk Anda secara langsung. Satu-satunya cara mereka menilai kualitas produk adalah melalui apa yang mereka lihat. Layanan kami hadir untuk menjembatani celah tersebut dengan menghadirkan visual yang presisi, menggugah, dan profesional.',
     features: [
-      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Kamera dan lensa kualitas terbaik.' },
-      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Detail foto yang sangat tajam.' },
-      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Pengaturan cahaya untuk mood yang tepat.' },
-      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Editing detail untuk hasil sempurna.' },
-      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Bantuan pose agar terlihat natural.' },
-      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Kualitas yang melebihi ekspektasi.' },
+      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Penggunaan sensor dan optik kelas dunia untuk menangkap setiap detail, tekstur, dan material produk dengan akurasi sempurna.' },
+      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Hasil foto super tajam yang siap digunakan untuk kebutuhan cetak besar maupun katalog digital' },
+      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: ': Penataan cahaya studio untuk menonjolkan dimensi produk dan menghilangkan bayangan yang mengganggu.' },
+      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Proses editing detail untuk memastikan produk terlihat bersih, sempurna, dan memiliki akurasi warna tinggi.' },
+      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Penataan posisi produk yang estetik untuk menonjolkan fitur utama dan menarik minat beli.' },
+      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Hasil akhir profesional yang dirancang untuk melampaui ekspektasi dan meningkatkan kredibilitas brand.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami mengutamakan kualitas hasil foto dengan pencahayaan, komposisi, dan editing (retouching) kelas atas untuk memberikan kesan premium.
+                Kami tidak hanya memotret barang; kami menonjolkan nilai jual dan detail yang membuat produk Anda tampak lebih unggul dari kompetitor.
               </p>
             </div>
           </motion.div>
