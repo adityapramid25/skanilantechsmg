@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Wedding Photography',
-    price: '$1500.00',
+    price: 'Rp1.500.000-3.000.000',
     category: 'Photography',
-    description: 'Layanan fotografi profesional untuk mengabadikan momen berharga dan memperkuat visual brand Anda.',
+    description: 'Wedding Photography kami mengabadikan setiap momen spesial pernikahan Anda dengan hasil foto yang natural, elegan, dan penuh cerita. Setiap detail penting ditangkap secara profesional agar kenangan indah Anda tersimpan dengan sempurna.',
     features: [
-      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Kamera dan lensa kualitas terbaik.' },
-      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Detail foto yang sangat tajam.' },
-      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Pengaturan cahaya untuk mood yang tepat.' },
-      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Editing detail untuk hasil sempurna.' },
-      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Bantuan pose agar terlihat natural.' },
-      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Kualitas yang melebihi ekspektasi.' },
+      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Fotografer profesional yang ahli menangkap momen candid dan ekspresi jujur secara natural.' },
+      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Penggunaan kamera full-frame dan lensa premium untuk hasil foto yang tajam dan jernih.' },
+      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Proses editing warna natural yang abadi, memastikan foto tetap indah hingga puluhan tahun.' },
+      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Bantuan pose yang nyaman dan tidak kaku agar Anda tampil percaya diri di depan kamera.' },
+      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Penyimpanan file yang aman dan mudah diakses untuk berbagi kebahagiaan kapan saja.' },
+      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Hasil cetak kualitas tinggi dengan material mewah sebagai warisan fisik momen spesial Anda.' },
     ]
   };
 
@@ -113,8 +113,8 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami mengutamakan kualitas hasil foto dengan pencahayaan, komposisi, dan editing (retouching) kelas atas untuk memberikan kesan premium.
-              </p>
+                Didukung peralatan berkualitas dan editing terbaik, kami menghadirkan foto yang tajam dan timeless dengan pilihan paket fleksibel sesuai kebutuhan Anda.
+                </p>
             </div>
           </motion.div>
 
