@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'motion/react';
 
 const galleryImages = [
-  { id: 1, src: 'https://picsum.photos/seed/team1/800/600', alt: 'Team meeting' },
+  { id: 1, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.03%20PM%20(1).jpeg', alt: 'Proses pengerjaan' },
   { id: 2, src: 'https://picsum.photos/seed/office/800/600', alt: 'Office space' },
   { id: 3, src: 'https://picsum.photos/seed/code/800/600', alt: 'Coding session' },
   { id: 4, src: 'https://picsum.photos/seed/hardware/800/600', alt: 'Hardware prototyping' },
