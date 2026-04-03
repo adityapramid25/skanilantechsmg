@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Portrait Session',
-    price: '$250.00',
+    price: 'Rp500.000',
     category: 'Photography',
-    description: 'Layanan fotografi profesional untuk mengabadikan momen berharga dan memperkuat visual brand Anda.',
+    description: 'Di dunia yang dipenuhi oleh ribuan gambar setiap harinya, sebuah foto potret yang kuat adalah cara terbaik untuk menunjukkan siapa Anda sebenarnya. Portrait Session kami bukan sekadar memotret wajah, melainkan menangkap esensi, kepribadian, dan aura unik yang Anda miliki.',
     features: [
-      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Kamera dan lensa kualitas terbaik.' },
-      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Detail foto yang sangat tajam.' },
-      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Pengaturan cahaya untuk mood yang tepat.' },
-      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Editing detail untuk hasil sempurna.' },
-      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Bantuan pose agar terlihat natural.' },
-      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Kualitas yang melebihi ekspektasi.' },
+      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Menggunakan bodi kamera dan lensa potret high-end untuk hasil profesional yang prestisius.' },
+      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Resolusi ultra-HD yang menangkap setiap detail dengan jernih, siap untuk kebutuhan cetak maupun digital.' },
+      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Pengaturan cahaya yang dikurasi khusus untuk mempertegas fitur wajah dan membangun mood yang tepat.' },
+      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Proses editing detail yang halus untuk hasil akhir yang bersih, elegan, namun tetap terlihat natural.' },
+      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Arahan gaya yang proaktif untuk memastikan Anda tampil percaya diri, luwes, dan berwibawa di depan kamera.' },
+      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Komitmen kami adalah memberikan aset visual yang meningkatkan nilai jual dan citra diri Anda.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami mengutamakan kualitas hasil foto dengan pencahayaan, komposisi, dan editing (retouching) kelas atas untuk memberikan kesan premium.
+              Kami percaya bahwa setiap orang memiliki sisi fotogenik—tugas kami adalah menemukannya dan mengabadikannya dengan sempurna.
               </p>
             </div>
           </motion.div>
