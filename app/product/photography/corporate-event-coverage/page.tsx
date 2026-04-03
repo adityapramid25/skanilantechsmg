@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Corporate Event Coverage',
-    price: '$800.00',
+    price: 'Rp. 750.000',
     category: 'Photography',
-    description: 'Layanan fotografi profesional untuk mengabadikan momen berharga dan memperkuat visual brand Anda.',
+    description: 'Layanan Corporate Event Coverage kami adalah solusi dokumentasi visual premium yang dirancang khusus untuk memenuhi standar profesional dunia bisnis. Kami tidak hanya mengambil gambar; kami mengabadikan narasi kesuksesan, profesionalisme, dan momentum penting perusahaan Anda dalam kualitas visual tingkat tinggi.',
     features: [
-      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Kamera dan lensa kualitas terbaik.' },
-      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Detail foto yang sangat tajam.' },
-      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Pengaturan cahaya untuk mood yang tepat.' },
-      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Editing detail untuk hasil sempurna.' },
-      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Bantuan pose agar terlihat natural.' },
-      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Kualitas yang melebihi ekspektasi.' },
+      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Kami mengandalkan ekosistem kamera dan lensa mutakhir untuk memastikan aset visual perusahaan Anda memiliki standar industri tertinggi.' },
+      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Menghasilkan gambar dengan kerapatan piksel tinggi yang tetap tajam dan kaya detail.' },
+      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Penguasaan teknik pencahayaan ruang guna menangkap ambience acara yang elegan tanpa menghilangkan kesan profesional.' },
+      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Setiap foto melewati tahap kurasi dan penyuntingan warna yang presisi untuk menciptakan kesan visual yang bersih, mewah, dan konsisten.' },
+      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Pendampingan penuh bagi pembicara atau tamu VIP saat pengambilan gambar agar tampil berwibawa, rileks, dan representatif di depan lensa.' },
+      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Dedikasi kami adalah menghadirkan galeri foto yang tidak hanya mendokumentasikan momen, tetapi juga mengangkat citra prestisius brand Anda.' },
     ]
   };
 
@@ -112,9 +112,9 @@ export default function ProductPage() {
               <p className="text-slate-600 leading-relaxed">
                 {product.description}
               </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
-                Kami mengutamakan kualitas hasil foto dengan pencahayaan, komposisi, dan editing (retouching) kelas atas untuk memberikan kesan premium.
-              </p>
+              <p className="text-slate-600 leading-relaxed mt-4"> 
+                Kami memahami bahwa acara korporat—baik itu konferensi, peluncuran produk, gala dinner, hingga Rapat Umum Pemegang Saham (RUPS)—adalah representasi dari brand Anda. Oleh karena itu, tim kami bekerja dengan pendekatan yang sistematis, diskret, dan berorientasi pada detail.
+                </p>
             </div>
           </motion.div>
 
