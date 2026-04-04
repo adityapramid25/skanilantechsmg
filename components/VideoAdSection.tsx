@@ -1,9 +1,9 @@
 'use client';
 
-// Jika kamu menggunakan Framer Motion versi terbaru, mungkin import-nya 'motion/react'
 import { motion } from 'framer-motion'; 
 import { PlayCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link'; // Tambahkan import Link di sini
 
 export function VideoAdSection() {
   return (
@@ -38,8 +38,8 @@ export function VideoAdSection() {
           transition={{ duration: 0.5 }}
           className="relative max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-xl group bg-slate-50"
         >
-          {/* PERBAIKAN: Tag <a> sekarang membungkus SELURUH area video */}
-          <a 
+          {/* MENGGUNAKAN <Link> SEBAGAI PENGGANTI <a> */}
+          <Link 
             href="https://youtu.be/QFQ1cItpW2o?si=n8in2byLgmKedBrW" 
             target="_blank" 
             rel="noopener noreferrer"
@@ -47,7 +47,7 @@ export function VideoAdSection() {
             aria-label="Tonton video di YouTube"
           >
             {/* Area link transparan yang menutupi seluruh container */}
-          </a>
+          </Link>
 
           {/* Tech-themed border accents */}
           <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-violet-500 rounded-tl-2xl z-20 opacity-50 group-hover:opacity-100 transition-opacity"></div>
