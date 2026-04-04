@@ -10,6 +10,12 @@ export default function ProductPage() {
     title: 'Hidroponik',
     price: 'Rp. 1.000.000',
     category: 'IoT',
+     gallery: [
+    'https://ik.imagekit.io/skanilantech/IoT/Hidroponik/1.png', // Foto kolom 1
+    'https://ik.imagekit.io/skanilantech/IoT/Hidroponik/2.png', // Foto kolom 2
+    'https://ik.imagekit.io/skanilantech/IoT/Hidroponik/3.png', // Foto kolom 3
+  ],
+    
     description: 'Solusi IoT cerdas dengan sensor presisi tinggi dan monitoring real-time. Cocok untuk otomatisasi dan efisiensi sistem Anda.',
     features: [
       { icon: <Cpu className="w-6 h-6 text-violet-600" />, title: 'Hardware Handal', desc: 'Komponen berkualitas untuk durabilitas tinggi.' },
@@ -19,7 +25,10 @@ export default function ProductPage() {
       { icon: <ShieldCheck className="w-6 h-6 text-violet-600" />, title: 'Keamanan Data', desc: 'Enkripsi end-to-end untuk data Anda.' },
       { icon: <Settings className="w-6 h-6 text-violet-600" />, title: 'Mudah Dikonfigurasi', desc: 'Pengaturan yang user-friendly.' },
     ]
+
   };
+
+  
 
   const whatsappMessage = encodeURIComponent(`Halo Skanilan Tech, saya ingin bertanya tentang ${product.title} seharga ${product.price}.`);
   const whatsappUrl = `https://wa.me/6281234567890?text=${whatsappMessage}`;
@@ -73,7 +82,7 @@ export default function ProductPage() {
               </div>
             </div>
             <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
+              src={`https://ik.imagekit.io/skanilantech/IoT/Hidroponik/2.png/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
               alt="Video Thumbnail" 
               fill 
               className="object-cover -z-10"
@@ -82,19 +91,37 @@ export default function ProductPage() {
           </div>
 
           {/* Image Gallery Grid (3 Columns) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
-                  alt={`Gallery Image ${i}`} 
-                  fill 
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            ))}
-          </div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* Gambar 1 */}
+  <div className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+    <Image 
+      src="https://ik.imagekit.io/skanilantech/IoT/Hidroponik/1.png" 
+      alt="Gallery 1" 
+      fill 
+      className="object-cover hover:scale-105 transition-transform duration-500"
+    />
+  </div>
+
+  {/* Gambar 2 */}
+  <div className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+    <Image 
+      src="https://ik.imagekit.io/skanilantech/IoT/Hidroponik/2.png" 
+      alt="Gallery 2" 
+      fill 
+      className="object-cover hover:scale-105 transition-transform duration-500"
+    />
+  </div>
+
+  {/* Gambar 3 */}
+  <div className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+    <Image 
+      src="https://ik.imagekit.io/skanilantech/IoT/Hidroponik/3.png" 
+      alt="Gallery 3" 
+      fill 
+      className="object-cover hover:scale-105 transition-transform duration-500"
+    />
+  </div>
+</div>
         </motion.div>
 
         {/* Product Knowledge & Features */}
@@ -113,8 +140,30 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Fokus pada integrasi hardware dan sensor yang handal. Kami memastikan setiap data yang ditangkap akurat dan dapat diakses kapan saja melalui dashboard.
+              Hidroponik adalah metode budidaya tanaman yang tidak menggunakan tanah sebagai media tanamnya, melainkan memanfaatkan air yang telah diperkaya dengan nutrisi penting.
               </p>
+
+              <p className="text-slate-600 leading-relaxed mt-4">
+              Pada pertanian konvensional, akar harus "mencari" nutrisi di dalam tanah. Pada hidroponik, nutrisi "didatangkan" langsung ke akar. Karena tanaman tidak perlu menghabiskan energi untuk memperpanjang akar mencari makan, energi tersebut dialihkan untuk pertumbuhan batang, daun, dan buah yang lebih cepat.
+              </p>
+
+              <p>
+                <ul className="space-y-3">
+                {[
+                  "Akurasi Dosis",
+                  "Efisiensi Air",
+                  "Vertical Farming",
+                  "Fitur EC/PPM Meter",
+                  "Fitur pH Control",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-base">
+                    <span className="shrink-0 text-violet-600">✅</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </p>
+
             </div>
           </motion.div>
 
