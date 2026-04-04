@@ -9,7 +9,7 @@ import { AdminDiscountModal } from '@/components/AdminDiscountModal';
 import { checkAdminStatus } from '@/app/actions';
 import { allProducts } from '@/lib/products';
 
-const WHATSAPP_NUMBER = '1234567890'; // Replace with actual WhatsApp number
+const WHATSAPP_NUMBER = '6281229438668'; // Replace with actual WhatsApp number
 
 export function DiscountSection() {
   const [discount, setDiscount] = useState<any>(null);
