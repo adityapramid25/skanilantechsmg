@@ -125,6 +125,36 @@ export default function ProductPage() {
               <p className="text-slate-600 leading-relaxed mt-4">
                 Transformasi digital ini menjadikan Masjid Al-Muttaqin tidak hanya sebagai pusat ibadah fisik, tetapi juga pelopor "Baitul Maal" modern di Demak yang mengintegrasikan akuntabilitas umat dalam satu genggaman layar!
               </p>
+              {/* Masukkan tombol <a> langsung di sini, TANPA export default function atau return */}
+                <div className="mt-6">
+                  <a 
+                    href="https://www.almuttaqinwiku.id/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group w-fit"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      <path d="M12 2l-3 5h6z" />
+                      <path d="M9 7v9H4V9l2.5-3L9 7z" />
+                      <path d="M15 7v9h5V9l-2.5-3L15 7z" />
+                      <path d="M9 16h6v6H9z" />
+                      <path d="M2 22h20" />
+                      <path d="M12 7v9" />
+                    </svg>
+                    Kunjungi Website Al-Muttaqin
+                  </a>
+                </div>
             </div>
           </motion.div>
 
