@@ -10,7 +10,8 @@ export default function ProductPage() {
     title: 'Employee Engagement App',
     price: '$2000.00',
     category: 'Gamification',
-    description: ' Apa itu Gamifikasi?
+    // PERBAIKAN: Menggunakan tanda backtick (`) di sini
+    description: ` Apa itu Gamifikasi?
 
 Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
 
@@ -79,7 +80,7 @@ Bentuk: Poin, hadiah fisik, atau akses fitur khusus.
 Meningkatkan motivasi belajar/kerja
 Meningkatkan keterlibatan pengguna
 Membuat proses lebih menyenangkan
-Meningkatkan retensi (daya ingat).',
+Meningkatkan retensi (daya ingat).`, // PERBAIKAN: Dan tanda backtick (`) di akhir teks
     features: [
       { icon: <Gamepad2 className="w-6 h-6 text-violet-600" />, title: 'Desain Interaktif', desc: 'Mekanik yang membuat pengguna ketagihan.' },
       { icon: <Trophy className="w-6 h-6 text-violet-600" />, title: 'Sistem Reward', desc: 'Pemberian poin dan badge yang memotivasi.' },
@@ -178,10 +179,12 @@ Meningkatkan retensi (daya ingat).',
           >
             <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
             <div className="prose prose-lg prose-slate prose-violet">
-              <p className="text-slate-600 leading-relaxed">
+              {/* Class whitespace-pre-wrap ditambahkan agar enter terbaca */}
+              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap">
                 {product.description}
               </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
+              
+              <p className="text-slate-600 leading-relaxed mt-4 whitespace-pre-wrap">
                  Apa itu Gamifikasi?
 
 Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
