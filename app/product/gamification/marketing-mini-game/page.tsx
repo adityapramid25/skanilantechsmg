@@ -12,9 +12,9 @@ export default function ProductPage() {
     category: 'Gamification',
     description: 'Apa itu Gamifikasi?
 
-Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
+    'Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
 
-🧩 Materi Utama dalam Gamifikasi
+`🧩 Materi Utama dalam Gamifikasi
 1. Tujuan (Goals)
 
 Deskripsi:
