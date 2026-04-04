@@ -44,7 +44,7 @@ export function VideoAdSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent z-10"></div>
           
           <Image 
-            src="https://picsum.photos/seed/techvideo/1280/720" 
+            src="https://ik.imagekit.io/skanilantech/Web%20Component/smkn9semarang" 
             alt="Video Thumbnail" 
             fill
             className="object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
@@ -53,7 +53,7 @@ export function VideoAdSection() {
           
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="w-20 h-20 bg-white/80 rounded-full flex items-center justify-center backdrop-blur-sm border border-white group-hover:scale-110 group-hover:bg-white transition-all duration-300 shadow-lg">
-              <PlayCircle className="w-10 h-10 text-violet-600 ml-1" />
+              <a href="https://youtu.be/QFQ1cItpW2o?si=n8in2byLgmKedBrW"><PlayCircle className="w-10 h-10 text-violet-600 ml-1" /></a>
             </div>
           </div>
         </motion.div>
