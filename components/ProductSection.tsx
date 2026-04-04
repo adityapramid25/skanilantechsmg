@@ -112,21 +112,21 @@ const allProducts = [
 
 
   // Mobile Applications Category
-  {
+ {
     id: 'mobile-1',
-    title: 'iOS Native App',
-    price: '$3000.00',
-    image: 'https://picsum.photos/seed/mobile1/400/300',
+    title: 'IOS NATIVE APP',
+    price: 'Rp. 299.000,00',
+    image: 'https://ik.imagekit.io/skanilantech/Applications%20/SIP%20SMKN%209%20SEMARANG/Gemini_Generated_Image_ppxwlrppxwlrppxw.png',
     description: 'High-performance native iOS application built with Swift, optimized for the latest Apple devices.',
     category: 'Mobile Applications',
   },
   {
-    id: 'mobile-2',
-    title: 'Android Native App',
-    price: '$2800.00',
-    image: 'https://picsum.photos/seed/mobile2/400/300',
-    description: 'Robust native Android application built with Kotlin, supporting a wide range of devices.',
-    category: 'Mobile Applications',
+  id: 'mobile-2',
+  title: 'ANDROID NATIVE APP',
+  price: 'Rp. 399.000,00',
+  image: 'https://ik.imagekit.io/skanilantech/Applications%20/SIP%20SMKN%209%20SEMARANG/Gemini_Generated_Image_ppxwlrppxwlrppxw.png',
+  description: 'Robust native Android application built with Kotlin, supporting a wide range of devices.',
+  category: 'Mobile Applications',
   },
   {
     id: 'mobile-3',
@@ -139,11 +139,12 @@ const allProducts = [
   {
     id: 'mobile-4',
     title: 'Desain UI/UX',
-    price: '$1500.00',
+    price: 'Rp. 199.000,00',
     image: 'https://picsum.photos/seed/mobile4/400/300',
     description: 'Complete overhaul of your existing mobile app interface for better user engagement.',
     category: 'Mobile Applications',
   },
+
 
   // Photography Category
   {
