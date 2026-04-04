@@ -22,8 +22,8 @@ const allProducts = [
   {
     id: 'iot-2',
     title: 'Hidroponik',
-    price: 'Rp. 1.000.000',
-    image: 'https://picsum.photos/seed/iot2/400/300',
+    price: 'Rp. 500.000,00',
+    image: 'https://ik.imagekit.io/skanilantech/IoT/Hidroponik/1.png',
     description: 'High-precision sensors for manufacturing and predictive maintenance. Includes real-time dashboard.',
     category: 'IoT',
   },
