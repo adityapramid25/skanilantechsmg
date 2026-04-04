@@ -53,7 +53,15 @@ export function VideoAdSection() {
           
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="w-20 h-20 bg-white/80 rounded-full flex items-center justify-center backdrop-blur-sm border border-white group-hover:scale-110 group-hover:bg-white transition-all duration-300 shadow-lg">
-              <link href="https://youtu.be/QFQ1cItpW2o?si=n8in2byLgmKedBrW"><PlayCircle className="w-10 h-10 text-violet-600 ml-1" /></link>
+              {/* PERBAIKAN DI SINI: Menggunakan tag <a> */}
+              <a 
+                href="https://youtu.be/QFQ1cItpW2o?si=n8in2byLgmKedBrW" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-full"
+              >
+                <PlayCircle className="w-10 h-10 text-violet-600 ml-1" />
+              </a>
             </div>
           </div>
         </motion.div>
