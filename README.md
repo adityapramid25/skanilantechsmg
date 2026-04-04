@@ -9,9 +9,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
 
-Website resmi **Skanilan Tech**, sebuah *tech agency* yang dikelola oleh siswa **SMKN 9 Semarang** di bawah naungan **Thinkora Student Company**. Kami menyediakan berbagai solusi teknologi mutakhir, mulai dari Web Development, layanan IoT (Internet of Things), hingga digitalisasi bisnis.
+Website resmi **Skanilan Tech**, sebuah *tech agency* yang dikelola oleh siswa jurusan PPLG dibawah naungan **SMKN 9 Semarang**. Kami menyediakan berbagai solusi teknologi yang menarik, mulai dari Web Development, layanan IoT (Internet of Things), App Development, Gamification, hingga Photography.
 
-🌍 **Live Demo:** [skanilantech.my.id](https://skanilantech.my.id)
+🌍 **Live Demo:** [skanilantechsmg.vercel.app](https://skanilantechsmg.vercel.app)
 
 ---
 
