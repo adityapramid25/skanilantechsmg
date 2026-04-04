@@ -8,9 +8,9 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Setting SEO',
-    price: 'Rp. 1.000.000',
+    price: 'Rp. 500.000-2.500.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Kami menyediakan Layanan pengembangan dan pembuatan website profesional yang dirancang khusus untuk membantu bisnis Anda tampil lebih kredibel dan menjangkau lebih banyak pelanggan secara online. Setiap website yang kami buat memiliki desain responsif (mobile friendly), loading cepat, serta struktur yang dioptimasi untuk SEO (Search Engine Optimization) agar lebih mudah muncul di hasil pencarian Google.',
     features: [
       { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.'mulai dari desktop, laptop, tablet hingga smartphone. Desain responsif memastikan tampilan website dapat menyesuaikan secara otomatis dengan perangkat yang digunakan sehingga konten tetap terlihat rapi, mudah dibaca, dan nyaman diakses oleh pengguna di mana saja. },
       { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.'agar website dapat diakses dengan cepat, mudah dibaca, dan tetap nyaman digunakan di berbagai perangkat mobile. Pendekatan mobile first memastikan setiap elemen website dirancang agar lebih efisien dan responsif bagi pengguna ponsel. },
