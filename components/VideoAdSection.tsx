@@ -47,7 +47,7 @@ export function VideoAdSection() {
             aria-label="Tonton video di YouTube"
           >
             {/* Area link transparan yang menutupi seluruh container */}
-          </Link>
+          
 
           {/* Tech-themed border accents */}
           <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-violet-500 rounded-tl-2xl z-20 opacity-50 group-hover:opacity-100 transition-opacity"></div>
@@ -68,7 +68,7 @@ export function VideoAdSection() {
               <PlayCircle className="w-10 h-10 text-violet-600 ml-1" />
             </div>
           </div>
-
+          </Link>
         </motion.div>
       </div>
     </section>
