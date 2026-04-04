@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Organisasi',
-    price: 'Gratis awal bulan!',
+    price: 'Gratis Awal Minggu',
     category: 'Web Development',
     description: 'Portal Sistem Informasi Manajemen Masjid Al-Muttaqin Demak yang menyediakan layanan digital terpadu, meliputi jadwal sholat, agenda kajian, berita kegiatan, transparansi keuangan, hingga fasilitas donasi online.',
     features: [
