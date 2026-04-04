@@ -7,8 +7,8 @@ import { motion } from 'motion/react';
 
 export default function ProductPage() {
   const product = {
-    title: 'Desain UI/UX',
-    price: '$1500.00',
+    title: 'NINE EXAM',
+    price: '$3000.00',
     category: 'Mobile Applications',
     description: 'Aplikasi mobile native dan cross-platform dengan performa tinggi dan desain antarmuka yang memukau.',
     features: [
@@ -113,8 +113,21 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Pengembangan aplikasi yang berfokus pada user experience dan performa. Kami memastikan aplikasi berjalan mulus di berbagai perangkat.
+               NINE EXAM adalah aplikasi peramban khusus (custom browser) yang dirancang untuk menjaga integritas dan keamanan pelaksanaan ujian berbasis komputer (CBT). Aplikasi ini berfungsi untuk meminimalisir kecurangan dengan cara membatasi akses peserta ujian ke fitur-fitur tertentu pada perangkat mereka selama ujian berlangsung.
               </p>
+               <ul className="space-y-3">
+                {[
+                  "Anti-Multitasking",
+                  "Data lengkap: identitas, waktu, dan status (H/S/I)",
+                  "Antarmuka simpel dan mudah digunakan",
+                  "Data tersimpan aman untuk laporan akademik"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-base">
+                    <span className="shrink-0 text-violet-600">✅</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
 

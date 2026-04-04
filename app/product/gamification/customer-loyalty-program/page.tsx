@@ -10,7 +10,7 @@ export default function ProductPage() {
     title: 'Customer Loyalty Program',
     price: '$1800.00',
     category: 'Gamification',
-    description: 'Solusi gamifikasi interaktif untuk meningkatkan engagement, loyalitas pelanggan, dan efektivitas pembelajaran
+    description: `Solusi gamifikasi interaktif untuk meningkatkan engagement, loyalitas pelanggan, dan efektivitas pembelajaran
       Apa itu Gamifikasi?
 
 Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
@@ -80,7 +80,7 @@ Bentuk: Poin, hadiah fisik, atau akses fitur khusus.
 Meningkatkan motivasi belajar/kerja
 Meningkatkan keterlibatan pengguna
 Membuat proses lebih menyenangkan
-Meningkatkan retensi (daya ingat).',
+Meningkatkan retensi (daya ingat).`,
     features: [
       { icon: <Gamepad2 className="w-6 h-6 text-violet-600" />, title: 'Desain Interaktif', desc: 'Mekanik yang membuat pengguna ketagihan.' },
       { icon: <Trophy className="w-6 h-6 text-violet-600" />, title: 'Sistem Reward', desc: 'Pemberian poin dan badge yang memotivasi.' },
@@ -179,10 +179,13 @@ Meningkatkan retensi (daya ingat).',
           >
             <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
             <div className="prose prose-lg prose-slate prose-violet">
-              <p className="text-slate-600 leading-relaxed">
+              {/* Tambahan whitespace-pre-wrap agar enter di teks terbaca sebagai baris baru */}
+              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap">
                 {product.description}
               </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
+              
+              {/* Tambahan whitespace-pre-wrap juga untuk paragraf di bawahnya jika mengandung enter */}
+              <p className="text-slate-600 leading-relaxed mt-4 whitespace-pre-wrap">
                 Menggabungkan mekanik game ke dalam konteks non-game untuk memotivasi pengguna dan menciptakan pengalaman yang menyenangkan.
                 Apa itu Gamifikasi?
 
