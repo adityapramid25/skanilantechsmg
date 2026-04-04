@@ -10,11 +10,12 @@ export default function ProductPage() {
     title: 'Marketing Mini-Game',
     price: '$1200.00',
     category: 'Gamification',
-    description: 'Apa itu Gamifikasi?
+    // MENGGUNAKAN BACKTICK (`) DI AWAL TEKS
+    description: `Apa itu Gamifikasi?
 
-    'Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
+Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
 
-`🧩 Materi Utama dalam Gamifikasi
+🧩 Materi Utama dalam Gamifikasi
 1. Tujuan (Goals)
 
 Deskripsi:
@@ -79,7 +80,7 @@ Bentuk: Poin, hadiah fisik, atau akses fitur khusus.
 Meningkatkan motivasi belajar/kerja
 Meningkatkan keterlibatan pengguna
 Membuat proses lebih menyenangkan
-Meningkatkan retensi (daya ingat).',
+Meningkatkan retensi (daya ingat).`, // MENGGUNAKAN BACKTICK (`) DI AKHIR TEKS
     features: [
       { icon: <Gamepad2 className="w-6 h-6 text-violet-600" />, title: 'Desain Interaktif', desc: 'Mekanik yang membuat pengguna ketagihan.' },
       { icon: <Trophy className="w-6 h-6 text-violet-600" />, title: 'Sistem Reward', desc: 'Pemberian poin dan badge yang memotivasi.' },
@@ -178,80 +179,9 @@ Meningkatkan retensi (daya ingat).',
           >
             <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
             <div className="prose prose-lg prose-slate prose-violet">
-              <p className="text-slate-600 leading-relaxed">
+              {/* CUKUP PANGGIL VARIABELNYA DI SINI (jangan diketik ulang) */}
+              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap">
                 {product.description}
-              </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
-                Apa itu Gamifikasi?
-
-Gamifikasi adalah penerapan elemen-elemen permainan (game) ke dalam konteks non-permainan, seperti pendidikan, bisnis, atau pelatihan, dengan tujuan meningkatkan motivasi, keterlibatan, dan partisipasi.
-
-🧩 Materi Utama dalam Gamifikasi
-1. Tujuan (Goals)
-
-Deskripsi:
-Tujuan adalah hasil yang ingin dicapai oleh pengguna/peserta. Dalam gamifikasi, tujuan harus jelas agar peserta tahu apa yang harus dilakukan.
-Contoh: Menyelesaikan modul pembelajaran atau mencapai skor tertentu.
-
-2. Aturan (Rules)
-
-Deskripsi:
-Aturan menentukan bagaimana sistem berjalan dan batasan yang harus diikuti.
-Contoh: Waktu pengerjaan kuis dibatasi 10 menit.
-
-3. Poin (Points)
-
-Deskripsi:
-Poin diberikan sebagai penghargaan atas aktivitas tertentu.
-Fungsi: Memberikan umpan balik langsung dan rasa pencapaian.
-
-4. Level (Levels)
-
-Deskripsi:
-Level menunjukkan progres pengguna dari tahap awal ke tahap yang lebih tinggi.
-Fungsi: Menjaga motivasi dengan tantangan bertahap.
-
-5. Lencana (Badges)
-
-Deskripsi:
-Lencana adalah simbol penghargaan atas pencapaian tertentu.
-Contoh: Badge “Ahli Matematika” setelah menyelesaikan 10 soal sulit.
-
-6. Papan Peringkat (Leaderboard)
-
-Deskripsi:
-Menampilkan peringkat peserta berdasarkan performa.
-Fungsi: Mendorong kompetisi sehat.
-
-7. Tantangan (Challenges)
-
-Deskripsi:
-Tugas atau misi yang harus diselesaikan.
-Fungsi: Meningkatkan keterlibatan dan rasa penasaran.
-
-8. Umpan Balik (Feedback)
-
-Deskripsi:
-Respons langsung terhadap tindakan pengguna.
-Contoh: Notifikasi “Benar!” atau “Coba lagi”.
-
-9. Narasi/Cerita (Storytelling)
-
-Deskripsi:
-Penggunaan alur cerita untuk membuat pengalaman lebih menarik dan bermakna.
-Contoh: Belajar sambil mengikuti petualangan karakter.
-
-10. Reward (Hadiah)
-
-Deskripsi:
-Imbalan yang diberikan setelah mencapai target tertentu.
-Bentuk: Poin, hadiah fisik, atau akses fitur khusus.
-
-🎯 Manfaat Gamifikasi
-Meningkatkan motivasi belajar/kerja
-Meningkatkan keterlibatan pengguna
-Membuat proses lebih menyenangkan
-Meningkatkan retensi (daya ingat).
               </p>
             </div>
           </motion.div>
