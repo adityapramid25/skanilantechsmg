@@ -13,11 +13,11 @@ export default function ProductPage() {
     description: 'Solusi IoT cerdas dengan sensor presisi tinggi dan monitoring real-time. Cocok untuk otomatisasi dan efisiensi sistem Anda.',
     features: [
       { icon: <Cpu className="w-6 h-6 text-violet-600" />, title: 'Hardware Handal', desc: 'Komponen berkualitas untuk durabilitas tinggi.' },
-      { icon: <Wifi className="w-6 h-6 text-violet-600" />, title: 'Konektivitas Stabil', desc: 'Terhubung 24/7 dengan server cloud.' },
-      { icon: <Database className="w-6 h-6 text-violet-600" />, title: 'Data Real-time', desc: 'Monitoring langsung dari perangkat Anda.' },
+      { icon: <Wifi className="w-6 h-6 text-violet-600" />, title: 'Konektivitas Stabil', desc: 'Terhubung 24/7 dengan server cloud, dan mengirim data suhu melalui Wi-Fi.' },
+      { icon: <Database className="w-6 h-6 text-violet-600" />, title: 'Data Real-time', desc: 'Mengukur suhu secara real-time' },
       { icon: <Activity className="w-6 h-6 text-violet-600" />, title: 'Sensor Presisi', desc: 'Tingkat akurasi tinggi untuk setiap pengukuran.' },
       { icon: <ShieldCheck className="w-6 h-6 text-violet-600" />, title: 'Keamanan Data', desc: 'Enkripsi end-to-end untuk data Anda.' },
-      { icon: <Settings className="w-6 h-6 text-violet-600" />, title: 'Mudah Dikonfigurasi', desc: 'Pengaturan yang user-friendly.' },
+      { icon: <Settings className="w-6 h-6 text-violet-600" />, title: 'Mudah Dikonfigurasi', desc: 'Pengaturan yang user-friendly, dan dapat dipantau lewat Smartphone, WebDashboard, dan Aplikasi Iot.' },
     ]
   };
 
