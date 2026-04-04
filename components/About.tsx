@@ -1,12 +1,12 @@
-'use client';
+'use client'; 
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 const galleryImages = [
-  { id: 1, src: 'https://picsum.photos/seed/team1/800/600', alt: 'Team meeting' },
-  { id: 2, src: 'https://picsum.photos/seed/office/800/600', alt: 'Office space' },
-  { id: 3, src: 'https://picsum.photos/seed/code/800/600', alt: 'Coding session' },
+  { id: 1, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.03%20PM%20(1).jpeg', alt: 'Proses pengerjaan' },
+  { id: 2, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.03%20PM.jpeg', alt: 'Office space' },
+  { id: 3, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.04%20PM.jpeg', alt: 'Coding session' },
   { id: 4, src: 'https://picsum.photos/seed/hardware/800/600', alt: 'Hardware prototyping' },
 ];
 
@@ -32,7 +32,7 @@ export function About() {
             />
             <div className="absolute inset-0 bg-violet-900/10" />
           </motion.div>
-
+ 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,8 +75,8 @@ export function About() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-display font-bold text-slate-900">Our Culture & Work</h3>
-            <p className="text-sm text-slate-500 mt-2">A glimpse into our daily operations and achievements.</p>
+            <h3 className="text-2xl font-display font-bold text-slate-900">Our Work & Gallery</h3>
+            <p className="text-sm text-slate-500 mt-2">Hasil dari usaha dan proses kami</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

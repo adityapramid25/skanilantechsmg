@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://skanilantechsmg.vercel.app'),
+  metadataBase: new URL('https://skanilantechsmg.vercel.app'), // Ubah ke https://skanilantech.my.id jika sudah siap
   title: {
     template: '%s | Skanilan Tech',
     default: 'Skanilan Tech - Technology Solution in Semarang',
@@ -23,11 +23,35 @@ export const metadata: Metadata = {
   description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
   keywords: ['Web Development Semarang', 'IoT Services Semarang', 'Jasa Pembuatan Website Semarang', 'SMKN 9 Semarang tech agency', 'Student-led digital agency', 'Jasa IoT Semarang', 'Jasa Fotografi Semarang'],
   icons: {
-    icon: '/skanilantech.png?v=2',
+    icon: '/skanilantech.png', // Perbaikan: hilangkan '/public'
   },
   verification: {
-    google: 'vyN5yBdV4a9eJyCohsf565h3VJ0j42HSUUnwY2EmzrM',
+    google: 'HcEcP0LxIt4YJpPwwop1nDnMYKg-u-gkM5lgb4lXPg8',
   },
+  // --- BAGIAN OPEN GRAPH & TWITTER CARD ---
+  openGraph: {
+    title: 'Skanilan Tech - Technology Solution in Semarang',
+    description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
+    url: 'https://skanilantechsmg.vercel.app',
+    siteName: 'Skanilan Tech',
+    images: [
+      {
+        url: '/skanilantechbanner.png', // Sangat disarankan membuat gambar khusus ukuran 1200x630px
+        width: 800, // Sesuaikan dengan dimensi asli gambar logo kamu saat ini
+        height: 800,
+        alt: 'Skanilan Tech Logo',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Skanilan Tech - Technology Solution in Semarang',
+    description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
+    images: ['/skanilantech.png'],
+  },
+  // -----------------------------------------
 };
 
 export default function RootLayout({
@@ -59,13 +83,11 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <head>
+      <body className="font-sans antialiased text-slate-900 bg-white flex flex-col min-h-screen" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-      </head>
-      <body className="font-sans antialiased text-slate-900 bg-white flex flex-col min-h-screen" suppressHydrationWarning>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

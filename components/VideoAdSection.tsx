@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { PlayCircle } from 'lucide-react';
 import Image from 'next/image';
 

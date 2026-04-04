@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Bisnis/UMKM',
-    price: '$300.00',
+    price: 'Rp. 1.500.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Solusi digital untuk pelaku usaha yang ingin naik kelas.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Katalog Produk Terstruktur', desc: 'Menampilkan produk dengan deskripsi dan harga yang jelas.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Tombol Order WhatsApp', desc: 'Mempercepat proses transaksi dari pengunjung langsung ke chat Anda.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Halaman Testimoni', desc: 'Membangun kepercayaan calon pembeli melalui ulasan pelanggan lama.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Lokasi Google Maps', desc: 'Memudahkan pelanggan menemukan toko fisik atau kantor Anda.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Manajemen Mandiri', desc: 'Sistem yang mudah digunakan sehingga Anda bisa mengubah harga atau produk sendiri.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Optimasi SEO Lokal', desc: 'Agar bisnis Anda muncul saat orang mencari layanan terdekat di kota mereka.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Website ini bertindak sebagai toko atau kantor digital yang menyediakan informasi produk, testimoni, dan sistem pemesanan sederhana yang terhubung langsung ke WhatsApp.
               </p>
             </div>
           </motion.div>

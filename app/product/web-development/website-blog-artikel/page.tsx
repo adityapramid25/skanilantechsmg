@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Blog/Artikel',
-    price: '$300.00',
+    price: 'Rp. 1.000.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Sangat cocok bagi penulis, jurnalis, atau perusahaan yang ingin melakukan content marketing.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Sistem Manajemen Konten (CMS)', desc: 'Menambah, mengedit, atau menghapus artikel semudah mengetik di Word.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Fitur Kategori & Tag', desc: 'Merapikan ribuan tulisan agar mudah dicari berdasarkan topik.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Optimasi Google News', desc: 'Setting teknis agar artikel lebih mudah masuk ke jajaran berita Google.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Langganan Email (Newsletter)', desc: 'Mengumpulkan database pembaca setia untuk dikirimi update terbaru.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Kolom Komentar Interaktif', desc: 'Membangun diskusi antara penulis dan pembaca.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Tipografi Nyaman', desc:'Desain font dan spasi yang diatur agar mata pembaca tidak cepat lelah.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Fokus utama website ini adalah keterbacaan (readability) dan kemudahan distribusi informasi melalui artikel-artikel yang informatif.
               </p>
             </div>
           </motion.div>

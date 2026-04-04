@@ -1,23 +1,23 @@
 'use client';
 
-import { ArrowLeft, Camera, Image as ImageIcon, Sun, Edit3, Users, Star } from 'lucide-react';
+import { ArrowLeft, Globe, Smartphone, Search, Zap, Lock, Code, Wallet, Heart, Clock, Calendar, Newspaper, Shield } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 export default function ProductPage() {
   const product = {
-    title: 'Wedding Photography',
-    price: 'Rp1.500.000-3.000.000',
-    category: 'Photography',
-    description: 'Wedding Photography kami mengabadikan setiap momen spesial pernikahan Anda dengan hasil foto yang natural, elegan, dan penuh cerita. Setiap detail penting ditangkap secara profesional agar kenangan indah Anda tersimpan dengan sempurna.',
+    title: 'Website Organisasi',
+    price: 'Gratis Awal Minggu',
+    category: 'Web Development',
+    description: 'Portal Sistem Informasi Manajemen Masjid Al-Muttaqin Demak yang menyediakan layanan digital terpadu, meliputi jadwal sholat, agenda kajian, berita kegiatan, transparansi keuangan, hingga fasilitas donasi online.',
     features: [
-      { icon: <Camera className="w-6 h-6 text-violet-600" />, title: 'Peralatan Profesional', desc: 'Fotografer profesional yang ahli menangkap momen candid dan ekspresi jujur secara natural.' },
-      { icon: <ImageIcon className="w-6 h-6 text-violet-600" />, title: 'Resolusi Tinggi', desc: 'Penggunaan kamera full-frame dan lensa premium untuk hasil foto yang tajam dan jernih.' },
-      { icon: <Sun className="w-6 h-6 text-violet-600" />, title: 'Pencahayaan Optimal', desc: 'Proses editing warna natural yang abadi, memastikan foto tetap indah hingga puluhan tahun.' },
-      { icon: <Edit3 className="w-6 h-6 text-violet-600" />, title: 'Retouching Premium', desc: 'Bantuan pose yang nyaman dan tidak kaku agar Anda tampil percaya diri di depan kamera.' },
-      { icon: <Users className="w-6 h-6 text-violet-600" />, title: 'Pengarahan Gaya', desc: 'Penyimpanan file yang aman dan mudah diakses untuk berbagi kebahagiaan kapan saja.' },
-      { icon: <Star className="w-6 h-6 text-violet-600" />, title: 'Hasil Memuaskan', desc: 'Hasil cetak kualitas tinggi dengan material mewah sebagai warisan fisik momen spesial Anda.' },
+      { icon: <Wallet className="w-6 h-6 text-violet-600" />, title: 'Transparansi Keuangan', desc: 'Menyajikan laporan arus kas dan keuangan masjid secara terbuka dan akuntabel.' },
+      { icon: <Heart className="w-6 h-6 text-violet-600" />, title: 'Fasilitas Donasi Online', desc: 'Kemudahan bagi jamaah untuk menyalurkan zakat, infaq, dan sedekah kapan saja.' },
+      { icon: <Clock className="w-6 h-6 text-violet-600" />, title: 'Jadwal Sholat Akurat', desc: 'Informasi waktu sholat real-time khusus untuk wilayah Demak dan sekitarnya.' },
+      { icon: <Calendar className="w-6 h-6 text-violet-600" />, title: 'Pusat Informasi Kajian', desc: 'Pusat jadwal terpadu untuk kajian Islam, penceramah, dan acara keagamaan.' },
+      { icon: <Newspaper className="w-6 h-6 text-violet-600" />, title: 'Berita & Kegiatan Aktual', desc: 'Pembaruan rutin seputar operasional masjid dan program sosial masyarakat.' },
+      { icon: <Shield className="w-6 h-6 text-violet-600" />, title: 'Platform Dakwah Kredibel', desc: 'Portal representasi digital resmi masjid yang terpercaya dan bebas hoaks.' },
     ]
   };
 
@@ -65,29 +65,39 @@ export default function ProductPage() {
           className="mb-24"
         >
           {/* Main Video Placeholder */}
-          <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+            <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
+              {/* Letakkan Image paling atas agar menjadi background layer paling dasar, dan HAPUS -z-10 */}
+              <Image 
+                src="https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_hd_videofake_0.png"
+                alt="Video Thumbnail" 
+                fill 
+                className="object-cover" 
+                referrerPolicy="no-referrer"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
+              
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+                </div>
               </div>
             </div>
-            <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
-              alt="Video Thumbnail" 
-              fill 
-              className="object-cover -z-10"
-              referrerPolicy="no-referrer"
-            />
-          </div>
 
           {/* Image Gallery Grid (3 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            {[
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_0.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_3_copy.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_4_copy.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_1_copy.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_5.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_2_copy.png"
+            ].map((imageUrl, index) => (
+              <div key={index} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
-                  alt={`Gallery Image ${i}`} 
+                  src={imageUrl} 
+                  alt={`Gallery Image Masjid Al-Muttaqin ${index + 1}`} 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -113,8 +123,38 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Didukung peralatan berkualitas dan editing terbaik, kami menghadirkan foto yang tajam dan timeless dengan pilihan paket fleksibel sesuai kebutuhan Anda.
-                </p>
+                Transformasi digital ini menjadikan Masjid Al-Muttaqin tidak hanya sebagai pusat ibadah fisik, tetapi juga pelopor "Baitul Maal" modern di Demak yang mengintegrasikan akuntabilitas umat dalam satu genggaman layar!
+              </p>
+              {/* Masukkan tombol <a> langsung di sini, TANPA export default function atau return */}
+                <div className="mt-6">
+                  <a 
+                    href="https://www.almuttaqinwiku.id/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group w-fit"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      <path d="M12 2l-3 5h6z" />
+                      <path d="M9 7v9H4V9l2.5-3L9 7z" />
+                      <path d="M15 7v9h5V9l-2.5-3L15 7z" />
+                      <path d="M9 16h6v6H9z" />
+                      <path d="M2 22h20" />
+                      <path d="M12 7v9" />
+                    </svg>
+                    Kunjungi Website Al-Muttaqin
+                  </a>
+                </div>
             </div>
           </motion.div>
 

@@ -8,16 +8,16 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Portofolio',
-    price: '$2500.00',
+    price: 'Rp. 900.000',
     category: 'Web Development',
-    description: 'Layanan pengembangan website profesional yang responsif, cepat, dan dioptimasi untuk mesin pencari (SEO).',
+    description: 'Ini adalah galeri digital bagi profesional, seniman, atau freelancer.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.' },
+      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Personal Branding Kuat', desc: 'Menonjolkan keahlian unik Anda di atas kompetitor.' },
+      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Galeri Karya Interaktif', desc: 'Fitur filter kategori karya agar klien mudah melihat spesialisasi Anda.' },
+      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Resume Digital Terintegrasi', desc: 'Keinginan klien mengunduh CV langsung dari website.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Integrasi Media Sosial', desc: 'Langsung ke Instagram, LinkedIn, atau Behance.' },
+      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Formulir Kontak Langsung', desc: 'Memudahkan potensi klien untuk mengirimkan penawaran kerja.' },
+      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Ringan & Cepat', desc: 'Dioptimalkan agar klien tidak menunggu lama saat membuka portofolio Anda.' },
     ]
   };
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
+                Website ini dirancang untuk menampilkan karya terbaik Anda dengan cara yang elegan, berfungsi sebagai resume interaktif yang dapat diakses oleh klien di seluruh dunia kapan saja.
               </p>
             </div>
           </motion.div>

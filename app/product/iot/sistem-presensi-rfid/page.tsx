@@ -1,23 +1,22 @@
 'use client';
 
-import { ArrowLeft, Cpu, Wifi, Database, Activity, ShieldCheck, Settings } from 'lucide-react';
+import { ArrowLeft, Zap, Wifi, Database, Activity, ShieldCheck, Sparkles, Shield, CreditCard, Target, Settings } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 export default function ProductPage() {
   const product = {
-    title: 'Sistem Presensi RFID',
-    price: 'Rp. 1.000.000',
-    category: 'IoT',
-    description: 'Solusi IoT cerdas dengan sensor presisi tinggi dan monitoring real-time. Cocok untuk otomatisasi dan efisiensi sistem Anda.',
+    title: 'Sistem Presensi RFID Pintar',
+    price: 'Rp 3000/per-Tahun',
+    category: 'Solusi IoT',
+    description: 'Solusi IoT cerdas yang dilengkapi dengan sensor presisi tinggi dan pemantauan waktu nyata (real-time). Sangat ideal untuk otomatisasi alur kerja dan meningkatkan efisiensi operasional instansi Anda.',
     features: [
-      { icon: <Cpu className="w-6 h-6 text-violet-600" />, title: 'Hardware Handal', desc: 'Komponen berkualitas untuk durabilitas tinggi.' },
-      { icon: <Wifi className="w-6 h-6 text-violet-600" />, title: 'Konektivitas Stabil', desc: 'Terhubung 24/7 dengan server cloud.' },
-      { icon: <Database className="w-6 h-6 text-violet-600" />, title: 'Data Real-time', desc: 'Monitoring langsung dari perangkat Anda.' },
-      { icon: <Activity className="w-6 h-6 text-violet-600" />, title: 'Sensor Presisi', desc: 'Tingkat akurasi tinggi untuk setiap pengukuran.' },
-      { icon: <ShieldCheck className="w-6 h-6 text-violet-600" />, title: 'Keamanan Data', desc: 'Enkripsi end-to-end untuk data Anda.' },
-      { icon: <Settings className="w-6 h-6 text-violet-600" />, title: 'Mudah Dikonfigurasi', desc: 'Pengaturan yang user-friendly.' },
+      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Kecepatan Transaksi', desc: 'Proses tapping hanya butuh waktu <1 detik.' },
+      { icon: <Sparkles className="w-6 h-6 text-violet-600" />, title: 'Higienis', desc: 'Tidak perlu menyentuh alat secara langsung (berbeda dengan fingerprint), sehingga mengurangi risiko penyebaran kuman/virus.' },
+      { icon: <Shield className="w-6 h-6 text-violet-600" />, title: 'Durabilitas Tinggi', desc: 'Reader RFID lebih tahan lama karena tidak memiliki komponen optik yang mudah kotor atau tergores.' },
+      { icon: <CreditCard className="w-6 h-6 text-violet-600" />, title: 'Multifungsi', desc: 'Kartu yang sama bisa digunakan untuk akses pintu (access control), pembayaran kantin, atau parkir.' },
+      { icon: <Target className="w-6 h-6 text-violet-600" />, title: 'Akurasi Data', desc: 'Mengurangi risiko kesalahan input manual dan memudahkan HR dalam menarik laporan bulanan secara otomatis.' },
     ]
   };
 
@@ -64,42 +63,52 @@ export default function ProductPage() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mb-24"
         >
-          {/* Main Video Placeholder */}
-          <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
-              </div>
-            </div>
-            <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
-              alt="Video Thumbnail" 
-              fill 
-              className="object-cover -z-10"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+         <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
+  {/* Color Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply z-10" />
+  
+  {/* Play Button */}
+  <div className="absolute inset-0 flex items-center justify-center z-20">
+    <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
+      {/* Play Icon (CSS Triangle) */}
+      <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+    </div>
+  </div>
 
-          {/* Image Gallery Grid (3 Columns) */}
+  {/* Background Image */}
+  <Image 
+  src="https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_fakevideo_2.png" 
+  alt="Demonstrasi Sistem RFID" 
+  fill 
+  className="object-cover z-0"
+  referrerPolicy="no-referrer"
+/>
+</div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
-                  alt={`Gallery Image ${i}`} 
-                  fill 
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            ))}
-          </div>
+  {/* Put your 3 different ImageKit URLs inside this array */}
+  {[
+    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_product_1.png',
+    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_tech_4.png',
+    'https://ik.imagekit.io/skanilantech/IoT/RFID/okay_smkn9_card_1.png'
+  ].map((imageUrl, i) => (
+    <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm">
+      <Image 
+        src={imageUrl} 
+        alt={`Detail Produk RFID ${i + 1}`} 
+        fill 
+        className="object-cover hover:scale-105 transition-transform duration-500"
+        referrerPolicy="no-referrer"
+      />
+    </div>
+  ))}
+</div>
         </motion.div>
 
-        {/* Product Knowledge & Features */}
+        {/* Product Overview & Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Product Knowledge */}
+          
+          {/* Product Knowledge / Informasi Produk */}
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -107,13 +116,48 @@ export default function ProductPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5"
           >
-            <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Informasi Produk</h2>
             <div className="prose prose-lg prose-slate prose-violet">
               <p className="text-slate-600 leading-relaxed">
                 {product.description}
               </p>
+
+              {/* Added 'my-8' to create distance on the top and bottom */}
+              <p className="text-2xl text-slate-900 my-8">
+                <b>Panduan Penggunaan Sistem Presensi RFID Otomatis:</b>
+              </p>
+
               <p className="text-slate-600 leading-relaxed mt-4">
-                Fokus pada integrasi hardware dan sensor yang handal. Kami memastikan setiap data yang ditangkap akurat dan dapat diakses kapan saja melalui dashboard.
+                <b>1. Aktivasi Kartu Identitas.</b>
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                Setiap karyawan/siswa diberikan kartu atau gantungan kunci berisi Chip RFID.
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                <b>2. Presensi Masuk & Pulang Otomatis</b>
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                Cukup berjalan melewati alat pembaca (Reader) yang dipasang di gerbang atau pintu masuk.
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                <b>3. Rekap Kehadiran Real-Time</b>
+              </p>
+              <div className="text-slate-600 leading-relaxed mt-4">
+              Begitu chip terdeteksi, data langsung terkirim ke server. Sistem secara otomatis menyusun:
+                <ul className="list-disc ml-6 mt-2 space-y-1">
+                  <li>
+                    <strong>Laporan Harian:</strong> Siapa yang terlambat atau pulang lebih awal.
+                  </li>
+                  <li>
+                    <strong>Laporan Mingguan & Bulanan:</strong> Akumulasi total jam kerja atau kehadiran tanpa perlu input manual di Excel.
+                  </li>
+                </ul>
+              </div>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                <b>4. Cek Riwayat Kehadiran Mandiri</b>
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                Setiap pengguna dapat melihat riwayat kehadirannya sendiri melalui aplikasi atau dasbor komputer. Semua data tersimpan aman dan transparan, meminimalkan risiko kecurangan "titip absen" karena setiap chip memiliki kode enkripsi unik.
               </p>
             </div>
           </motion.div>
@@ -138,6 +182,7 @@ export default function ProductPage() {
               ))}
             </div>
           </motion.div>
+
         </div>
       </main>
 
@@ -152,7 +197,7 @@ export default function ProductPage() {
           <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
-          Order via WhatsApp
+          Pesan via WhatsApp
         </a>
       </div>
     </div>

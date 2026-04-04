@@ -42,8 +42,12 @@ export function Navbar() {
       if (!error && data?.full_name) {
         setProfileName(data.full_name);
       }
-    } catch (error) {
-      console.error('Error fetching profile:', error);
+    } catch (error: any) {
+      if (error?.message === 'Failed to fetch') {
+        console.error('Unable to connect to Supabase to fetch profile.');
+      } else {
+        console.error('Error fetching profile:', error);
+      }
     } finally {
       setIsLoadingProfile(false);
     }
@@ -52,18 +56,31 @@ export function Navbar() {
   useEffect(() => {
     const fetchSession = async () => {
       setIsLoadingProfile(true);
-      const { data: { session } } = await supabase.auth.getSession();
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        await fetchProfile(session.user);
-      } else {
+      try {
+        const { data: { user }, error } = await supabase.auth.getUser();
+        if (error) {
+          // If there's an error (like invalid refresh token), sign out to clear stale data
+          await supabase.auth.signOut().catch(() => {});
+        }
+        setUser(user ?? null);
+        if (user) {
+          await fetchProfile(user);
+        } else {
+          setIsLoadingProfile(false);
+        }
+      } catch (err: any) {
+        if (err?.message === 'Failed to fetch') {
+          console.error('Unable to connect to Supabase to fetch session.');
+        } else {
+          console.error('Error fetching session:', err);
+        }
         setIsLoadingProfile(false);
       }
     };
 
     fetchSession();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       setUser(session?.user ?? null);
       if (session?.user) {
         setIsLoadingProfile(true);
@@ -107,7 +124,7 @@ export function Navbar() {
             <div className="flex-shrink-0 flex items-center w-[200px]">
               <Link href="/" className="flex items-center gap-2">
                 <Image 
-                  src="/skanilantech.png" 
+                  src="https://ik.imagekit.io/skanilantech/Web%20Component/logo_skanilantech?updatedAt=1774763237161" 
                   alt="Skanilan Tech Logo" 
                   width={32} 
                   height={32} 

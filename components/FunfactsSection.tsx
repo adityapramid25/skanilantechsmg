@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'motion/react';
+import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Briefcase, Users, Code, Trophy } from 'lucide-react';
 
