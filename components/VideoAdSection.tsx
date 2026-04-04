@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; 
 import { PlayCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link'; // Tambahkan import Link di sini
 
 export function VideoAdSection() {
   return (
@@ -35,27 +36,39 @@ export function VideoAdSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-xl group cursor-pointer bg-slate-50"
+          className="relative max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-xl group bg-slate-50"
         >
+          {/* MENGGUNAKAN <Link> SEBAGAI PENGGANTI <a> */}
+          <Link 
+            href="https://youtu.be/QFQ1cItpW2o?si=n8in2byLgmKedBrW" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block w-full h-full absolute inset-0 z-30 cursor-pointer"
+            aria-label="Tonton video di YouTube"
+          >
+            {/* Area link transparan yang menutupi seluruh container */}
+          
+
           {/* Tech-themed border accents */}
           <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-violet-500 rounded-tl-2xl z-20 opacity-50 group-hover:opacity-100 transition-opacity"></div>
           <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-blue-500 rounded-br-2xl z-20 opacity-50 group-hover:opacity-100 transition-opacity"></div>
           
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent z-10 pointer-events-none"></div>
           
           <Image 
-            src="https://picsum.photos/seed/techvideo/1280/720" 
+            src="https://ik.imagekit.io/skanilantech/Web%20Component/smkn9semarang" 
             alt="Video Thumbnail" 
             fill
-            className="object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
+            className="object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"
             referrerPolicy="no-referrer"
           />
           
-          <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
             <div className="w-20 h-20 bg-white/80 rounded-full flex items-center justify-center backdrop-blur-sm border border-white group-hover:scale-110 group-hover:bg-white transition-all duration-300 shadow-lg">
               <PlayCircle className="w-10 h-10 text-violet-600 ml-1" />
             </div>
           </div>
+          </Link>
         </motion.div>
       </div>
     </section>
