@@ -104,8 +104,8 @@ const allProducts = [
   {
     id: 'web-9',
     title: 'Website Organisasi',
-    price: 'Rp. 1.000.000',
-    image: 'https://picsum.photos/seed/web2/400/300',
+    price: 'Gratis!',
+    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_00.png',
     description: 'Professional company website with SEO optimization, blog, and CMS for easy content updates.',
     category: 'Web Development',
   },
