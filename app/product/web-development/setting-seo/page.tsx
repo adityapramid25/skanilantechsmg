@@ -12,12 +12,36 @@ export default function ProductPage() {
     category: 'Web Development',
     description: 'Kami menyediakan Layanan pengembangan dan pembuatan website profesional yang dirancang khusus untuk membantu bisnis Anda tampil lebih kredibel dan menjangkau lebih banyak pelanggan secara online. Setiap website yang kami buat memiliki desain responsif (mobile friendly), loading cepat, serta struktur yang dioptimasi untuk SEO (Search Engine Optimization) agar lebih mudah muncul di hasil pencarian Google.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Desain Responsif', desc: 'Tampil sempurna di semua ukuran layar.'mulai dari desktop, laptop, tablet hingga smartphone. Desain responsif memastikan tampilan website dapat menyesuaikan secara otomatis dengan perangkat yang digunakan sehingga konten tetap terlihat rapi, mudah dibaca, dan nyaman diakses oleh pengguna di mana saja. },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Mobile First', desc: 'Dioptimasi untuk pengguna smartphone.'agar website dapat diakses dengan cepat, mudah dibaca, dan tetap nyaman digunakan di berbagai perangkat mobile. Pendekatan mobile first memastikan setiap elemen website dirancang agar lebih efisien dan responsif bagi pengguna ponsel. },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'SEO Friendly', desc: 'Struktur yang disukai mesin pencari.'sehingga website lebih mudah ditemukan oleh pengguna melalui hasil pencarian. Dengan penggunaan struktur HTML yang rapi, pengaturan heading yang jelas, serta optimasi kata kunci yang tepat, website dapat lebih mudah diindeks oleh mesin pencari seperti Google dan berpeluang mendapatkan peringkat yang lebih baik. },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Performa Cepat', desc: 'Waktu loading yang sangat singkat.'sehingga halaman website dapat terbuka dengan cepat tanpa membuat pengunjung menunggu terlalu lama. Performa yang cepat membantu meningkatkan kenyamanan pengguna saat mengakses website serta mendukung optimasi SEO karena mesin pencari seperti Google cenderung memprioritaskan website dengan kecepatan akses yang baik. },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Keamanan Terjamin', desc: 'Perlindungan dari serangan siber.'sehingga website dan data pengguna tetap aman dari berbagai ancaman digital. Sistem keamanan diterapkan melalui penggunaan enkripsi, pembaruan sistem secara berkala, serta pengamanan server untuk menjaga kestabilan dan kepercayaan pengguna saat mengakses website. },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Kode Bersih', desc: 'Mudah di-maintain dan dikembangkan.'karena struktur kode ditulis dengan rapi, terorganisir, dan mengikuti standar pengembangan web yang baik. Dengan kode yang bersih, proses perawatan, pembaruan fitur, maupun pengembangan website di masa depan dapat dilakukan dengan lebih mudah dan efisien. },
+      { 
+        icon: <Globe className="w-6 h-6 text-violet-600" />, 
+        title: 'Desain Responsif', 
+        desc: 'Tampil sempurna di semua ukuran layar mulai dari desktop, laptop, tablet hingga smartphone. Desain responsif memastikan tampilan website dapat menyesuaikan secara otomatis dengan perangkat yang digunakan sehingga konten tetap terlihat rapi, mudah dibaca, dan nyaman diakses oleh pengguna di mana saja.' 
+      },
+      { 
+        icon: <Smartphone className="w-6 h-6 text-violet-600" />, 
+        title: 'Mobile First', 
+        desc: 'Dioptimasi untuk pengguna smartphone agar website dapat diakses dengan cepat, mudah dibaca, dan tetap nyaman digunakan di berbagai perangkat mobile. Pendekatan mobile first memastikan setiap elemen website dirancang agar lebih efisien dan responsif bagi pengguna ponsel.' 
+      },
+      { 
+        icon: <Search className="w-6 h-6 text-violet-600" />, 
+        title: 'SEO Friendly', 
+        desc: 'Struktur yang disukai mesin pencari sehingga website lebih mudah ditemukan oleh pengguna melalui hasil pencarian. Dengan penggunaan struktur HTML yang rapi, pengaturan heading yang jelas, serta optimasi kata kunci yang tepat, website dapat lebih mudah diindeks oleh mesin pencari seperti Google dan berpeluang mendapatkan peringkat yang lebih baik.' 
+      },
+      { 
+        icon: <Zap className="w-6 h-6 text-violet-600" />, 
+        title: 'Performa Cepat', 
+        desc: 'Waktu loading yang sangat singkat sehingga halaman website dapat terbuka dengan cepat tanpa membuat pengunjung menunggu terlalu lama. Performa yang cepat membantu meningkatkan kenyamanan pengguna saat mengakses website serta mendukung optimasi SEO karena mesin pencari seperti Google cenderung memprioritaskan website dengan kecepatan akses yang baik.' 
+      },
+      { 
+        icon: <Lock className="w-6 h-6 text-violet-600" />, 
+        title: 'Keamanan Terjamin', 
+        desc: 'Perlindungan dari serangan siber sehingga website dan data pengguna tetap aman dari berbagai ancaman digital. Sistem keamanan diterapkan melalui penggunaan enkripsi, pembaruan sistem secara berkala, serta pengamanan server untuk menjaga kestabilan dan kepercayaan pengguna saat mengakses website.' 
+      },
+      { 
+        icon: <Code className="w-6 h-6 text-violet-600" />, 
+        title: 'Kode Bersih', 
+        desc: 'Mudah di-maintain dan dikembangkan karena struktur kode ditulis dengan rapi, terorganisir, dan mengikuti standar pengembangan web yang baik. Dengan kode yang bersih, proses perawatan, pembaruan fitur, maupun pengembangan website di masa depan dapat dilakukan dengan lebih mudah dan efisien.' 
+      },
     ]
   };
 
@@ -109,10 +133,10 @@ export default function ProductPage() {
           >
             <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
             <div className="prose prose-lg prose-slate prose-violet">
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap">
                 {product.description}
               </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
+              <p className="text-slate-600 leading-relaxed mt-4 whitespace-pre-wrap">
                 Kami berfokus pada UI/UX yang intuitif dan struktur kode yang SEO-friendly. Website Anda tidak hanya akan terlihat bagus, tapi juga mudah ditemukan oleh calon pelanggan.
               </p>
             </div>
