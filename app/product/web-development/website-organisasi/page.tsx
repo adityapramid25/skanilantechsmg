@@ -1,23 +1,23 @@
 'use client';
 
-import { ArrowLeft, Globe, Smartphone, Search, Zap, Lock, Code } from 'lucide-react';
+import { ArrowLeft, Globe, Smartphone, Search, Zap, Lock, Code, Wallet, Heart, Clock, Calendar, Newspaper, Shield } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 export default function ProductPage() {
   const product = {
-    title: 'Website Portofolio',
-    price: 'Rp. 900.000',
+    title: 'Website Organisasi',
+    price: 'Gratis awal bulan!',
     category: 'Web Development',
-    description: 'Ini adalah galeri digital bagi profesional, seniman, atau freelancer.',
+    description: 'Portal Sistem Informasi Manajemen Masjid Al-Muttaqin Demak yang menyediakan layanan digital terpadu, meliputi jadwal sholat, agenda kajian, berita kegiatan, transparansi keuangan, hingga fasilitas donasi online.',
     features: [
-      { icon: <Globe className="w-6 h-6 text-violet-600" />, title: 'Personal Branding Kuat', desc: 'Menonjolkan keahlian unik Anda di atas kompetitor.' },
-      { icon: <Smartphone className="w-6 h-6 text-violet-600" />, title: 'Galeri Karya Interaktif', desc: 'Fitur filter kategori karya agar klien mudah melihat spesialisasi Anda.' },
-      { icon: <Search className="w-6 h-6 text-violet-600" />, title: 'Resume Digital Terintegrasi', desc: 'Keinginan klien mengunduh CV langsung dari website.' },
-      { icon: <Zap className="w-6 h-6 text-violet-600" />, title: 'Integrasi Media Sosial', desc: 'Langsung ke Instagram, LinkedIn, atau Behance.' },
-      { icon: <Lock className="w-6 h-6 text-violet-600" />, title: 'Formulir Kontak Langsung', desc: 'Memudahkan potensi klien untuk mengirimkan penawaran kerja.' },
-      { icon: <Code className="w-6 h-6 text-violet-600" />, title: 'Ringan & Cepat', desc: 'Dioptimalkan agar klien tidak menunggu lama saat membuka portofolio Anda.' },
+      { icon: <Wallet className="w-6 h-6 text-violet-600" />, title: 'Transparansi Keuangan', desc: 'Menyajikan laporan arus kas dan keuangan masjid secara terbuka dan akuntabel.' },
+      { icon: <Heart className="w-6 h-6 text-violet-600" />, title: 'Fasilitas Donasi Online', desc: 'Kemudahan bagi jamaah untuk menyalurkan zakat, infaq, dan sedekah kapan saja.' },
+      { icon: <Clock className="w-6 h-6 text-violet-600" />, title: 'Jadwal Sholat Akurat', desc: 'Informasi waktu sholat real-time khusus untuk wilayah Demak dan sekitarnya.' },
+      { icon: <Calendar className="w-6 h-6 text-violet-600" />, title: 'Pusat Informasi Kajian', desc: 'Pusat jadwal terpadu untuk kajian Islam, penceramah, dan acara keagamaan.' },
+      { icon: <Newspaper className="w-6 h-6 text-violet-600" />, title: 'Berita & Kegiatan Aktual', desc: 'Pembaruan rutin seputar operasional masjid dan program sosial masyarakat.' },
+      { icon: <Shield className="w-6 h-6 text-violet-600" />, title: 'Platform Dakwah Kredibel', desc: 'Portal representasi digital resmi masjid yang terpercaya dan bebas hoaks.' },
     ]
   };
 
@@ -65,29 +65,39 @@ export default function ProductPage() {
           className="mb-24"
         >
           {/* Main Video Placeholder */}
-          <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+            <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
+              {/* Letakkan Image paling atas agar menjadi background layer paling dasar, dan HAPUS -z-10 */}
+              <Image 
+                src="https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_hd_videofake_0.png"
+                alt="Video Thumbnail" 
+                fill 
+                className="object-cover" 
+                referrerPolicy="no-referrer"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
+              
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+                </div>
               </div>
             </div>
-            <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
-              alt="Video Thumbnail" 
-              fill 
-              className="object-cover -z-10"
-              referrerPolicy="no-referrer"
-            />
-          </div>
 
           {/* Image Gallery Grid (3 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            {[
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_0.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_3_copy.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_4_copy.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_1_copy.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_5.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_2_copy.png"
+            ].map((imageUrl, index) => (
+              <div key={index} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
-                  alt={`Gallery Image ${i}`} 
+                  src={imageUrl} 
+                  alt={`Gallery Image Masjid Al-Muttaqin ${index + 1}`} 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -113,7 +123,7 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Website ini dirancang untuk menampilkan karya terbaik Anda dengan cara yang elegan, berfungsi sebagai resume interaktif yang dapat diakses oleh klien di seluruh dunia kapan saja.
+                Transformasi digital ini menjadikan Masjid Al-Muttaqin tidak hanya sebagai pusat ibadah fisik, tetapi juga pelopor "Baitul Maal" modern di Demak yang mengintegrasikan akuntabilitas umat dalam satu genggaman layar!
               </p>
             </div>
           </motion.div>
