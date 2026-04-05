@@ -8,8 +8,8 @@ export function Contact() {
     <section className="py-20 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary-light">Get in Touch</h2>
-          <p className="text-sm text-slate-500 mt-2">We&apos;d love to hear from you. Let&apos;s build something great together.</p>
+          <h2 className="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary-light">Hubungi Kami</h2>
+          <p className="text-sm text-slate-500 mt-2">kami dengan senang hati menerima feedback dari anda.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -22,7 +22,7 @@ export function Contact() {
             className="space-y-8"
           >
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <h3 className="text-xl font-semibold text-primary mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold text-primary mb-6">Informasi Kontak</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -30,7 +30,7 @@ export function Contact() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-primary">Phone</p>
+                    <p className="font-medium text-primary">Nomor telpon</p>
                     <p className="text-slate-600 text-sm mt-1">+62 812 2943 8668</p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ export function Contact() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-primary">Office Location</p>
+                    <p className="font-medium text-primary">Lokasi Kerja</p>
                     <p className="text-slate-600 text-sm mt-1">
                       Jl. Peterongansari No.2, Peterongan, Kec. Semarang Sel., <br />
                       Kota Semarang, Jawa Tengah 50242
@@ -60,7 +60,7 @@ export function Contact() {
               </div>
 
               <div className="mt-8 pt-8 border-t border-slate-200">
-                <p className="font-medium text-primary mb-4">Follow Us</p>
+                <p className="font-medium text-primary mb-4">Follow kami</p>
                 <div className="flex gap-4">
                   <a href="#" className="p-2 bg-slate-100 text-slate-600 hover:bg-primary hover:text-white rounded-lg transition-colors">
                     <Instagram className="w-5 h-5" />
