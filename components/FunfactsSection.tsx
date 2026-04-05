@@ -6,7 +6,7 @@ import { Briefcase, Users, Code, Trophy } from 'lucide-react';
 
 const facts = [
   { id: 1, label: 'Projects Done', value: 150, icon: Briefcase, suffix: '+' },
-  { id: 2, label: 'Team Members', value: 45, icon: Users, suffix: '' },
+  { id: 2, label: 'Team Members', value: 35, icon: Users, suffix: '' },
   { id: 3, label: 'Lines of Code', value: 1.2, icon: Code, suffix: 'M' },
   { id: 4, label: 'Awards Won', value: 12, icon: Trophy, suffix: '' },
 ];
