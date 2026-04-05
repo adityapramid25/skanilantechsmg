@@ -18,7 +18,7 @@ export function VideoAdSection() {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl font-display font-bold text-slate-900 mb-4"
           >
-            Experience the Future
+            Kenali Skanilan Tech
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export function VideoAdSection() {
             transition={{ delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base"
           >
-            Watch how Skanilan Tech transforms businesses with cutting-edge IoT, Web, and Mobile solutions.
+            Lihat profil dan kenali kami lebih jauh.
           </motion.p>
         </div>
 
