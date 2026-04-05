@@ -125,20 +125,6 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           }
           throw signUpError;
         }
-        
-        // Insert into public.profiles
-        if (data.user) {
-           // Cukup lakukan signUp, biarkan database yang mengurus sisanya
-          const { data, error } = await supabase.auth.signUp({
-            email,
-            password,
-            options: {
-              data: {
-                full_name: fullName, // Trigger SQL akan mengambil data dari sini
-              },
-            },
-          });
-        }
 
         // If email confirmation is disabled, Supabase auto-logs in the user.
         // We sign them out immediately to enforce the manual login flow.
