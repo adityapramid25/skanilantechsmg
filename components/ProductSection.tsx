@@ -249,7 +249,7 @@ export function ProductSection() {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl font-display font-bold text-slate-900 mb-3"
           >
-            Our Products & Services
+            Produk & Jasa Kami
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -258,7 +258,7 @@ export function ProductSection() {
             transition={{ delay: 0.1 }}
             className="text-sm text-slate-600 max-w-2xl mx-auto"
           >
-            Explore our comprehensive range of tech solutions designed to elevate your business.
+            Temukan teknologi kami yang anda minati.
           </motion.p>
         </div>
 
