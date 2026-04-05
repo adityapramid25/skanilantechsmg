@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Eye, EyeOff } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
@@ -190,11 +190,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         setShowConfirmPassword(false);
       }
     } catch (err: any) {
-      let msg = err.message || 'An error occurred';
-      if (msg === 'Failed to fetch') {
-        msg = 'Unable to connect to the server. Please check your internet connection or try again later.';
-      }
-      setError(msg);
+      setError(err.message || 'An error occurred');
     } finally {
       setLoading(false);
     }
