@@ -126,8 +126,6 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           throw signUpError;
         }
 
-        // If email confirmation is disabled, Supabase auto-logs in the user.
-        // We sign them out immediately to enforce the manual login flow.
         if (data.session) {
           await supabase.auth.signOut();
         }
@@ -166,7 +164,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         setAuthMode('forgot-update');
 
       } else if (authMode === 'forgot-update') {
-        // --- PERBAIKAN MULAI DI SINI ---
+        // --- PERBAIKAN FINAL ---
         if (password !== confirmPassword) {
           throw new Error("Passwords do not match");
         }
@@ -175,27 +173,19 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           throw new Error("Password must be at least 6 characters.");
         }
 
-        // 1. Jalankan update password di background tanpa 'await' (Fire & Forget)
-        // Ini mengatasi bug loading lama gara-gara SMTP email Supabase.
-        supabase.auth.updateUser({ password }).then(({ error }) => {
-          if (error) console.error("Update password background error:", error);
+        // 1. Jalankan update di background tanpa di-await
+        supabase.auth.updateUser({ password }).catch((err) => {
+          console.error("Background password update error:", err);
         });
 
-        // 2. Beri delay animasi loading 1 detik agar UI terlihat natural
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        // 3. Keluarkan user dari sesi pemulihan (Logout paksa)
-        // Ini wajib agar mereka bisa login ulang secara normal dengan password baru
-        await supabase.auth.signOut();
+        // 2. Beritahu user bahwa proses berhasil
+        setMessage('Password updated successfully!');
         
-        // 4. Update tampilan UI ke mode Login
-        setMessage('Password updated successfully! You can now log in.');
-        setAuthMode('login');
-        setPassword('');
-        setConfirmPassword('');
-        setShowPassword(false);
-        setShowConfirmPassword(false);
-        // --- PERBAIKAN SELESAI ---
+        // 3. Beri jeda 1.5 detik agar user sempat membaca pesan sukses di atas
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // 4. Langsung tutup modal, user sudah dalam kondisi login!
+        handleClose();
       }
     } catch (err: any) {
       let msg = err.message || 'An error occurred';
