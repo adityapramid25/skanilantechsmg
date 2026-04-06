@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation'; // <-- TAMBAHAN PENTING
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Eye, EyeOff } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
@@ -13,6 +14,8 @@ interface AuthModalProps {
 type AuthMode = 'login' | 'register' | 'forgot-request' | 'forgot-verify' | 'forgot-update';
 
 export function AuthModal({ isOpen, onClose }: AuthModalProps) {
+  const router = useRouter(); // <-- INISIALISASI ROUTER
+  
   const [authMode, setAuthMode] = useState<AuthMode>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -69,7 +72,6 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
     newOtp[index] = value;
     setOtpArray(newOtp);
 
-    // Auto-focus next input
     if (value && index < 5) {
       otpRefs.current[index + 1]?.focus();
     }
@@ -77,7 +79,6 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
   const handleOtpKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace' && !otpArray[index] && index > 0) {
-      // Auto-focus previous input on backspace if current is empty
       otpRefs.current[index - 1]?.focus();
     }
   };
@@ -92,7 +93,6 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
       }
       setOtpArray(newOtp);
       
-      // Focus the next empty input or the last one
       if (pastedData.length < 6) {
         otpRefs.current[pastedData.length]?.focus();
       } else {
@@ -113,9 +113,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           email,
           password,
           options: {
-            data: {
-              full_name: fullName,
-            },
+            data: { full_name: fullName },
           },
         });
         
@@ -130,17 +128,28 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           await supabase.auth.signOut();
         }
 
-        setMessage('Registration successful! Please enter your password to login.');
+        setMessage('Registration successful! Please login.');
         setAuthMode('login');
         setPassword('');
         setShowPassword(false);
 
       } else if (authMode === 'login') {
+        // --- PERBAIKAN LOGIN ---
         const { error: signInError } = await supabase.auth.signInWithPassword({
           email,
           password,
         });
+        
         if (signInError) throw signInError;
+        
+        // Tampilkan pesan sukses seketika agar user merasa webnya responsif
+        setMessage('Login successful! Welcome to Skanilan Tech.');
+        
+        // Paksa Next.js memperbarui state Server Component (seperti Navbar)
+        router.refresh(); 
+        
+        // Beri jeda sangat singkat untuk animasi yang mulus sebelum modal ditutup
+        await new Promise(resolve => setTimeout(resolve, 600));
         handleClose();
 
       } else if (authMode === 'forgot-request') {
@@ -164,33 +173,31 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         setAuthMode('forgot-update');
 
       } else if (authMode === 'forgot-update') {
-        // --- PERBAIKAN FINAL ---
         if (password !== confirmPassword) {
           throw new Error("Passwords do not match");
         }
-        
         if (password.length < 6) {
           throw new Error("Password must be at least 6 characters.");
         }
 
-        // 1. Jalankan update di background tanpa di-await
+        // Fire and forget untuk bypass delay server email
         supabase.auth.updateUser({ password }).catch((err) => {
           console.error("Background password update error:", err);
         });
 
-        // 2. Beritahu user bahwa proses berhasil
         setMessage('Password updated successfully!');
         
-        // 3. Beri jeda 1.5 detik agar user sempat membaca pesan sukses di atas
+        // Paksa refresh UI berjaga-jaga jika sesi aktif digunakan
+        router.refresh();
         await new Promise(resolve => setTimeout(resolve, 1500));
-
-        // 4. Langsung tutup modal, user sudah dalam kondisi login!
         handleClose();
       }
     } catch (err: any) {
       let msg = err.message || 'An error occurred';
       if (msg === 'Failed to fetch') {
-        msg = 'Unable to connect to the server. Please check your internet connection or try again later.';
+        msg = 'Koneksi terputus. Pastikan internet Anda stabil.';
+      } else if (msg === 'Invalid login credentials') {
+        msg = 'Email atau password yang Anda masukkan salah.';
       }
       setError(msg);
     } finally {
