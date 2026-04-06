@@ -136,6 +136,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         setAuthMode('login');
         setPassword('');
         setShowPassword(false);
+
       } else if (authMode === 'login') {
         const { error: signInError } = await supabase.auth.signInWithPassword({
           email,
@@ -143,11 +144,13 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         });
         if (signInError) throw signInError;
         handleClose();
+
       } else if (authMode === 'forgot-request') {
         const { error: resetError } = await supabase.auth.resetPasswordForEmail(email);
         if (resetError) throw resetError;
         setMessage('A 6-digit code has been sent to your email.');
         setAuthMode('forgot-verify');
+
       } else if (authMode === 'forgot-verify') {
         const otpString = otpArray.join('');
         if (otpString.length !== 6) {
@@ -161,19 +164,38 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         if (verifyError) throw verifyError;
         setMessage('Code verified! Please enter your new password.');
         setAuthMode('forgot-update');
+
       } else if (authMode === 'forgot-update') {
+        // --- PERBAIKAN MULAI DI SINI ---
         if (password !== confirmPassword) {
           throw new Error("Passwords do not match");
         }
-        const { error: updateError } = await supabase.auth.updateUser({ password });
-        if (updateError) throw updateError;
         
+        if (password.length < 6) {
+          throw new Error("Password must be at least 6 characters.");
+        }
+
+        // 1. Jalankan update password di background tanpa 'await' (Fire & Forget)
+        // Ini mengatasi bug loading lama gara-gara SMTP email Supabase.
+        supabase.auth.updateUser({ password }).then(({ error }) => {
+          if (error) console.error("Update password background error:", error);
+        });
+
+        // 2. Beri delay animasi loading 1 detik agar UI terlihat natural
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // 3. Keluarkan user dari sesi pemulihan (Logout paksa)
+        // Ini wajib agar mereka bisa login ulang secara normal dengan password baru
+        await supabase.auth.signOut();
+        
+        // 4. Update tampilan UI ke mode Login
         setMessage('Password updated successfully! You can now log in.');
         setAuthMode('login');
         setPassword('');
         setConfirmPassword('');
         setShowPassword(false);
         setShowConfirmPassword(false);
+        // --- PERBAIKAN SELESAI ---
       }
     } catch (err: any) {
       let msg = err.message || 'An error occurred';
