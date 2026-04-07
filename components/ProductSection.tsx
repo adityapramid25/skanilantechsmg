@@ -15,7 +15,7 @@ const allProducts = [
     id: 'iot-1',
     title: 'Sistem Presensi RFID',
     price: 'Rp. 3000/per-Tahun',
-    image: 'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_group_0.png',
+    image: 'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_mc_2.png',
     description: 'Solusi IoT cerdas yang dilengkapi dengan sensor presisi tinggi dan pemantauan waktu nyata (real-time). Sangat ideal untuk otomatisasi alur kerja dan meningkatkan efisiensi operasional instansi Anda.',
     category: 'IoT',
   },
@@ -106,7 +106,7 @@ const allProducts = [
     title: 'Website Organisasi',
     price: 'Gratis!',
     image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_00.png',
-    description: 'Professional company website with SEO optimization, blog, and CMS for easy content updates.',
+    description: 'Website perusahaan profesional dengan optimasi, blog, dan CMS untuk pembaruan konten yang mudah.',
     category: 'Web Development',
   },
 
