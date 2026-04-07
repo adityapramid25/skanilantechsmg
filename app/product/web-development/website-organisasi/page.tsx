@@ -10,14 +10,38 @@ export default function ProductPage() {
     title: 'Website Organisasi',
     price: 'Gratis Awal Minggu',
     category: 'Web Development',
-    description: 'Portal Sistem Informasi Manajemen Masjid Al-Muttaqin Demak yang menyediakan layanan digital terpadu, meliputi jadwal sholat, agenda kajian, berita kegiatan, transparansi keuangan, hingga fasilitas donasi online.',
+    description: 'Butuh website organisasi profesional seperti Portal Sistem Informasi Masjid Al-Muttaqin Demak? Percayakan pada jasa pembuatan web kami. Layanan lengkap mulai dari sistem informasi, jadwal kegiatan, hingga fitur donasi.',
     features: [
-      { icon: <Wallet className="w-6 h-6 text-violet-600" />, title: 'Transparansi Keuangan', desc: 'Menyajikan laporan arus kas dan keuangan masjid secara terbuka dan akuntabel.' },
-      { icon: <Heart className="w-6 h-6 text-violet-600" />, title: 'Fasilitas Donasi Online', desc: 'Kemudahan bagi jamaah untuk menyalurkan zakat, infaq, dan sedekah kapan saja.' },
-      { icon: <Clock className="w-6 h-6 text-violet-600" />, title: 'Jadwal Sholat Akurat', desc: 'Informasi waktu sholat real-time khusus untuk wilayah Demak dan sekitarnya.' },
-      { icon: <Calendar className="w-6 h-6 text-violet-600" />, title: 'Pusat Informasi Kajian', desc: 'Pusat jadwal terpadu untuk kajian Islam, penceramah, dan acara keagamaan.' },
-      { icon: <Newspaper className="w-6 h-6 text-violet-600" />, title: 'Berita & Kegiatan Aktual', desc: 'Pembaruan rutin seputar operasional masjid dan program sosial masyarakat.' },
-      { icon: <Shield className="w-6 h-6 text-violet-600" />, title: 'Platform Dakwah Kredibel', desc: 'Portal representasi digital resmi masjid yang terpercaya dan bebas hoaks.' },
+      { 
+        icon: <Wallet className="w-6 h-6 text-violet-600" />, 
+        title: 'Sistem Transparansi Keuangan', 
+        desc: 'Kami merancang modul laporan arus kas yang interaktif, memastikan transparansi keuangan organisasi Anda tampil profesional dan akuntabel.' 
+      },
+      { 
+        icon: <Heart className="w-6 h-6 text-violet-600" />, 
+        title: 'Integrasi Donasi Online', 
+        desc: 'Dilengkapi fasilitas gateway pembayaran yang aman untuk mempermudah penerimaan donasi, zakat, atau pendanaan organisasi kapan saja.' 
+      },
+      { 
+        icon: <Clock className="w-6 h-6 text-violet-600" />, 
+        title: 'Sinkronisasi Data Real-Time', 
+        desc: 'Implementasi API cerdas Kami, seperti fitur jadwal sholat otomatis yang akurat dan menyesuaikan lokasi pengguna secara real-time.' 
+      },
+      { 
+        icon: <Calendar className="w-6 h-6 text-violet-600" />, 
+        title: 'Manajemen Agenda Dinamis', 
+        desc: 'Sistem kalender terpadu yang mudah dikelola admin untuk menampilkan jadwal kajian, event, atau program kerja organisasi dengan rapi.' 
+      },
+      { 
+        icon: <Newspaper className="w-6 h-6 text-violet-600" />, 
+        title: 'CMS Berita & Publikasi', 
+        desc: 'Panel kontrol (CMS) responsif dari kami yang mempermudah Anda mempublikasikan berita aktual dan kegiatan organisasi tanpa ribet.' 
+      },
+      { 
+        icon: <Shield className="w-6 h-6 text-violet-600" />, 
+        title: 'Keamanan & Kredibilitas', 
+        desc: 'Membangun representasi digital yang aman, cepat, dan profesional untuk meningkatkan kepercayaan publik terhadap organisasi Anda.' 
+      },
     ]
   };
 
@@ -117,13 +141,13 @@ export default function ProductPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5"
           >
-            <h2 className="text-3xl font-bold mb-6 text-slate-900">Product Knowledge</h2>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Informasi Jasa</h2>
             <div className="prose prose-lg prose-slate prose-violet">
               <p className="text-slate-600 leading-relaxed">
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-                Transformasi digital ini menjadikan Masjid Al-Muttaqin tidak hanya sebagai pusat ibadah fisik, tetapi juga pelopor "Baitul Maal" modern di Demak yang mengintegrasikan akuntabilitas umat dalam satu genggaman layar!
+                Inilah bukti nyata transformasi digital bersama jasa web Kami. Kami merancang sistem yang menjadikan Masjid Al-Muttaqin pelopor "Baitul Maal" modern dengan akuntabilitas tinggi dalam satu genggaman layar. Jadikan ini inspirasi, dan lihat langsung contoh website organisasi kami!
               </p>
               {/* Masukkan tombol <a> langsung di sini, TANPA export default function atau return */}
                 <div className="mt-6">
