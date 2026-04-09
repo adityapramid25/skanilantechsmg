@@ -1,5 +1,5 @@
 'use client';
-
+ 
 import { ArrowLeft, Zap, Wifi, Database, Activity, ShieldCheck, Sparkles, Shield, CreditCard, Target, Settings } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
