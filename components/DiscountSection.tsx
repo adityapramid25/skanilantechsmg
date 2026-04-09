@@ -17,20 +17,24 @@ export function DiscountSection() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { days, hours, minutes, seconds, isExpired } = useCountdown(discount?.end_date || null);
+  // PERBAIKAN 2: Kita hapus isExpired dari sini untuk dievaluasi secara manual di bawah
+  const { days, hours, minutes, seconds } = useCountdown(discount?.end_date || null);
 
   const fetchDiscount = async () => {
     setIsLoading(true);
     const now = new Date().toISOString();
     
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('active_discounts')
         .select('*')
         .gte('end_date', now)
         .order('end_date', { ascending: true })
         .limit(1)
         .maybeSingle();
+
+      // Mencegah error diam-diam (silent error) yang membuat loading terus menerus
+      if (error) throw error;
 
       if (data) {
         const product = allProducts.find(p => p.id === data.product_id);
@@ -49,15 +53,17 @@ export function DiscountSection() {
             price: parsedPrice
           };
         }
+        setDiscount(data);
+      } else {
+        setDiscount(null); // Pastikan state bersih jika tidak ada diskon
       }
-
-      setDiscount(data);
     } catch (error: any) {
       if (error?.message === 'Failed to fetch') {
         console.error('Unable to connect to Supabase to fetch discounts.');
       } else {
         console.error('Error fetching discount:', error);
       }
+      setDiscount(null);
     } finally {
       setIsLoading(false);
     }
@@ -65,11 +71,14 @@ export function DiscountSection() {
 
   const checkAdmin = async () => {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) {
-        // Check email, user.role, app_metadata or user_metadata first
+      // PERBAIKAN 2: Menggunakan getSession() jauh lebih cepat daripada getUser() untuk inisialisasi awal
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (session?.user) {
+        const user = session.user;
+        
+        // PERBAIKAN 1: Email hardcode dihapus. Hanya membaca dari role database.
         if (
-          user.email === 'adityapramid25@gmail.com' ||
           user.role === 'admin' || 
           user.app_metadata?.role === 'admin' || 
           user.user_metadata?.role === 'admin'
@@ -89,11 +98,7 @@ export function DiscountSection() {
         } else {
           // Fallback to server action in case RLS blocks reading profiles
           const isServerAdmin = await checkAdminStatus(user.id);
-          if (isServerAdmin) {
-            setIsAdmin(true);
-          } else {
-            setIsAdmin(false);
-          }
+          setIsAdmin(!!isServerAdmin);
         }
       } else {
         setIsAdmin(false);
@@ -139,7 +144,12 @@ export function DiscountSection() {
     );
   }
 
-  const showEmptyState = !discount || !discount.products || isExpired;
+  // PERBAIKAN 2: Menghitung status kadaluarsa secara realtime (sinkron) agar UI tidak nge-bug dan menyembunyikan diskon
+  const isActuallyExpired = discount?.end_date 
+    ? new Date(discount.end_date).getTime() <= new Date().getTime() 
+    : true;
+    
+  const showEmptyState = !discount || !discount.products || isActuallyExpired;
 
   return (
     <section className="relative w-full max-w-5xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
