@@ -1,13 +1,27 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { CountdownTimer } from './CountdownTimer';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
 export function DiscountBanner() {
-  // Set target date to 3 days from now for demonstration
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 3);
+  // 1. Gunakan state untuk menyimpan target waktu dan status render
+  const [isMounted, setIsMounted] = useState(false);
+  const [targetDate, setTargetDate] = useState<Date | null>(null);
+
+  // 2. Set waktu HANYA setelah komponen sukses dimuat di browser (mencegah Hydration Error)
+  useEffect(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 3); // Promo 3 hari
+    setTargetDate(date);
+    setIsMounted(true);
+  }, []);
+
+  // Cegah render sebelum sinkronisasi waktu selesai agar tidak nge-blank
+  if (!isMounted || !targetDate) {
+    return null; 
+  }
 
   return (
     <section className="py-12 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 relative overflow-hidden border-y border-white/20">
@@ -19,9 +33,10 @@ export function DiscountBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <motion.div 
+            // 3. Ubah whileInView menjadi animate agar LANGSUNG MUNCUL saat web dibuka
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
             className="text-center lg:text-left flex-1"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white text-xs font-semibold uppercase tracking-wider mb-4">
@@ -37,9 +52,10 @@ export function DiscountBanner() {
           </motion.div>
 
           <motion.div 
+            // 3. Ubah whileInView menjadi animate agar LANGSUNG MUNCUL
             initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="flex flex-col items-center gap-6 bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-md"
           >
             <CountdownTimer targetDate={targetDate} />
