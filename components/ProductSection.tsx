@@ -40,7 +40,7 @@ const allProducts = [
   {
     id: 'web-1',
     title: 'Setting SEO',
-    price: 'Rp. 1.000.000',
+    price: 'Rp. 500.000-2.500.000',
     image: 'https://picsum.photos/seed/web1/400/300',
     description: 'Custom online store with payment gateway integration, inventory management, and user profiles.',
     category: 'Web Development',
