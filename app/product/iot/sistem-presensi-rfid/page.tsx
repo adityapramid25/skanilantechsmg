@@ -1,11 +1,23 @@
 'use client';
- 
-import { ArrowLeft, Zap, Wifi, Database, Activity, ShieldCheck, Sparkles, Shield, CreditCard, Target, Settings } from 'lucide-react';
+
+import { useRef, useState } from 'react';
+import { ArrowLeft, Zap, Sparkles, Shield, CreditCard, Target } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 export default function ProductPage() {
+  // State and Ref for the interactive video player
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   const product = {
     title: 'Sistem Presensi RFID Pintar',
     price: 'Rp 3000/per-Tahun',
@@ -25,6 +37,7 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-violet-200">
+      
       {/* Fixed Back Navigation */}
       <div className="fixed top-0 left-0 w-full p-4 md:p-6 z-50 pointer-events-none">
         <Link 
@@ -37,6 +50,7 @@ export default function ProductPage() {
       </div>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32">
+        
         {/* Hero Section */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -63,52 +77,60 @@ export default function ProductPage() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mb-24"
         >
-         <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
-  {/* Color Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply z-10" />
-  
-  {/* Play Button */}
-  <div className="absolute inset-0 flex items-center justify-center z-20">
-    <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
-      {/* Play Icon (CSS Triangle) */}
-      <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
-    </div> 
-  </div>
+          
+          {/* Interactive Video Player */}
+          <div className="w-full bg-black rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm flex items-center justify-center">
+            
+            {/* Play Button Overlay */}
+            {!isPlaying && (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/20 to-blue-500/20 mix-blend-multiply z-10 pointer-events-none" />
+                <div 
+                  className="absolute inset-0 flex items-center justify-center z-20 cursor-pointer"
+                  onClick={handlePlayVideo}
+                >
+                  <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+                  </div> 
+                </div>
+              </>
+            )}
 
-  {/* Background Image */}
-  <Image 
-  src="https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_thumnail_hd_4.png" 
-  alt="Demonstrasi Sistem RFID" 
-  fill 
-  className="object-cover z-0"
-  referrerPolicy="no-referrer"
-/>
-</div>
+            {/* The Video Element */}
+            <video 
+              ref={videoRef}
+              src="https://ik.imagekit.io/skanilantech/IoT/RFID/video_promosi_najwa_rfid_1.mp4" 
+              poster="https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_thumnail_hd_4.png?updatedAt=1775567005930" 
+              className="object-contain w-full max-h-[80vh] z-0" /* Changed object-cover to object-contain */
+              controls={isPlaying}
+              playsInline
+            />
+          </div>
 
+          {/* Product Images Gallery */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {/* Put your 3 different ImageKit URLs inside this array */}
-  {[
-    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_product_6.png',
-    'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_tech_4.png',
-    'https://ik.imagekit.io/skanilantech/IoT/RFID/hand_grap_card_3.png'
-  ].map((imageUrl, i) => (
-    <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm">
-      <Image 
-        src={imageUrl} 
-        alt={`Detail Produk RFID ${i + 1}`} 
-        fill 
-        className="object-cover hover:scale-105 transition-transform duration-500"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-  ))}
-</div>
+            {[
+              'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_product_6.png',
+              'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_tech_4.png',
+              'https://ik.imagekit.io/skanilantech/IoT/RFID/hand_grap_card_3.png'
+            ].map((imageUrl, i) => (
+              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm">
+                <Image 
+                  src={imageUrl} 
+                  alt={`Detail Produk RFID ${i + 1}`} 
+                  fill 
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Product Overview & Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
-          {/* Product Knowledge / Informasi Produk */}
+          {/* Product Information */}
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -122,41 +144,31 @@ export default function ProductPage() {
                 {product.description}
               </p>
 
-              {/* Added 'my-8' to create distance on the top and bottom */}
               <p className="text-2xl text-slate-900 my-8">
                 <b>Panduan Penggunaan Sistem Presensi RFID Otomatis:</b>
               </p>
 
               <p className="text-slate-600 leading-relaxed mt-4">
-                <b>1. Aktivasi Kartu Identitas.</b>
-              </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
+                <b>1. Aktivasi Kartu Identitas.</b><br/>
                 Setiap karyawan/siswa diberikan kartu atau gantungan kunci berisi Chip RFID.
               </p>
+              
               <p className="text-slate-600 leading-relaxed mt-4">
-                <b>2. Presensi Masuk & Pulang Otomatis</b>
-              </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
+                <b>2. Presensi Masuk & Pulang Otomatis</b><br/>
                 Cukup berjalan melewati alat pembaca (Reader) yang dipasang di gerbang atau pintu masuk.
               </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
-                <b>3. Rekap Kehadiran Real-Time</b>
-              </p>
+              
               <div className="text-slate-600 leading-relaxed mt-4">
-              Begitu chip terdeteksi, data langsung terkirim ke server. Sistem secara otomatis menyusun:
+                <b>3. Rekap Kehadiran Real-Time</b><br/>
+                Begitu chip terdeteksi, data langsung terkirim ke server. Sistem secara otomatis menyusun:
                 <ul className="list-disc ml-6 mt-2 space-y-1">
-                  <li>
-                    <strong>Laporan Harian:</strong> Siapa yang terlambat atau pulang lebih awal.
-                  </li>
-                  <li>
-                    <strong>Laporan Mingguan & Bulanan:</strong> Akumulasi total jam kerja atau kehadiran tanpa perlu input manual di Excel.
-                  </li>
+                  <li><strong>Laporan Harian:</strong> Siapa yang terlambat atau pulang lebih awal.</li>
+                  <li><strong>Laporan Mingguan & Bulanan:</strong> Akumulasi total jam kerja atau kehadiran tanpa perlu input manual di Excel.</li>
                 </ul>
               </div>
+              
               <p className="text-slate-600 leading-relaxed mt-4">
-                <b>4. Cek Riwayat Kehadiran Mandiri</b>
-              </p>
-              <p className="text-slate-600 leading-relaxed mt-4">
+                <b>4. Cek Riwayat Kehadiran Mandiri</b><br/>
                 Setiap pengguna dapat melihat riwayat kehadirannya sendiri melalui aplikasi atau dasbor komputer. Semua data tersimpan aman dan transparan, meminimalkan risiko kecurangan "titip absen" karena setiap chip memiliki kode enkripsi unik.
               </p>
             </div>
