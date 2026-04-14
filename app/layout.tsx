@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://skanilantechsmg.vercel.app'), // Ubah ke https://skanilantech.my.id jika sudah siap
+  metadataBase: new URL('https://skanilan.tech'), // Ubah ke https://skanilantech.my.id jika sudah siap
   title: {
     template: '%s | Skanilan Tech',
     default: 'Skanilan Tech - Technology Solution in Semarang',
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     icon: '/skanilantech.png', // Perbaikan: hilangkan '/public'
   },
   verification: {
-    google: 'HcEcP0LxIt4YJpPwwop1nDnMYKg-u-gkM5lgb4lXPg8',
+    google: 'G4adT8q5pPfGne42Yn-3gTBiJjpIYINx0dHrq3zWWYA',
   },
   // --- BAGIAN OPEN GRAPH & TWITTER CARD ---
   openGraph: {
     title: 'Skanilan Tech - Technology Solution in Semarang',
     description: "Skanilan Tech is Semarang's premier student-led tech agency from SMKN 9. We specialize in custom web development, IoT services, and digital solutions.",
-    url: 'https://skanilantechsmg.vercel.app',
+    url: 'https://skanilan.tech',
     siteName: 'Skanilan Tech',
     images: [
       {
@@ -63,7 +63,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Skanilan Tech",
-    "image": "https://skanilantechsmg.vercel.app/skanilantech.png",
+    "image": "https://skanilan.tech/skanilantech.png",
     "description": "A student-led tech agency from SMKN 9 Semarang specializing in Web Development, IoT Services, and Mobile Applications.",
     "address": {
       "@type": "PostalAddress",
@@ -76,8 +76,8 @@ export default function RootLayout({
       "latitude": "-7.0082",
       "longitude": "110.4287"
     },
-    "url": "https://skanilantechsmg.vercel.app",
-    "telephone": "+62-800-0000-0000",
+    "url": "https://skanilan.tech",
+    "telephone": "+62-812-2943-8668",
     "priceRange": "$$"
   };
 
