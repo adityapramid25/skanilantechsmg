@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { ArrowLeft, Zap, Sparkles, Shield, CreditCard, Target } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'motion/react';
+import { motion } from 'motion/react'; 
 
 export default function ProductPage() {
   // State and Ref for the interactive video player
