@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ChevronRight, ChevronLeft, MessageCircle } from 'lucide-react';
-
+ 
 // Static Data for Products - Edit each product individually here
 const categories = ['IoT', 'Web Development', 'Mobile Applications', 'Photography', 'Gamification'];
 
