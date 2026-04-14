@@ -8,21 +8,21 @@ import Image from 'next/image';
 const slides = [
   {
     id: 1,
-    title: 'Next-Gen IoT Solutions',
+    title: 'Solusi IoT terbaik',
     subtitle: 'Connecting the physical world to the digital realm with smart, scalable IoT infrastructure.',
     image: 'https://picsum.photos/seed/technology/1920/1080',
     color: 'from-violet-500 to-blue-600',
   },
   {
     id: 2,
-    title: 'Enterprise Web Development',
+    title: 'Pembuatan web responsif',
     subtitle: 'Building robust, high-performance web applications tailored to your business needs.',
     image: 'https://picsum.photos/seed/office/1920/1080',
     color: 'from-blue-600 to-indigo-600',
   },
   {
     id: 3,
-    title: 'Mobile App Innovation',
+    title: 'Inovasi mobile application',
     subtitle: 'Creating intuitive and engaging mobile experiences for iOS and Android platforms.',
     image: 'https://picsum.photos/seed/digital/1920/1080',
     color: 'from-indigo-500 to-violet-600',
