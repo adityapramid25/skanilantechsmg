@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 const galleryImages = [
   { id: 1, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.03%20PM%20(1).jpeg', alt: 'Proses pengerjaan' },
   { id: 2, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.03%20PM.jpeg', alt: 'Office space' },
-  { id: 3, src: 'https://ik.imagekit.io/skanilantech/IoT/about/WhatsApp%20Image%202026-04-03%20at%207.00.04%20PM.jpeg', alt: 'Coding session' },
+  { id: 3, src: 'https://ik.imagekit.io/skanilantech/IoT/RFID/rfid_mc_2.png?updatedAt=1775565670783', alt: 'rfid' },
   { id: 4, src: 'https://ik.imagekit.io/skanilantech/IoT/Hidroponik/1.png?updatedAt=1775298714027', alt: 'Hidroponik' },
 ];
 
