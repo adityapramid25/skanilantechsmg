@@ -4,7 +4,7 @@ import { ArrowLeft, Globe, Smartphone, Search, Zap, Lock, Code, Wallet, Heart, C
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-
+ 
 export default function ProductPage() {
   const product = {
     title: 'Website Organisasi',
