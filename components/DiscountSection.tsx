@@ -12,26 +12,31 @@ import { allProducts } from '@/lib/products';
 const WHATSAPP_NUMBER = '6281229438668'; // Replace with actual WhatsApp number
 
 export function DiscountSection() {
-  const [discount, setDiscount] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [discount, setDiscount] = useState<any>(() => {
+    if (typeof window !== 'undefined') {
+      const cached = localStorage.getItem('cached_discount');
+      if (cached) {
+        try {
+          return JSON.parse(cached);
+        } catch (e) {
+          return null;
+        }
+      }
+    }
+    return null;
+  });
+  const [isLoading, setIsLoading] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !localStorage.getItem('cached_discount');
+    }
+    return true;
+  });
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { days, hours, minutes, seconds, isExpired } = useCountdown(discount?.end_date || null);
 
   useEffect(() => {
-    // Read from cache to hydrate UI immediately without skeleton flash on subsequent loads
-    // Moved to useEffect to prevent hydration mismatch between server HTML and client HTML
-    const cached = localStorage.getItem('cached_discount');
-    if (cached) {
-      try {
-        setDiscount(JSON.parse(cached));
-        setIsLoading(false);
-      } catch (e) {
-        localStorage.removeItem('cached_discount');
-      }
-    }
-    
     fetchDiscount();
     checkAdmin();
 
@@ -220,8 +225,9 @@ export function DiscountSection() {
       )}
 
       <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col relative pointer-events-auto">
-        <div className="absolute top-5 -left-10 w-40 z-20 bg-red-600 text-white text-[10px] font-black py-1.5 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1 -rotate-45">
-          <Zap size={10} className="fill-current" /> Flash Sale
+        <div className="absolute top-6 -left-12 w-48 z-20 bg-red-600 text-white text-[10px] font-black py-1.5 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1.5 -rotate-45">
+          <Zap size={10} className="fill-current" />
+          <span className="mt-[1px]">Flash Sale</span>
         </div>
 
         <div className="relative w-full h-36 bg-gray-50">

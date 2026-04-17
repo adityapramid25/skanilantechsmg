@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import { DiscountSection } from '@/components/DiscountSection';
+import dynamic from 'next/dynamic';
+
+const DiscountSection = dynamic(() => import('@/components/DiscountSection').then(mod => mod.DiscountSection), { ssr: false });
 
 const slides = [
   {
