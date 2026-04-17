@@ -9,7 +9,7 @@ import { AdminDiscountModal } from '@/components/AdminDiscountModal';
 import { checkAdminStatus } from '@/app/actions';
 import { allProducts } from '@/lib/products';
 
-const WHATSAPP_NUMBER = '1234567890'; // Replace with actual WhatsApp number
+const WHATSAPP_NUMBER = '6281229438668'; // Replace with actual WhatsApp number
 
 export function DiscountSection() {
   const [discount, setDiscount] = useState<any>(null);
@@ -133,28 +133,48 @@ export function DiscountSection() {
 
   const showEmptyState = !discount || !discount.products || isExpired;
 
-  if (isLoading || showEmptyState) {
+  if (isLoading) {
     return (
-      <>
+      <div className="relative w-full max-w-[320px] mx-auto h-[340px] bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col justify-center items-center pointer-events-auto">
+        <div className="animate-pulse w-full h-full flex flex-col gap-4 p-4">
+          <div className="w-full h-36 bg-gray-200 rounded-2xl"></div>
+          <div className="w-3/4 h-6 bg-gray-200 rounded-md mt-2"></div>
+          <div className="w-1/2 h-8 bg-gray-200 rounded-md"></div>
+          <div className="w-full h-12 bg-gray-200 rounded-xl mt-auto"></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (showEmptyState) {
+    return (
+      <div className="relative w-full max-w-[320px] mx-auto">
         {isAdmin && (
-          <div className="relative w-full z-10 flex justify-end mb-4">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg shadow-lg font-medium flex items-center gap-2 transition-all text-sm"
-              title="Manage Flash Sale"
-            >
-              <Settings size={16} />
-              <span>Manage Flash Sale</span>
-            </button>
-            <AdminDiscountModal 
-              isOpen={isModalOpen} 
-              onClose={() => setIsModalOpen(false)} 
-              onSuccess={fetchDiscount}
-              existingDiscount={discount}
-            />
-          </div>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute -top-10 right-0 z-20 px-3 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-lg shadow-lg font-medium flex items-center gap-1.5 transition-all text-xs"
+            title="Manage Flash Sale"
+          >
+            <Settings size={14} />
+            <span>Manage</span>
+          </button>
         )}
-      </>
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col relative pointer-events-auto h-[340px] justify-center items-center p-6 text-center">
+          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+            <Zap className="h-8 w-8 text-gray-300" />
+          </div>
+          <h3 className="text-lg font-extrabold text-gray-800 mb-2">Belum ada promo</h3>
+          <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">
+            Saat ini sedang tidak ada flash sale yang berlangsung. Pantau terus untuk penawaran menarik berikutnya!
+          </p>
+        </div>
+        <AdminDiscountModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+          onSuccess={fetchDiscount}
+          existingDiscount={discount}
+        />
+      </div>
     );
   }
 
