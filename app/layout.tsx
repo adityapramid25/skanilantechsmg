@@ -90,6 +90,7 @@ export default function RootLayout({
         />
         <Navbar />
         <main className="flex-grow">{children}</main>
+        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>
