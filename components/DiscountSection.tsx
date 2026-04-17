@@ -19,8 +19,35 @@ export function DiscountSection() {
 
   const { days, hours, minutes, seconds, isExpired } = useCountdown(discount?.end_date || null);
 
+  useEffect(() => {
+    // Read from cache to hydrate UI immediately without skeleton flash on subsequent loads
+    // Moved to useEffect to prevent hydration mismatch between server HTML and client HTML
+    const cached = localStorage.getItem('cached_discount');
+    if (cached) {
+      try {
+        setDiscount(JSON.parse(cached));
+        setIsLoading(false);
+      } catch (e) {
+        localStorage.removeItem('cached_discount');
+      }
+    }
+    
+    fetchDiscount();
+    checkAdmin();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user) {
+        checkAdmin();
+      } else {
+        setIsAdmin(false);
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
   const fetchDiscount = async () => {
-    setIsLoading(true);
     const now = new Date().toISOString();
     
     try {
@@ -35,7 +62,6 @@ export function DiscountSection() {
       if (data) {
         const product = allProducts.find(p => p.id === data.product_id);
         if (product) {
-          // Parse price string to number
           let parsedPrice = 0;
           if (product.price.includes('Rp.')) {
             parsedPrice = parseFloat(product.price.replace(/[^0-9]/g, ""));
@@ -49,6 +75,9 @@ export function DiscountSection() {
             price: parsedPrice
           };
         }
+        localStorage.setItem('cached_discount', JSON.stringify(data));
+      } else {
+        localStorage.removeItem('cached_discount');
       }
 
       setDiscount(data);
@@ -67,9 +96,8 @@ export function DiscountSection() {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
-        // Check email, user.role, app_metadata or user_metadata first
+        // Check user.role, app_metadata or user_metadata first
         if (
-          user.email === 'adityapramid25@gmail.com' ||
           user.role === 'admin' || 
           user.app_metadata?.role === 'admin' || 
           user.user_metadata?.role === 'admin'
@@ -126,7 +154,7 @@ export function DiscountSection() {
 
   const handleOrderClick = () => {
     if (!discount || !discount.products) return;
-    const message = `Hello, I would like to order ${discount.products.name} at the special promo price of ${formatCurrency(discount.discount_price)}. Is it still available?`;
+    const message = `Hai min, saya mau order produk ${discount.products.name} dengan harga diskon sebesar ${formatCurrency(discount.discount_price)}. Apakah stock masih ada?`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -192,7 +220,7 @@ export function DiscountSection() {
       )}
 
       <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col relative pointer-events-auto">
-        <div className="absolute top-3 right-3 z-10 bg-red-600 text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1">
+        <div className="absolute top-5 -left-10 w-40 z-20 bg-red-600 text-white text-[10px] font-black py-1.5 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1 -rotate-45">
           <Zap size={10} className="fill-current" /> Flash Sale
         </div>
 
@@ -219,7 +247,7 @@ export function DiscountSection() {
           </h2>
 
           <div className="flex items-baseline gap-2 mb-3">
-            <span className="text-xl font-black text-indigo-700 tracking-tight">
+            <span className="text-xl font-black text-red-600 tracking-tight">
               {formatCurrency(discount.discount_price)}
             </span>
             <span className="text-xs text-gray-400 line-through font-semibold">
@@ -250,9 +278,12 @@ export function DiscountSection() {
 
           <button
             onClick={handleOrderClick}
-            className="w-full py-2.5 bg-gradient-to-r from-blue-700 to-indigo-700 hover:opacity-90 text-white text-xs font-bold rounded-xl transition-all shadow-lg"
+            className="w-full py-2.5 bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5"
           >
-            Order Now
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413" />
+            </svg>
+            Order Via Whatsapp
           </button>
         </div>
       </div>
