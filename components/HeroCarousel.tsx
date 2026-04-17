@@ -46,7 +46,7 @@ export function HeroCarousel() {
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
 
   return (
-    <div className="relative min-h-[100dvh] lg:h-screen w-full bg-white flex flex-col justify-center">
+    <div className="relative py-16 lg:py-0 lg:h-screen w-full bg-white flex flex-col justify-center">
       <div className="absolute inset-0 overflow-hidden">
         <AnimatePresence initial={false}>
           <motion.div
@@ -72,12 +72,12 @@ export function HeroCarousel() {
         </AnimatePresence>
       </div>
 
-      <div className="relative z-10 w-full pt-28 pb-32 lg:pt-0 lg:pb-0 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
+      <div className="relative z-10 w-full pt-16 pb-16 lg:pt-0 lg:pb-0 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 w-full items-center">
             
             {/* Left side text / Carousel Text */}
-            <div className="w-full order-2 lg:order-1 lg:col-span-7">
+            <div className="hidden lg:block w-full order-2 lg:order-1 lg:col-span-7">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
@@ -116,7 +116,7 @@ export function HeroCarousel() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-8 right-4 lg:right-8 z-20 flex gap-2 lg:gap-4">
+      <div className="hidden absolute bottom-8 right-4 lg:right-8 z-20 lg:flex gap-2 lg:gap-4">
         <button
           onClick={prevSlide}
           className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/50 hover:bg-white/80 backdrop-blur-md flex items-center justify-center text-slate-900 border border-slate-200 transition-colors shadow-sm"
@@ -132,7 +132,7 @@ export function HeroCarousel() {
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-10 lg:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="hidden absolute bottom-10 lg:bottom-8 left-1/2 -translate-x-1/2 z-20 lg:flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
