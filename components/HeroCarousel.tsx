@@ -9,8 +9,8 @@ import { DiscountSection } from '@/components/DiscountSection';
 const slides = [
   {
     id: 1,
-    title: 'Next-Gen IoT Solutions',
-    subtitle: 'Connecting the physical world to the digital realm with smart, scalable IoT infrastructure.',
+    title: 'Selamat Datang di Skanilan Tech',
+    subtitle: 'Mewujudkan masa depan yang lebih canggih melalui inovasi teknologi yang terbaik.',
     image: 'https://picsum.photos/seed/technology/1920/1080',
     color: 'from-violet-500 to-blue-600',
   },
