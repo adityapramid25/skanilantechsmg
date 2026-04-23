@@ -12,16 +12,14 @@ interface CountdownResult extends TimeLeft {
 }
 
 export function useCountdown(endTime: string | null): CountdownResult {
-  const [currentTime, setCurrentTime] = useState<number>(0);
-  const [isMounted, setIsMounted] = useState(false);
+  const [currentTime, setCurrentTime] = useState<number>(() => new Date().getTime());
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsMounted(true);
+    if (!endTime) return;
+    
+    // Update current time once immediately to ensure it catches up
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentTime(new Date().getTime());
-    
-    if (!endTime) return;
     
     const timer = setInterval(() => {
       setCurrentTime(new Date().getTime());
@@ -30,7 +28,7 @@ export function useCountdown(endTime: string | null): CountdownResult {
     return () => clearInterval(timer);
   }, [endTime]);
 
-  if (!isMounted || !endTime) {
+  if (!endTime) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0, isExpired: true };
   }
 
