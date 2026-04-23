@@ -162,12 +162,18 @@ export function DiscountSection() {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-[320px] mx-auto h-[340px] bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col justify-center items-center pointer-events-auto">
-        <div className="animate-pulse w-full h-full flex flex-col gap-4 p-4">
-          <div className="w-full h-36 bg-gray-200 rounded-2xl"></div>
-          <div className="w-3/4 h-6 bg-gray-200 rounded-md mt-2"></div>
-          <div className="w-1/2 h-8 bg-gray-200 rounded-md"></div>
-          <div className="w-full h-12 bg-gray-200 rounded-xl mt-auto"></div>
+      <div className="relative w-full max-w-[320px] md:max-w-none mx-auto h-[340px] md:h-[240px] bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col md:flex-row pointer-events-auto">
+        <div className="animate-pulse w-full md:w-[40%] h-40 md:h-[240px] bg-gray-200"></div>
+        <div className="w-full md:flex-1 h-full flex flex-col gap-4 p-4 md:p-5 justify-center">
+          <div className="w-full max-w-[200px] h-6 bg-gray-200 rounded-md"></div>
+          <div className="w-3/4 h-8 bg-gray-200 rounded-md"></div>
+          <div className="w-full flex gap-2 mt-2">
+             <div className="w-10 h-10 bg-gray-200 rounded-lg"></div>
+             <div className="w-10 h-10 bg-gray-200 rounded-lg"></div>
+             <div className="w-10 h-10 bg-gray-200 rounded-lg"></div>
+             <div className="w-10 h-10 bg-gray-200 rounded-lg"></div>
+          </div>
+          <div className="w-full h-[42px] bg-gray-200 rounded-xl mt-auto"></div>
         </div>
       </div>
     );
@@ -175,7 +181,7 @@ export function DiscountSection() {
 
   if (showEmptyState) {
     return (
-      <div className="relative w-full max-w-[320px] mx-auto">
+      <div className="relative w-full max-w-[320px] md:max-w-none mx-auto">
         {isAdmin && (
           <button
             onClick={() => setIsModalOpen(true)}
@@ -186,14 +192,16 @@ export function DiscountSection() {
             <span>Manage</span>
           </button>
         )}
-        <div className="bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col relative pointer-events-auto h-[340px] justify-center items-center p-6 text-center">
-          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
-            <Zap className="h-8 w-8 text-gray-300" />
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col md:flex-row relative pointer-events-auto h-[340px] md:h-[220px] justify-center items-center p-6 text-center md:text-left gap-4 md:gap-6">
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-50 rounded-full flex items-center justify-center mb-0">
+            <Zap className="h-8 w-8 md:h-10 md:w-10 text-gray-300" />
           </div>
-          <h3 className="text-lg font-extrabold text-gray-800 mb-2">Belum ada promo</h3>
-          <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">
-            Saat ini sedang tidak ada flash sale yang berlangsung. Pantau terus untuk penawaran menarik berikutnya!
-          </p>
+          <div>
+            <h3 className="text-lg md:text-xl font-extrabold text-gray-800 mb-2">Belum ada promo</h3>
+            <p className="text-xs md:text-sm text-gray-500 leading-relaxed max-w-[200px] md:max-w-[260px]">
+              Saat ini sedang tidak ada flash sale yang berlangsung. Pantau terus untuk penawaran menarik berikutnya!
+            </p>
+          </div>
         </div>
         <AdminDiscountModal 
           isOpen={isModalOpen} 
@@ -206,7 +214,7 @@ export function DiscountSection() {
   }
 
   return (
-    <div className="relative w-full max-w-[320px] mx-auto">
+    <div className="relative w-full max-w-[320px] md:max-w-none mx-auto">
       {isAdmin && (
         <button
           onClick={() => setIsModalOpen(true)}
@@ -218,13 +226,13 @@ export function DiscountSection() {
         </button>
       )}
 
-      <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col relative pointer-events-auto">
-        <div className="absolute top-6 -left-12 w-48 z-20 bg-red-600 text-white text-[10px] font-black py-1.5 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1.5 -rotate-45">
+      <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col md:flex-row relative pointer-events-auto items-stretch md:min-h-[220px]">
+        <div className="absolute top-6 md:top-4 -left-12 md:-left-12 w-48 z-20 bg-red-600 text-white text-[10px] md:text-[9px] font-black py-1.5 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1.5 -rotate-45">
           <Zap size={10} className="fill-current" />
           <span className="mt-[1px]">Flash Sale</span>
         </div>
 
-        <div className="relative w-full h-36 bg-gray-50">
+        <div className="relative w-full md:w-[45%] aspect-[4/3] md:aspect-auto bg-gray-50 flex-shrink-0">
           {discount.products?.image_url ? (
             <Image
               src={discount.products.image_url}
@@ -240,9 +248,9 @@ export function DiscountSection() {
           )}
         </div>
 
-        <div className="w-full p-4 flex flex-col justify-center bg-white">
+        <div className="w-full md:flex-1 p-4 md:px-5 md:py-4 flex flex-col justify-center bg-white">
           <div className="text-xs font-bold text-gray-800 mb-0.5">Limited offer</div>
-          <h2 className="text-lg font-extrabold text-gray-900 mb-1 leading-tight line-clamp-1">
+          <h2 className="text-lg font-extrabold text-gray-900 mb-1 leading-tight line-clamp-2">
             {discount.products?.name}
           </h2>
 

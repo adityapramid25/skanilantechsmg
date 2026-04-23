@@ -9,8 +9,8 @@ import { DiscountSection } from '@/components/DiscountSection';
 const slides = [
   {
     id: 1,
-    title: 'Selamat Datang di Skanilan Tech',
-    subtitle: 'Mewujudkan masa depan yang lebih canggih melalui inovasi teknologi yang terbaik.',
+    title: 'Next-Gen IoT Solutions',
+    subtitle: 'Connecting the physical world to the digital realm with smart, scalable IoT infrastructure.',
     image: 'https://picsum.photos/seed/technology/1920/1080',
     color: 'from-violet-500 to-blue-600',
   },
@@ -105,7 +105,7 @@ export function HeroCarousel() {
             </div>
 
             {/* Right side Flash Sale */}
-            <div className="w-full order-1 lg:order-2 lg:col-span-5 max-w-[320px] mx-auto lg:ml-auto z-20">
+            <div className="w-full order-1 lg:order-2 lg:col-span-5 max-w-[320px] md:max-w-[480px] lg:max-w-[500px] mx-auto lg:ml-auto z-20">
                <DiscountSection />
             </div>
 
