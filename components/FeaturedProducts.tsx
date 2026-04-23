@@ -21,7 +21,7 @@ export function FeaturedProducts() {
   };
 
   const handleOrderClick = (product: any) => {
-    const message = `Hai min, saya tertarik dengan produk unggulan ${product.title}. Apakah bisa dibantu informasi lebih lanjut?`;
+    const message = `Hai mimin Skanilan Tech, saya tertarik dengan produk unggulan ${product.title}. Apakah stock masih ada?`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
