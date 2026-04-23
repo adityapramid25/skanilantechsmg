@@ -41,7 +41,7 @@ const allProducts = [
     id: 'web-1',
     title: 'Setting SEO',
     price: 'Rp. 500.000-2.500.000',
-    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/SEO/seo_rama_mc_0.png',
+    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/SEO/seo_mc%20(1).png',
     description: 'Custom online store with payment gateway integration, inventory management, and user profiles.',
     category: 'Web Development',
   },
