@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-slate-200 text-sm text-center text-slate-500">
-          &copy; {new Date().getFullYear()} Skanilan Tech. All rights reserved.
+          &copy; {new Date().getFullYear()} Skanilan Tech. Segala hak cipta dilindungi undang-undang.
         </div>
       </div>
     </footer>
