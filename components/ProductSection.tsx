@@ -105,7 +105,7 @@ const allProducts = [
     id: 'web-9',
     title: 'Website Organisasi',
     price: 'Gratis!',
-    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_00.png',
+    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_lgolog.png',
     description: 'Website perusahaan profesional dengan optimasi, blog, dan CMS untuk pembaruan konten yang mudah.',
     category: 'Web Development',
   },
