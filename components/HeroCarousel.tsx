@@ -9,16 +9,16 @@ import { DiscountSection } from '@/components/DiscountSection';
 const slides = [
   {
     id: 1,
-    title: 'Next-Gen IoT Solutions',
-    subtitle: 'Connecting the physical world to the digital realm with smart, scalable IoT infrastructure.',
-    image: 'https://picsum.photos/seed/technology/1920/1080',
+    title: 'Selamat Datang di Skanilan Tech',
+    subtitle: 'Mewujudkan masa depan yang canggih melalui inovasi teknologi yang terbaik.',
+    image: 'https://ik.imagekit.io/skanilantech/IoT/about/skanilantech1.jpeg',
     color: 'from-violet-500 to-blue-600',
   },
   {
     id: 2,
-    title: 'Enterprise Web Development',
-    subtitle: 'Building robust, high-performance web applications tailored to your business needs.',
-    image: 'https://picsum.photos/seed/office/1920/1080',
+    title: 'Kenali Teknologi Kami',
+    subtitle: 'Teknologi kami bertujuan untuk memberikan solusi terbaik terhadap masalah sehari-hari.',
+    image: 'https://ik.imagekit.io/skanilantech/IoT/about/skanilan2.jpg',
     color: 'from-blue-600 to-indigo-600',
   },
   {
