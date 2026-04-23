@@ -42,8 +42,8 @@ export function FeaturedProducts() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {featured.map((product) => (
             <div key={product?.id} className="flex flex-col bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              {/* 16:9 Image */}
-              <div className="relative w-full aspect-video bg-gray-100">
+              {/* 4:3 Image */}
+              <div className="relative w-full aspect-[4/3] bg-gray-100">
                 <Image
                   src={product?.image || 'https://picsum.photos/400/300'}
                   alt={product?.title || 'Product Image'}
