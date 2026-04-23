@@ -20,7 +20,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-slate-500 max-w-xs">
-              Empowering the future through innovative technology solutions in IoT, Web Development, Mobile Apps, Photography, and Gamification.
+              Memberdayakan masa depan melalui solusi teknologi inovatif di bidang IoT, Web Development, Mobile Apps, Fotografi, dan Gamifikasi.
             </p>
           </div>
           <div>
