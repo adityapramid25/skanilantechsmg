@@ -12,31 +12,25 @@ import { allProducts } from '@/lib/products';
 const WHATSAPP_NUMBER = '6281229438668'; // Replace with actual WhatsApp number
 
 export function DiscountSection() {
-  const [discount, setDiscount] = useState<any>(() => {
-    if (typeof window !== 'undefined') {
-      const cached = localStorage.getItem('cached_discount');
-      if (cached) {
-        try {
-          return JSON.parse(cached);
-        } catch (e) {
-          return null;
-        }
-      }
-    }
-    return null;
-  });
-  const [isLoading, setIsLoading] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return !localStorage.getItem('cached_discount');
-    }
-    return true;
-  });
+  const [discount, setDiscount] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { days, hours, minutes, seconds, isExpired } = useCountdown(discount?.end_date || null);
 
   useEffect(() => {
+    // Read from cache synchronously after hydration
+    const cached = localStorage.getItem('cached_discount');
+    if (cached) {
+      try {
+        setDiscount(JSON.parse(cached));
+        setIsLoading(false);
+      } catch (e) {
+        localStorage.removeItem('cached_discount');
+      }
+    }
+
     fetchDiscount();
     checkAdmin();
 

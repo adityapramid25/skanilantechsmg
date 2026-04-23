@@ -4,21 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
-
-const DiscountSection = dynamic(() => import('@/components/DiscountSection').then(mod => mod.DiscountSection), { 
-  ssr: false,
-  loading: () => (
-    <div className="w-full max-w-[320px] mx-auto h-[340px] bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col justify-center items-center">
-      <div className="animate-pulse w-full h-full flex flex-col gap-4 p-4">
-        <div className="w-full h-36 bg-gray-200 rounded-2xl"></div>
-        <div className="w-3/4 h-6 bg-gray-200 rounded-md mt-2"></div>
-        <div className="w-1/2 h-8 bg-gray-200 rounded-md"></div>
-        <div className="w-full h-12 bg-gray-200 rounded-xl mt-auto"></div>
-      </div>
-    </div>
-  )
-});
+import { DiscountSection } from '@/components/DiscountSection';
 
 const slides = [
   {
