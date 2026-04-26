@@ -7,8 +7,8 @@ import { motion } from 'motion/react';
 
 export default function ProductPage() {
   const product = {
-    title: 'NINE EXAM',
-    price: '$3000.00',
+    title: 'Desain UI/UX',
+    price: 'Rp. 199.000,00',
     category: 'Mobile Applications',
     description: 'Aplikasi mobile native dan cross-platform dengan performa tinggi dan desain antarmuka yang memukau.',
     features: [
@@ -64,30 +64,39 @@ export default function ProductPage() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mb-24"
         >
-          {/* Main Video Placeholder */}
+          {/* Bagian Video Utama (Diisi dengan gambar mockup app) */}
           <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
             <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
                 <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
               </div>
             </div>
+            {/* MENGGUNAKAN GAMBAR ASLI DARI UNSPLASH */}
             <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
-              alt="Video Thumbnail" 
+              src="https://ik.imagekit.io/skanilantech/Applications%20/UI_UX/2.png"
+              alt="Prototipe Desain UI/UX Mobile" 
               fill 
-              className="object-cover -z-10"
+              className="object-cover"
               referrerPolicy="no-referrer"
+              priority
             />
           </div>
 
           {/* Image Gallery Grid (3 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            {[
+              // Gambar Galeri 1 (Mockup Tangan)
+              "https://ik.imagekit.io/skanilantech/Applications%20/UI_UX/2.png",
+              // Gambar Galeri 2 (Layar Komputer)
+              "https://ik.imagekit.io/skanilantech/Applications%20/UI_UX/3.png",
+              // Gambar Galeri 3 (Wireframe/Sketch)
+              "https://ik.imagekit.io/skanilantech/Applications%20/UI_UX/1.png?updatedAt=1777181066600"
+            ].map((src, i) => (
+              <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
                 <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
-                  alt={`Gallery Image ${i}`} 
+                  src={src} 
+                  alt={`Galeri Gambar Desain ${i + 1}`} 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -113,14 +122,16 @@ export default function ProductPage() {
                 {product.description}
               </p>
               <p className="text-slate-600 leading-relaxed mt-4">
-               NINE EXAM adalah aplikasi peramban khusus (custom browser) yang dirancang untuk menjaga integritas dan keamanan pelaksanaan ujian berbasis komputer (CBT). Aplikasi ini berfungsi untuk meminimalisir kecurangan dengan cara membatasi akses peserta ujian ke fitur-fitur tertentu pada perangkat mereka selama ujian berlangsung.
-              </p>
-               <ul className="space-y-3">
+                UX (User Experience): Adalah proses meningkatkan kepuasan pengguna (pengguna akhir) dalam berinteraksi dengan produk. Fokusnya adalah pada logika, struktur, dan kenyamanan penggunaan.
+                UI (User Interface): Adalah segala sesuatu yang dilihat dan digunakan pengguna untuk berinteraksi dengan produk. Fokusnya adalah pada estetika, tampilan visual, dan interaksi.
+                </p>
+
+              <ul className="space-y-3">
                 {[
-                  "Anti-Multitasking",
-                  "Data lengkap: identitas, waktu, dan status (H/S/I)",
-                  "Antarmuka simpel dan mudah digunakan",
-                  "Data tersimpan aman untuk laporan akademik"
+                  "User Research",
+                  "Information Architecture (IA)",
+                  "Visual Design",
+                  "Interactivity"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-base">
                     <span className="shrink-0 text-violet-600">✅</span>
@@ -128,6 +139,7 @@ export default function ProductPage() {
                   </li>
                 ))}
               </ul>
+
             </div>
           </motion.div>
 
