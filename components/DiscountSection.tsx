@@ -220,7 +220,7 @@ export function DiscountSection() {
       )}
 
       <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col md:flex-row relative pointer-events-auto items-stretch md:min-h-[220px]">
-        <div className="absolute top-6 md:top-4 -left-12 md:-left-12 w-48 z-20 bg-red-600 text-white text-[10px] md:text-[9px] font-black py-1.5 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1.5 -rotate-45">
+        <div className="absolute top-6 md:top-4 -left-12 md:-left-12 w-48 z-20 bg-red-600 text-white text-[10px] md:text-[9px] font-black py-1.5 pr-5 ml-0 uppercase tracking-widest shadow-lg flex justify-center items-center gap-1.5 -rotate-45">
           <Zap size={10} className="fill-current" />
           <span className="mt-[1px]">Flash Sale</span>
         </div>
