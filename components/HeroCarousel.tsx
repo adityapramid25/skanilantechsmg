@@ -9,16 +9,16 @@ import { DiscountSection } from '@/components/DiscountSection';
 const slides = [
   {
     id: 1,
-    title: 'Selamat Datang di Skanilan Tech',
-    subtitle: 'Mewujudkan masa depan yang canggih melalui inovasi teknologi yang terbaik.',
-    image: 'https://ik.imagekit.io/skanilantech/IoT/about/skanilantech1.jpeg',
+    title: 'Next-Gen IoT Solutions',
+    subtitle: 'Connecting the physical world to the digital realm with smart, scalable IoT infrastructure.',
+    image: 'https://picsum.photos/seed/technology/1920/1080',
     color: 'from-violet-500 to-blue-600',
   },
   {
     id: 2,
-    title: 'Kenali Teknologi Kami',
-    subtitle: 'Teknologi kami bertujuan untuk memberikan solusi terbaik terhadap masalah sehari-hari.',
-    image: 'https://ik.imagekit.io/skanilantech/IoT/about/skanilan2.jpg',
+    title: 'Enterprise Web Development',
+    subtitle: 'Building robust, high-performance web applications tailored to your business needs.',
+    image: 'https://picsum.photos/seed/office/1920/1080',
     color: 'from-blue-600 to-indigo-600',
   },
   {
@@ -44,7 +44,7 @@ export function HeroCarousel() {
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
 
   return (
-    <div className="relative py-16 lg:py-0 lg:h-screen w-full bg-white flex flex-col justify-center">
+    <div className="relative h-[100dvh] lg:h-screen w-full bg-white flex flex-col justify-center">
       <div className="absolute inset-0 overflow-hidden">
         <AnimatePresence initial={false}>
           <motion.div
@@ -70,7 +70,7 @@ export function HeroCarousel() {
         </AnimatePresence>
       </div>
 
-      <div className="relative z-10 w-full lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
+      <div className="relative z-10 w-full pt-16 lg:absolute lg:inset-0 lg:pt-0 lg:flex lg:items-center lg:justify-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 w-full items-center">
             

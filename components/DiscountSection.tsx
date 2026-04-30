@@ -21,18 +21,23 @@ export function DiscountSection() {
 
   useEffect(() => {
     // Read from cache synchronously after hydration
-    const cached = localStorage.getItem('cached_discount');
-    if (cached) {
-      try {
+    try {
+      const cached = localStorage.getItem('cached_discount');
+      if (cached) {
         setDiscount(JSON.parse(cached));
         setIsLoading(false);
-      } catch (e) {
-        localStorage.removeItem('cached_discount');
       }
+    } catch (e) {
+      try { localStorage.removeItem('cached_discount'); } catch (err) {}
     }
 
-    fetchDiscount();
-    checkAdmin();
+    let isMounted = true;
+
+    // We only fetch and check role if mounted
+    const init = async () => {
+      await Promise.all([fetchDiscount(), checkAdmin()]);
+    };
+    init();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (session?.user) {
@@ -43,6 +48,7 @@ export function DiscountSection() {
     });
 
     return () => {
+      isMounted = false;
       subscription.unsubscribe();
     };
   }, []);
@@ -74,9 +80,13 @@ export function DiscountSection() {
             price: parsedPrice
           };
         }
-        localStorage.setItem('cached_discount', JSON.stringify(data));
+        try {
+          localStorage.setItem('cached_discount', JSON.stringify(data));
+        } catch (e) {}
       } else {
-        localStorage.removeItem('cached_discount');
+        try {
+          localStorage.removeItem('cached_discount');
+        } catch (e) {}
       }
 
       setDiscount(data);
@@ -130,23 +140,6 @@ export function DiscountSection() {
       setIsAdmin(false);
     }
   };
-
-  useEffect(() => {
-    fetchDiscount();
-    checkAdmin();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      if (session?.user) {
-        checkAdmin();
-      } else {
-        setIsAdmin(false);
-      }
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, []);
 
   const formatCurrency = (val: number) => 
     new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(val);
