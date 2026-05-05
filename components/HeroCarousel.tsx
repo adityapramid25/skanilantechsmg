@@ -25,7 +25,7 @@ const slides = [
     id: 3,
     title: 'LAYANAN PENGEMBANGAN TEKNOLOGI',
     subtitle: 'Selain membuat produk, kami juga memberikan layanan serta bimbingan terhadap instalasi dan pengembangan produk.',
-    image: 'https://picsum.photos/seed/digital/1920/1080',
+    image: 'https://ik.imagekit.io/skanilantech/IoT/about/skanilan2.jpg?updatedAt=1776910034751',
     color: 'from-indigo-500 to-violet-600',
   },
 ];
