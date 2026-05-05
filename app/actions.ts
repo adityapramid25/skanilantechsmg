@@ -62,3 +62,19 @@ export async function stopFlashSale() {
     }
   }
 }
+
+export async function saveFeaturedProducts(payload: any) {
+  const supabase = getServiceSupabase();
+  
+  // Ensure the bucket exists (ignoring errors if it already does)
+  await supabase.storage.createBucket('app-settings', { public: true });
+
+  const { error } = await supabase.storage
+    .from('app-settings')
+    .upload('featured-products.json', JSON.stringify(payload), { upsert: true, contentType: 'application/json' });
+    
+  if (error) {
+    console.error('Error saving featured products:', JSON.stringify(error));
+    throw new Error(error.message || 'Failed to save featured products');
+  }
+}
