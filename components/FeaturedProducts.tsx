@@ -7,6 +7,8 @@ import { ShoppingCart, Edit3 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { AdminFeaturedModal } from './AdminFeaturedModal';
 
+import { saveFeaturedProducts } from '@/app/actions';
+
 const WHATSAPP_NUMBER = '6281229438668';
 
 export function FeaturedProducts() {
@@ -17,34 +19,50 @@ export function FeaturedProducts() {
   const [customImages, setCustomImages] = useState<Record<string, string>>({});
   const [customDetails, setCustomDetails] = useState<Record<string, { price: string, description: string }>>({});
   const [featuredIds, setFeaturedIds] = useState<string[]>(['iot-1', 'web-1', 'mobile-1', 'photo-1']);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Match the IDs with the actual products
   const featured = featuredIds.map(id => allProducts.find(p => p.id === id) || allProducts[0]);
 
   useEffect(() => {
-    try {
-      const storedIds = localStorage.getItem('custom_featured_ids');
-      if (storedIds) {
-        setFeaturedIds(JSON.parse(storedIds));
-      }
-    } catch (e) {}
+    const loadConfig = async () => {
+      // 1. Try local storage first for immediate paint
+      try {
+        const storedIds = localStorage.getItem('custom_featured_ids');
+        if (storedIds) setFeaturedIds(JSON.parse(storedIds));
+        const storedImg = localStorage.getItem('custom_featured_images');
+        if (storedImg) setCustomImages(JSON.parse(storedImg));
+        const storedDetails = localStorage.getItem('custom_featured_details');
+        if (storedDetails) setCustomDetails(JSON.parse(storedDetails));
+      } catch (e) {}
 
-    // Load custom images from local storage
-    try {
-      const stored = localStorage.getItem('custom_featured_images');
-      if (stored) {
-        setCustomImages(JSON.parse(stored));
+      // 2. Fetch from Supabase for fresh data
+      try {
+        const { data, error } = await supabase.storage.from('app-settings').download('featured-products.json');
+        if (data) {
+          const text = await data.text();
+          const config = JSON.parse(text);
+          if (config.featuredIds) {
+            setFeaturedIds(config.featuredIds);
+            localStorage.setItem('custom_featured_ids', JSON.stringify(config.featuredIds));
+          }
+          if (config.customImages) {
+            setCustomImages(config.customImages);
+            localStorage.setItem('custom_featured_images', JSON.stringify(config.customImages));
+          }
+          if (config.customDetails) {
+            setCustomDetails(config.customDetails);
+            localStorage.setItem('custom_featured_details', JSON.stringify(config.customDetails));
+          }
+        }
+      } catch (e) {
+        console.error('Error fetching global featured products', e);
+      } finally {
+        setIsLoading(false);
       }
-    } catch (e) {
-      // Ignore
-    }
-
-    try {
-      const storedDetails = localStorage.getItem('custom_featured_details');
-      if (storedDetails) {
-        setCustomDetails(JSON.parse(storedDetails));
-      }
-    } catch(e) {}
+    };
+    
+    loadConfig();
 
     const checkAdmin = async () => {
       try {
@@ -95,25 +113,32 @@ export function FeaturedProducts() {
     setIsModalOpen(true);
   };
 
-  const handleSaveFeatured = (slotIndex: number, newProductId: string, imageUrl: string, price: string, description: string) => {
+  const handleSaveFeatured = async (slotIndex: number, newProductId: string, imageUrl: string, price: string, description: string) => {
     const updatedIds = [...featuredIds];
     updatedIds[slotIndex] = newProductId;
     setFeaturedIds(updatedIds);
-    try {
-      localStorage.setItem('custom_featured_ids', JSON.stringify(updatedIds));
-    } catch(e) {}
 
     const updatedImages = { ...customImages, [newProductId]: imageUrl };
     setCustomImages(updatedImages);
-    try {
-      localStorage.setItem('custom_featured_images', JSON.stringify(updatedImages));
-    } catch (e) {}
 
     const updatedDetails = { ...customDetails, [newProductId]: { price, description } };
     setCustomDetails(updatedDetails);
+    
     try {
+      localStorage.setItem('custom_featured_ids', JSON.stringify(updatedIds));
+      localStorage.setItem('custom_featured_images', JSON.stringify(updatedImages));
       localStorage.setItem('custom_featured_details', JSON.stringify(updatedDetails));
     } catch(e) {}
+
+    try {
+      await saveFeaturedProducts({
+        featuredIds: updatedIds,
+        customImages: updatedImages,
+        customDetails: updatedDetails
+      });
+    } catch (err) {
+      console.error('Failed to save configuration globally:', err);
+    }
   };
 
   const formatCurrency = (str: string) => {
