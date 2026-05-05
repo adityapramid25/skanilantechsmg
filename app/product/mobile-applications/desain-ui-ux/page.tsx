@@ -4,7 +4,7 @@ import { ArrowLeft, Smartphone, Layers, Zap, Shield, Cloud, RefreshCw } from 'lu
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-
+ 
 export default function ProductPage() {
   const product = {
     title: 'Desain UI/UX',
