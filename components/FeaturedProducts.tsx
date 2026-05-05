@@ -15,6 +15,7 @@ export function FeaturedProducts() {
   const [activeProduct, setActiveProduct] = useState<any>(null);
   const [activeSlot, setActiveSlot] = useState<number | null>(null);
   const [customImages, setCustomImages] = useState<Record<string, string>>({});
+  const [customDetails, setCustomDetails] = useState<Record<string, { price: string, description: string }>>({});
   const [featuredIds, setFeaturedIds] = useState<string[]>(['iot-1', 'web-1', 'mobile-1', 'photo-1']);
 
   // Match the IDs with the actual products
@@ -37,6 +38,13 @@ export function FeaturedProducts() {
     } catch (e) {
       // Ignore
     }
+
+    try {
+      const storedDetails = localStorage.getItem('custom_featured_details');
+      if (storedDetails) {
+        setCustomDetails(JSON.parse(storedDetails));
+      }
+    } catch(e) {}
 
     const checkAdmin = async () => {
       try {
@@ -87,7 +95,7 @@ export function FeaturedProducts() {
     setIsModalOpen(true);
   };
 
-  const handleSaveFeatured = (slotIndex: number, newProductId: string, imageUrl: string) => {
+  const handleSaveFeatured = (slotIndex: number, newProductId: string, imageUrl: string, price: string, description: string) => {
     const updatedIds = [...featuredIds];
     updatedIds[slotIndex] = newProductId;
     setFeaturedIds(updatedIds);
@@ -100,6 +108,12 @@ export function FeaturedProducts() {
     try {
       localStorage.setItem('custom_featured_images', JSON.stringify(updatedImages));
     } catch (e) {}
+
+    const updatedDetails = { ...customDetails, [newProductId]: { price, description } };
+    setCustomDetails(updatedDetails);
+    try {
+      localStorage.setItem('custom_featured_details', JSON.stringify(updatedDetails));
+    } catch(e) {}
   };
 
   const formatCurrency = (str: string) => {
@@ -129,6 +143,8 @@ export function FeaturedProducts() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {featured.map((product, index) => {
             const displayImage = product?.id ? (customImages[product.id] || product.image) : (product?.image || 'https://picsum.photos/400/300');
+            const displayPrice = product?.id ? (customDetails[product.id]?.price || product.price) : (product?.price || '');
+            const displayDescription = product?.id ? (customDetails[product.id]?.description || product.description) : (product?.description || '');
             
             return (
               <div key={`${product?.id}-${index}`} className="flex flex-col bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -160,13 +176,13 @@ export function FeaturedProducts() {
                   <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
                     {product?.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-4 line-clamp-3 flex-1">
-                    {product?.description}
+                  <p className="text-sm text-gray-500 mb-4 line-clamp-3 flex-1 whitespace-pre-wrap">
+                    {displayDescription}
                   </p>
                   
                   <div className="flex items-center justify-between mb-5">
                     <span className="text-lg font-black text-gray-900">
-                      {formatCurrency(product?.price || '')}
+                      {formatCurrency(displayPrice)}
                     </span>
                   </div>
 
@@ -194,6 +210,8 @@ export function FeaturedProducts() {
           slotIndex={activeSlot}
           productId={activeProduct.id}
           currentImage={customImages[activeProduct.id] || activeProduct.image}
+          currentPrice={customDetails[activeProduct.id]?.price || activeProduct.price}
+          currentDescription={customDetails[activeProduct.id]?.description || activeProduct.description}
         />
       )}
     </section>

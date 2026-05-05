@@ -7,28 +7,34 @@ import { allProducts, categories } from '@/lib/products';
 interface AdminFeaturedModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSuccess: (slotIndex: number, newProductId: string, imageUrl: string) => void;
+  onSuccess: (slotIndex: number, newProductId: string, imageUrl: string, price: string, description: string) => void;
   slotIndex: number;
   productId: string;
   currentImage: string;
+  currentPrice: string;
+  currentDescription: string;
 }
 
-export function AdminFeaturedModal({ isOpen, onClose, onSuccess, slotIndex, productId, currentImage }: AdminFeaturedModalProps) {
+export function AdminFeaturedModal({ isOpen, onClose, onSuccess, slotIndex, productId, currentImage, currentPrice, currentDescription }: AdminFeaturedModalProps) {
   const [imageUrl, setImageUrl] = useState('');
   const [selectedProductId, setSelectedProductId] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
   
   useEffect(() => {
     if (isOpen) {
       setImageUrl(currentImage || '');
       setSelectedProductId(productId || '');
+      setPrice(currentPrice || '');
+      setDescription(currentDescription || '');
     }
-  }, [isOpen, currentImage, productId]);
+  }, [isOpen, currentImage, productId, currentPrice, currentDescription]);
 
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSuccess(slotIndex, selectedProductId, imageUrl);
+    onSuccess(slotIndex, selectedProductId, imageUrl, price, description);
     onClose();
   };
 
@@ -38,6 +44,8 @@ export function AdminFeaturedModal({ isOpen, onClose, onSuccess, slotIndex, prod
     const newProd = allProducts.find(p => p.id === newId);
     if (newProd) {
       setImageUrl(newProd.image);
+      setPrice(newProd.price);
+      setDescription(newProd.description);
     }
   };
 
@@ -103,6 +111,34 @@ export function AdminFeaturedModal({ isOpen, onClose, onSuccess, slotIndex, prod
             <p className="mt-2 text-xs text-gray-500">
               Provide a valid direct URL to an image. Image will be displayed in 4:3 aspect ratio.
             </p>
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+              Price
+            </label>
+            <input
+              type="text"
+              required
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="e.g. Rp 1.500.000"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all text-sm"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+              Description
+            </label>
+            <textarea
+              required
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={3}
+              placeholder="Product description..."
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all text-sm resize-none"
+            />
           </div>
 
           <div className="flex justify-end gap-3 mt-4">
