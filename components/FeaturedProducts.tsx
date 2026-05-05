@@ -13,17 +13,21 @@ export function FeaturedProducts() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState<any>(null);
+  const [activeSlot, setActiveSlot] = useState<number | null>(null);
   const [customImages, setCustomImages] = useState<Record<string, string>>({});
+  const [featuredIds, setFeaturedIds] = useState<string[]>(['iot-1', 'web-1', 'mobile-1', 'photo-1']);
 
-  // Let's take 4 top products from different categories
-  const featured = [
-    allProducts.find(p => p.id === 'iot-1'),
-    allProducts.find(p => p.id === 'web-1'),
-    allProducts.find(p => p.id === 'mobile-1'),
-    allProducts.find(p => p.id === 'photo-1')
-  ].filter(Boolean);
+  // Match the IDs with the actual products
+  const featured = featuredIds.map(id => allProducts.find(p => p.id === id) || allProducts[0]);
 
   useEffect(() => {
+    try {
+      const storedIds = localStorage.getItem('custom_featured_ids');
+      if (storedIds) {
+        setFeaturedIds(JSON.parse(storedIds));
+      }
+    } catch (e) {}
+
     // Load custom images from local storage
     try {
       const stored = localStorage.getItem('custom_featured_images');
@@ -77,16 +81,24 @@ export function FeaturedProducts() {
     };
   }, []);
 
-  const handleEditClick = (product: any) => {
+  const handleEditClick = (product: any, index: number) => {
     setActiveProduct(product);
+    setActiveSlot(index);
     setIsModalOpen(true);
   };
 
-  const handleSaveImage = (productId: string, imageUrl: string) => {
-    const updated = { ...customImages, [productId]: imageUrl };
-    setCustomImages(updated);
+  const handleSaveFeatured = (slotIndex: number, newProductId: string, imageUrl: string) => {
+    const updatedIds = [...featuredIds];
+    updatedIds[slotIndex] = newProductId;
+    setFeaturedIds(updatedIds);
     try {
-      localStorage.setItem('custom_featured_images', JSON.stringify(updated));
+      localStorage.setItem('custom_featured_ids', JSON.stringify(updatedIds));
+    } catch(e) {}
+
+    const updatedImages = { ...customImages, [newProductId]: imageUrl };
+    setCustomImages(updatedImages);
+    try {
+      localStorage.setItem('custom_featured_images', JSON.stringify(updatedImages));
     } catch (e) {}
   };
 
@@ -115,11 +127,11 @@ export function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {featured.map((product) => {
+          {featured.map((product, index) => {
             const displayImage = product?.id ? (customImages[product.id] || product.image) : (product?.image || 'https://picsum.photos/400/300');
             
             return (
-              <div key={product?.id} className="flex flex-col bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div key={`${product?.id}-${index}`} className="flex flex-col bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 {/* 4:3 Image */}
                 <div className="relative w-full aspect-[4/3] bg-gray-100 group">
                   <Image
@@ -131,9 +143,9 @@ export function FeaturedProducts() {
                   />
                   {isAdmin && product && (
                     <button
-                      onClick={() => handleEditClick(product)}
+                      onClick={() => handleEditClick(product, index)}
                       className="absolute top-3 right-3 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-200 z-10"
-                      title="Edit Image"
+                      title="Edit Product"
                     >
                       <Edit3 size={18} />
                     </button>
@@ -174,11 +186,12 @@ export function FeaturedProducts() {
           })}
         </div>
       </div>
-      {activeProduct && (
+      {activeProduct && activeSlot !== null && (
         <AdminFeaturedModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          onSuccess={handleSaveImage}
+          onSuccess={handleSaveFeatured}
+          slotIndex={activeSlot}
           productId={activeProduct.id}
           currentImage={customImages[activeProduct.id] || activeProduct.image}
         />
