@@ -8,7 +8,7 @@ import { DiscountSection } from '@/components/DiscountSection';
 
 const slides = [
   {
-    id: 1,
+    id: 1, 
     title: 'SKANILAN TECH',
     subtitle: 'Selamat datang di <b>SKANILAN TECH</b> dimana kami memberikan inovasi teknologi yang terbaik untuk permasalahan sehari-hari.',
     image: 'https://ik.imagekit.io/skanilantech/IoT/about/skanilantech1.jpeg?updatedAt=1776909979419',
