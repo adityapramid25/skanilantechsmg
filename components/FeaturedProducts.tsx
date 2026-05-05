@@ -38,21 +38,23 @@ export function FeaturedProducts() {
 
       // 2. Fetch from Supabase for fresh data
       try {
-        const { data, error } = await supabase.storage.from('app-settings').download('featured-products.json');
-        if (data) {
-          const text = await data.text();
-          const config = JSON.parse(text);
-          if (config.featuredIds) {
-            setFeaturedIds(config.featuredIds);
-            localStorage.setItem('custom_featured_ids', JSON.stringify(config.featuredIds));
-          }
-          if (config.customImages) {
-            setCustomImages(config.customImages);
-            localStorage.setItem('custom_featured_images', JSON.stringify(config.customImages));
-          }
-          if (config.customDetails) {
-            setCustomDetails(config.customDetails);
-            localStorage.setItem('custom_featured_details', JSON.stringify(config.customDetails));
+        const { data: urlData } = supabase.storage.from('app-settings').getPublicUrl('featured-products.json');
+        if (urlData?.publicUrl) {
+          const res = await fetch(`${urlData.publicUrl}?t=${Date.now()}`, { cache: 'no-store' });
+          if (res.ok) {
+            const config = await res.json();
+            if (config.featuredIds) {
+              setFeaturedIds(config.featuredIds);
+              localStorage.setItem('custom_featured_ids', JSON.stringify(config.featuredIds));
+            }
+            if (config.customImages) {
+              setCustomImages(config.customImages);
+              localStorage.setItem('custom_featured_images', JSON.stringify(config.customImages));
+            }
+            if (config.customDetails) {
+              setCustomDetails(config.customDetails);
+              localStorage.setItem('custom_featured_details', JSON.stringify(config.customDetails));
+            }
           }
         }
       } catch (e) {
@@ -63,6 +65,9 @@ export function FeaturedProducts() {
     };
     
     loadConfig();
+
+    // Auto-refresh configuration every 5 seconds to catch updates by other admins
+    const interval = setInterval(loadConfig, 5000);
 
     const checkAdmin = async () => {
       try {
@@ -104,6 +109,7 @@ export function FeaturedProducts() {
 
     return () => {
       subscription.unsubscribe();
+      clearInterval(interval);
     };
   }, []);
 
