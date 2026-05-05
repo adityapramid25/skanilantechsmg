@@ -23,7 +23,7 @@ const slides = [
   },
   {
     id: 3,
-    title: 'LAYANAN DAN BIMBINGAN INSTALASI & PENGEMBANGAN PRODUK',
+    title: 'LAYANAN INSTALASI & PENGEMBANGAN PRODUK',
     subtitle: 'Selain membuat produk, kami juga memberikan layanan serta bimbingan terhadap instalasi dan pengembangan produk.',
     image: 'https://picsum.photos/seed/digital/1920/1080',
     color: 'from-indigo-500 to-violet-600',
