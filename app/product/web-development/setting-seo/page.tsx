@@ -113,7 +113,7 @@ export default function ProductPage() {
             {[1, 2, 3].map((i) => (
               <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
+                  src={`https://ik.imagekit.io/skanilantech/Web%20Development%20/SEO/Cuplikan%20layar%202026-05-07%20092450.png`} 
                   alt={`Gallery Image ${i}`} 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-500"
