@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Bisnis/UMKM',
-    price: 'Rp. 1.500.000',
+    price: 'Rp. 2.500.000',
     category: 'Web Development',
     description: 'Solusi digital untuk pelaku usaha yang ingin naik kelas.',
     features: [
