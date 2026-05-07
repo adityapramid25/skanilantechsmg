@@ -175,7 +175,7 @@ const allProducts = [
     id: 'photo-4',
     title: 'Portrait Session',
     price: 'Rp. 500.000',
-    image: 'https://ik.imagekit.io/skanilantech/Photography%20/mockuper%20(1).png',
+    image: 'https://ik.imagekit.io/oh01ctqxs5/ft%20seto.jpeg',
     description: 'Professional headshots and creative portraits for personal branding or team pages.',
     category: 'Photography',
   },
