@@ -1,4 +1,4 @@
-'use client';
+'use client'; 
 
 import { ArrowLeft, Camera, Image as ImageIcon, Sun, Edit3, Users, Star } from 'lucide-react';
 import Link from 'next/link';
