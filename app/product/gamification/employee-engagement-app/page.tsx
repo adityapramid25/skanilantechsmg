@@ -1,5 +1,5 @@
 'use client';
-
+ 
 import { ArrowLeft, Gamepad2, Trophy, TrendingUp, Users, Target, Award } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
