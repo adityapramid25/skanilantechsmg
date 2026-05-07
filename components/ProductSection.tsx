@@ -65,7 +65,7 @@ const allProducts = [
     id: 'web-4',
     title: 'Website Bisnis/UMKM',
     price: 'Rp. 2.500.000',
-    image: 'https://picsum.photos/seed/web4/400/300',
+    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/web%20bisnis%20dan%20umkm/mockuper.png',
     description: 'High-converting landing page design and development for your marketing campaigns.',
     category: 'Web Development',
   },
