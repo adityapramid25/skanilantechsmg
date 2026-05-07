@@ -92,7 +92,7 @@ export default function ProductPage() {
             <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
               {/* Letakkan Image paling atas agar menjadi background layer paling dasar, dan HAPUS -z-10 */}
               <Image 
-                src="https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_hd_videofake_0.png"
+                src="https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku.png?updatedAt=1777516759420"
                 alt="Video Thumbnail" 
                 fill 
                 className="object-cover" 
