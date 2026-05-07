@@ -131,7 +131,7 @@ const allProducts = [
   {
     id: 'mobile-3',
     title: 'Cross-Platform App',
-    price: '$4000.00',
+    price: 'Rp. 499.000,00',
     image: 'https://picsum.photos/seed/mobile3/400/300',
     description: 'React Native or Flutter app that works seamlessly on both iOS and Android from a single codebase.',
     category: 'Mobile Applications',
