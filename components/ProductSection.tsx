@@ -14,7 +14,7 @@ const allProducts = [
   {
     id: 'iot-1',
     title: 'Sistem Presensi RFID',
-    price: 'Rp. 100.000,00',
+    price: 'Rp. 100.000',
     image: 'https://ik.imagekit.io/skanilantech/IoT/RFID/3.png',
     description: 'Solusi IoT cerdas yang dilengkapi dengan sensor presisi tinggi dan pemantauan waktu nyata (real-time). Sangat ideal untuk otomatisasi alur kerja dan meningkatkan efisiensi operasional instansi Anda.',
     category: 'IoT',
