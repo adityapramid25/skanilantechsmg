@@ -89,21 +89,24 @@ export default function ProductPage() {
           className="mb-24"
         >
           {/* Main Video Placeholder */}
-          <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+            <div className="aspect-video w-full bg-slate-100 rounded-3xl overflow-hidden mb-6 relative group border border-slate-200 shadow-sm">
+              {/* Letakkan Image paling atas agar menjadi background layer paling dasar, dan HAPUS -z-10 */}
+              <Image 
+                src="https://ik.imagekit.io/skanilantech/Web%20Development%20/SEO/seo_settings.png?updatedAt=1777516732167"
+                alt="Video Thumbnail" 
+                fill 
+                className="object-cover" 
+                referrerPolicy="no-referrer"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-blue-500/10 mix-blend-multiply" />
+              
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-violet-600 ml-2" />
+                </div>
               </div>
             </div>
-            <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
-              alt="Video Thumbnail" 
-              fill 
-              className="object-cover -z-10"
-              referrerPolicy="no-referrer"
-            />
-          </div>
 
           {/* Image Gallery Grid (3 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
