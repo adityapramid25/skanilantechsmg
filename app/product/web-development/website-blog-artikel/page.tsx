@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Blog/Artikel',
-    price: 'Rp. 1.000.000',
+    price: 'Start from Rp. 1.000.000',
     category: 'Web Development',
     description: 'Sangat cocok bagi penulis, jurnalis, atau perusahaan yang ingin melakukan content marketing.',
     features: [
