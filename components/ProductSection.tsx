@@ -150,7 +150,7 @@ const allProducts = [
   {
     id: 'photo-1',
     title: 'Wedding Photography',
-    price: '$1500.00',
+    price: 'Rp. 1.500.000-3.000.000',
     image: 'https://picsum.photos/seed/photo1/400/300',
     description: 'Full-day wedding coverage with edited high-resolution photos and a premium physical album.',
     category: 'Photography',
@@ -158,7 +158,7 @@ const allProducts = [
   {
     id: 'photo-2',
     title: 'Product Photography',
-    price: '$500.00',
+    price: 'Rp. 100.000-250.000',
     image: 'https://picsum.photos/seed/photo2/400/300',
     description: 'Professional studio shots for your e-commerce products, including lifestyle and white-background images.',
     category: 'Photography',
@@ -166,7 +166,7 @@ const allProducts = [
   {
     id: 'photo-3',
     title: 'Corporate Event Coverage',
-    price: '$800.00',
+    price: 'Rp. 750.000',
     image: 'https://picsum.photos/seed/photo3/400/300',
     description: 'Comprehensive photo coverage for conferences, seminars, and corporate parties.',
     category: 'Photography',
@@ -174,7 +174,7 @@ const allProducts = [
   {
     id: 'photo-4',
     title: 'Portrait Session',
-    price: '$250.00',
+    price: 'Rp. 500.000',
     image: 'https://ik.imagekit.io/skanilantech/Photography%20/mockuper%20(1).png',
     description: 'Professional headshots and creative portraits for personal branding or team pages.',
     category: 'Photography',
