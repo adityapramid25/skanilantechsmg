@@ -258,7 +258,7 @@ export function ProductSection() {
             transition={{ delay: 0.1 }}
             className="text-sm text-slate-600 max-w-2xl mx-auto"
           >
-            Temukan teknologi kami yang anda minati.
+            Temukan teknologi kami yang Anda minati.
           </motion.p>
         </div>
 
