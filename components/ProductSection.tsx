@@ -97,7 +97,7 @@ const allProducts = [
     id: 'web-8',
     title: 'Website Company Profile',
     price: 'Rp. 3.000.000',
-    image: 'https://picsum.photos/seed/web2/400/300',
+    image: 'https://ik.imagekit.io/skanilantech/Web%20Development%20/web%20company%20profile/mockuper.png?updatedAt=1778118439085',
     description: 'Professional company website with SEO optimization, blog, and CMS for easy content updates.',
     category: 'Web Development',
   },
