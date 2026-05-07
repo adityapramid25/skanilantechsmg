@@ -73,7 +73,7 @@ export default function ProductPage() {
               </div>
             </div>
             <Image 
-              src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}/1920/1080?blur=2`} 
+              src={`https://ik.imagekit.io/oh01ctqxs5/vid%20seto.mp4?updatedAt=1778120291977`} 
               alt="Video Thumbnail" 
               fill 
               className="object-cover -z-10"
@@ -86,7 +86,7 @@ export default function ProductPage() {
             {[1, 2, 3].map((i) => (
               <div key={i} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <Image 
-                  src={`https://picsum.photos/seed/${product.title.replace(/ /g, '')}${i}/800/600`} 
+                  src={`https://ik.imagekit.io/oh01ctqxs5/ft%20seto3.jpeg?updatedAt=1778120348321`} 
                   alt={`Gallery Image ${i}`} 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-500"
