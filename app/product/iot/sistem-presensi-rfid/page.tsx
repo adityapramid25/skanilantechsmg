@@ -1,4 +1,4 @@
-'use client';
+'use client'; 
 
 import { useRef, useState } from 'react';
 import { ArrowLeft, Zap, Sparkles, Shield, CreditCard, Target } from 'lucide-react';
