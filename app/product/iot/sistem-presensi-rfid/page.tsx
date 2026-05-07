@@ -155,7 +155,7 @@ export default function ProductPage() {
               
               <p className="text-slate-600 leading-relaxed mt-4">
                 <b>2. Presensi Masuk & Pulang Otomatis</b><br/>
-                Cukup berjalan melewati alat pembaca (Reader) yang dipasang di gerbang atau pintu masuk.
+                Dekatkan/tempelkan kartu Chip RFID ke alat pembaca (Reader) yang dipasang di gerbang atau pintu masuk.
               </p>
               
               <div className="text-slate-600 leading-relaxed mt-4">
