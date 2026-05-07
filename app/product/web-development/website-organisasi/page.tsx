@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Organisasi',
-    price: 'Gratis Awal Minggu',
+    price: 'Start from 1.000.000',
     category: 'Web Development',
     description: 'Butuh website organisasi profesional seperti Portal Sistem Informasi Masjid Al-Muttaqin Demak? Percayakan pada jasa pembuatan web kami. Layanan lengkap mulai dari sistem informasi, jadwal kegiatan, hingga fitur donasi.',
     features: [
