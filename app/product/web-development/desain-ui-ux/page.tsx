@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Desain UI/UX',
-    price: 'Rp. 2.000.000',
+    price: 'Start from Rp. 250.000',
     category: 'Web Development',
     description: 'Kami merancang antarmuka (UI) yang memanjakan mata sekaligus pengalaman pengguna (UX) yang intuitif.',
     features: [
