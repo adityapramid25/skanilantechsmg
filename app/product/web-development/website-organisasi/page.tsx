@@ -111,12 +111,12 @@ export default function ProductPage() {
           {/* Image Gallery Grid (3 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_0.png",
-              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_3_copy.png",
-              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_4_copy.png",
-              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_1_copy.png",
-              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_5.png",
-              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/masjid_wiku_2_copy.png"
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/kumpulan%20gambar/page-1.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/kumpulan%20gambar/page-2.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/kumpulan%20gambar/page-3.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/kumpulan%20gambar/page-4.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/kumpulan%20gambar/page-5.png",
+              "https://ik.imagekit.io/skanilantech/Web%20Development%20/Web%20Organisasi/kumpulan%20gambar/page-6.png"
             ].map((imageUrl, index) => (
               <div key={index} className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <Image 
