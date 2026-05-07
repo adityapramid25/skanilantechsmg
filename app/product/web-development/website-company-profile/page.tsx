@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Website Company Profile',
-    price: 'Rp. 900.000',
+    price: 'Start from Rp. 3.000.000',
     category: 'Web Development',
     description: 'Wajah resmi sebuah perusahaan di dunia maya.',
     features: [
