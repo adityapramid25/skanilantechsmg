@@ -175,7 +175,7 @@ const allProducts = [
     id: 'photo-4',
     title: 'Portrait Session',
     price: '$250.00',
-    image: 'https://picsum.photos/seed/photo4/400/300',
+    image: 'https://ik.imagekit.io/skanilantech/Photography%20/mockuper%20(1).png',
     description: 'Professional headshots and creative portraits for personal branding or team pages.',
     category: 'Photography',
   },
