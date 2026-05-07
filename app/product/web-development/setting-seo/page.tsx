@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Setting SEO',
-    price: 'Rp. 500.000-2.500.000',
+    price: 'Start from Rp. 500.000',
     category: 'Web Development',
     description: 'Kami menyediakan Layanan pengembangan dan pembuatan website profesional yang dirancang khusus untuk membantu bisnis Anda tampil lebih kredibel dan menjangkau lebih banyak pelanggan secara online. Setiap website yang kami buat memiliki desain responsif (mobile friendly), loading cepat, serta struktur yang dioptimasi untuk SEO (Search Engine Optimization) agar lebih mudah muncul di hasil pencarian Google.',
     features: [
