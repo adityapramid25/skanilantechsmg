@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export default function ProductPage() {
   const product = {
     title: 'Jasa Pembuatan Web Pendidikan/Lembaga',
-    price: 'Rp. 1.000.000',
+    price: 'Start from Rp. 1.250.000',
     category: 'Web Development',
     description: 'Website khusus untuk institusi seperti sekolah, universitas, atau lembaga kursus.',
     features: [
