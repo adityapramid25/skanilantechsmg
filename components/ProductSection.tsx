@@ -140,7 +140,7 @@ const allProducts = [
     id: 'mobile-4',
     title: 'Desain UI/UX',
     price: 'Rp. 199.000,00',
-    image: 'https://picsum.photos/seed/mobile4/400/300',
+    image: 'https://ik.imagekit.io/skanilantech/Applications%20/UI_UX/2.png?updatedAt=1777181518116',
     description: 'Complete overhaul of your existing mobile app interface for better user engagement.',
     category: 'Mobile Applications',
   },
