@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
+ 
 export function Footer() {
   return (
     <footer className="bg-slate-50 text-slate-600 py-12 border-t border-slate-200">
