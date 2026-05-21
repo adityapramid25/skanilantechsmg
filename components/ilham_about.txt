@@ -1,0 +1,31 @@
+1. `'use client';`: Direktif Next.js yang menandakan komponen ini dirender di sisi klien (browser). Diperlukan karena komponen ini menggunakan interaksi dan animasi.
+
+2. `import Image`: Mengimpor komponen dari Next.js untuk memuat gambar secara optimal.
+
+3. `import { motion }`: Mengimpor library Framer Motion untuk membuat efek animasi.
+
+4. Sebuah array konstanta yang menyimpan daftar objek data gambar. Setiap objek berisi `id` unik, URL gambar (`src`), dan teks alternatif (`alt`).
+
+5. Komponen fungsi utama yang mengembalikan struktur HTML/UI dari halaman, dibungkus dalam tag `<section>` dengan padding dan latar belakang putih. Terdiri dari dua bagian utama:
+
+6. Menggunakan layout grid yang membagi tampilan menjadi dua kolom pada layar besar (`lg:grid-cols-2`).
+
+7. Kolom Kiri (Visual): Menggunakan `<motion.div>` untuk membuat animasi gambar yang muncul bergeser dari kiri (`x: -20` ke `x: 0`). Di dalamnya terdapat komponen `<Image>` yang menampilkan foto kantor, ditutupi oleh elemen `<div>` dengan efek warna ungu transparan (`bg-violet-900/10`).
+
+8. Kolom Kanan (Teks): Menggunakan `<motion.div>` dengan animasi bergeser dari kanan (`x: 20` ke `x: 0`) dan jeda `0.2` detik. Memuat judul, tiga paragraf deskripsi tentang Skanilan Tech, serta elemen *grid* kecil di bagian bawah untuk menampilkan data statistik ("50+ Projects" dan "99% Client Satisfaction") yang diberi hiasan garis vertikal ungu di sisi kirinya.
+
+9. Animasi Pembungkus Utama: Seluruh area galeri dibungkus `<motion.div>` agar memiliki efek animasi muncul dari bawah (`y: 20` ke `y: 0`) saat layar digulir (`whileInView`).
+
+10. Judul Galeri: Teks "Our Work & Gallery" beserta deskripsi singkatnya.
+
+11. Grid Galeri: Elemen grid yang diatur menjadi 2 kolom pada layar kecil dan 4 kolom pada layar menengah ke atas (`md:grid-cols-4`).
+
+12. Perulangan Gambar (`map`): Kode melakukan iterasi (perulangan) pada variabel `galleryImages` untuk merender setiap gambar ke dalam layar.
+
+13. Efek Hover (Interaksi Kursor)
+
+14. Kotak gambar (`<motion.div>`) akan sedikit membesar (`scale: 1.02`) saat disorot kursor.
+
+15. Gambar di dalamnya (`<Image>`) memiliki kelas Tailwind `group-hover:scale-110` yang memberikan efek *zoom-in* secara halus.
+
+16. Elemen `<div>` paling bawah bertindak sebagai overlay yang berubah dari transparan menjadi gelap (`group-hover:bg-slate-900/20`) saat disorot kursor.
