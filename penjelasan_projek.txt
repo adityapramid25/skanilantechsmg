@@ -1,0 +1,3 @@
+Jelaskan semua komponen yang ada di website yang sudah dibuat bersama, dengan pembagian:
+Arina: menjelaskan bagian semua komponen di hero (beranda)
+Ailsya: menjelaskan bagian semua komponen di produk unggulan (beranda)\
