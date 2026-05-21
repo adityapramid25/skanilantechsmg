@@ -1,3 +1,14 @@
 Jelaskan semua komponen yang ada di website yang sudah dibuat bersama, dengan pembagian:
-Arina: menjelaskan bagian semua komponen di hero (beranda)
-Ailsya: menjelaskan bagian semua komponen di produk unggulan (beranda)\
+
+Ailsya: menjelaskan bagian components Navbar & Footer (Navbar.tsx & Footer.tsx)
+Reza: menjelaskan bagian components caraousel (HeroCaraousel.tsx)
+Arina: menjelaskan bagian components produk (ProductSection.tsx)
+Cahya: menjelaskan bagian components Statistik (FunFactSection.tsx)
+Ilham: menjelaskan bagian components About (About.tsx)
+Evan: menjelaskan bagian components produk unggulan (FeaturedProducts.tsx)
+Fiya: menjelaskan bagian components flash sale/diskon (DiscountBannerClient.tsx)
+Rama: menjelaskan bagian components kontak (Contact.tsx)
+Sahal: menjelaskan bagian components produk unggulan sebagai admin (AdminFeaturedModal.tsx)
+Vira: menjelaskan bagian components flash sale/diskon sebagai admin (AdminDiscountModal.tsx)
+Voleta: menjelaskan algoritma durasi flash sale (CountdownTimer.tsx)
+Wildan: menjelaskan bagian components login dan register (AuthModal.tsx)
