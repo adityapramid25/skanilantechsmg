@@ -1,0 +1,17 @@
+'use client'; : Digunakan agar komponen berjalan di sisi client (browser) sehingga dapat menampilkan interaksi dan update data secara realtime.
+import { useRealTimeCountdown } : Mengimpor hook useRealTimeCountdown yang digunakan untuk menghitung dan menampilkan sisa waktu promo atau flash sale.
+import { motion } : Mengimpor library animasi untuk memberikan efek pada tampilan banner saat muncul di halaman.
+import { Sparkles, ArrowRight } : Mengimpor icon yang digunakan pada label Flash Sale dan tombol Claim Discount Now.
+import { useEffect, useState } from 'react'; : Digunakan untuk mengimpor hook React yang digunakan untuk mengatur state dan efek saat komponen dijalankan.
+interface DiscountBannerClientProps : Digunakan untuk menerima data berupa productName, productDescription, discountPrice, dan endDate.
+export function DiscountBannerClient({...}) : Digunakan untuk membuat komponen DiscountBannerClient dan menerima data dari DiscountBannerClientProps untuk ditampilkan pada banner flash sale.
+const [mounted, setMounted] = useState(false); : Digunakan untuk mengatur status komponen agar ditampilkan setelah halaman selesai dimuat.
+const { timeLeft, isExpired } = useRealTimeCountdown(endDate); : Digunakan untuk mengambil data sisa waktu (timeLeft) dan status apakah promo sudah berakhir (isExpired).
+useEffect(() => { setMounted(true); }, []); : Digunakan untuk mengubah status mounted menjadi true saat komponen pertama kali dijalankan.
+if (!mounted) : Digunakan untuk mencegah error Hydration Safety saat halaman dimuat.
+if (isExpired) : Digunakan untuk mengecek apakah waktu promo sudah habis, Jika promo berakhir maka banner flash sale tidak akan ditampilkan.
+<section className="..."> : Digunakan sebagai wadah utama banner flash sale dengan background gradasi warna dan efek visual.
+<motion.div> : Digunakan untuk memberikan animasi pada banner saat muncul di halaman.
+Bagian banner menampilkan label Flash Sale, nama produk (productName), deskripsi produk (productDescription), serta harga promo (discountPrice).
+Offer Ends In: {timeLeft} : Digunakan untuk menampilkan countdown timer yang berisi sisa waktu promo secara realtime.
+Tombol Claim Discount Now digunakan sebagai tombol aksi untuk pengguna agar dapat mengambil promo atau diskon yang tersedia.
