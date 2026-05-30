@@ -1,0 +1,17 @@
+'use client';: Instruksi khusus untuk Next.js yang menandakan bahwa komponen ini adalah Client Component (berjalan di sisi browser).
+import: Mengimpor modul seperti useRef untuk manipulasi DOM, next/image untuk optimasi gambar, next/link untuk navigasi, motion untuk animasi, serta lucide-react untuk ikon
+
+categories: Array yang berisi daftar kategori untuk mengelompokkan produk.
+allProducts: Array of objects yang menyimpan data detail setiap produk, seperti ID, judul, harga, URL gambar, deskripsi, dan kategori. Ini memudahkan pengelolaan konten tanpa harus mengubah kode di bagian tampilan.
+
+scrollContainerRefs: Hook untuk menyimpan referensi ke kontainer produk agar sistem tahu elemen mana yang harus digeser saat tombol panah ditekan.
+scroll(): Fungsi untuk melakukan penggeseran (scrolling) horizontal secara halus (smooth) pada kontainer produk.
+handleWhatsApp(): Fungsi untuk mengarahkan pengguna ke aplikasi WhatsApp dengan pesan otomatis yang menyertakan nama produk yang dipilih.
+getCategorySlug & getProductSlug: Fungsi untuk mengubah teks (nama kategori/produk) menjadi format URL-friendly (misalnya: "IoT" menjadi "iot").
+
+Header Section: Menggunakan komponen motion untuk memberikan efek animasi muncul (fade-in) saat halaman dimuat.
+Mapping Kategori: Menggunakan fungsi .map() untuk memproses daftar kategori secara otomatis, sehingga jika ada kategori baru, tampilan akan menyesuaikan sendiri.
+Horizontal Scroll Container: Wadah untuk menampilkan daftar produk secara mendatar. Di sini terdapat logika .filter() agar produk yang tampil selalu sesuai dengan kategorinya.
+Tombol Detail & WhatsApp: Menyediakan akses bagi pengguna untuk melihat informasi lebih lanjut atau langsung menghubungi penjual melalui WhatsApp.
+
+hide-scrollbar: Kode CSS di bagian bawah yang berfungsi menyembunyikan scrollbar (bilah geser) pada browser agar tampilan antarmuka terlihat lebih bersih dan profesional di perangkat mobile maupun desktop.
